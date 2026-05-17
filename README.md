@@ -18,6 +18,7 @@ npm run test:salon     # Salon Provider tests
 npm run test:admin     # Admin panel tests
 npm run test:exhaustive # Project-Wide Exhaustive Tests (1140 cases)
 npm run test:advanced  # Controlled Architectural/Infrastructure Tests (6 cases)
+npm run test:web       # Frontend Web UI Tests (Admin Login, etc.)
 ```
 
 ### নির্দিষ্ট একটি file:

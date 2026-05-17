@@ -15,6 +15,7 @@
     "test:admin": "npx playwright test tests/admin-overview.spec.js tests/admin-users.spec.js tests/admin-salons.spec.js tests/admin-orders.spec.js tests/admin-categories-services.spec.js tests/admin-financial.spec.js tests/admin-settings.spec.js tests/admin-admins.spec.js tests/admin-content.spec.js",
     "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
     "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
+    "test:web": "npx playwright test tests/ui/",
     "show-report": "npx playwright show-report"
   },
   "devDependencies": {
