@@ -16,6 +16,7 @@
     "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
     "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
     "test:web": "npx playwright test tests/ui/",
+    "test:stress": "npx playwright test tests/stress-test.spec.js",
     "show-report": "npx playwright show-report"
   },
   "devDependencies": {
