@@ -1,39 +1,39 @@
-# MyCoifeur API Automation Test Suite
+# MyCoifeur API & UI Automation Test Suite
 
-## 🚀 Test Run করার নিয়ম
+## 🚀 How to Run the Tests
 
-> ✅ **সবসময় `d:\SQA\My Coifeur` folder থেকে run করুন**
+> ✅ **Always execute commands from the project root folder: `d:\SQA\My Coifeur`**
 
-### সব Tests একসাথে:
+### Run All Tests Together:
 ```bash
 npx playwright test
 ```
 
-### Category অনুযায়ী:
+### Run by Categories / Specific Modules:
 ```bash
-npm run test:auth      # Authentication tests
-npm run test:user      # User API tests
-npm run test:guest     # Public/Guest API tests
-npm run test:salon     # Salon Provider tests
-npm run test:admin     # Admin panel tests
-npm run test:exhaustive # Project-Wide Exhaustive Tests (1140 cases)
-npm run test:advanced  # Controlled Architectural/Infrastructure Tests (6 cases)
-npm run test:web       # Frontend Web UI Tests (Admin Login, etc.)
-npm run test:stress    # API Stress & Load Performance Tests
+npm run test:auth       # Authentication API tests
+npm run test:user       # User API tests
+npm run test:guest      # Public/Guest API tests
+npm run test:salon      # Salon Provider tests
+npm run test:admin      # Admin panel tests
+npm run test:exhaustive # Project-Wide Exhaustive Swagger Tests (1140 cases)
+npm run test:advanced   # Controlled Architectural & Infrastructure Tests (6 cases)
+npm run test:web        # Frontend Web UI Tests (Admin Dashboard Login, etc.)
+npm run test:stress     # API Stress & Load Performance Tests
 ```
 
-### নির্দিষ্ট একটি file:
+### Run a Specific File:
 ```bash
 npx playwright test tests/login.spec.js
-npx playwright test tests/cart.spec.js
+npx playwright test tests/ui/admin-login-ui.spec.js
 ```
 
-### HTML Report সহ:
+### Run Tests and Generate HTML Report:
 ```bash
 npx playwright test --reporter=html
 ```
 
-### Report browser-এ দেখতে:
+### Show Interactive HTML Report in Browser:
 ```bash
 npx playwright show-report
 ```
