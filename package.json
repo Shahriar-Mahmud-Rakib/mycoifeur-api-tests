@@ -1,0 +1,23 @@
+{
+  "name": "mycoifeur-api-tests",
+  "version": "1.0.0",
+  "description": "MyCoifeur API Automation Test Suite using Playwright",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:report": "npx playwright test --reporter=html && npx playwright show-report",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:auth": "npx playwright test tests/login.spec.js tests/user-login.spec.js tests/user-register.spec.js tests/forgot-password.spec.js tests/update-password.spec.js tests/verify-code.spec.js tests/refresh-token.spec.js tests/social-login.spec.js",
+    "test:user": "npx playwright test tests/user-profile.spec.js tests/address.spec.js tests/cart.spec.js tests/orders.spec.js tests/balance-banks.spec.js",
+    "test:guest": "npx playwright test tests/guest.spec.js tests/categories.spec.js tests/locations.spec.js tests/config.spec.js tests/blogs-pages.spec.js tests/contact-us.spec.js tests/salons.spec.js tests/services-offers-packages.spec.js tests/home-notifications.spec.js",
+    "test:salon": "npx playwright test tests/salon-profile.spec.js tests/salon-orders.spec.js tests/salon-web.spec.js",
+    "test:admin": "npx playwright test tests/admin-overview.spec.js tests/admin-users.spec.js tests/admin-salons.spec.js tests/admin-orders.spec.js tests/admin-categories-services.spec.js tests/admin-financial.spec.js tests/admin-settings.spec.js tests/admin-admins.spec.js tests/admin-content.spec.js",
+    "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
+    "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
+    "show-report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}
