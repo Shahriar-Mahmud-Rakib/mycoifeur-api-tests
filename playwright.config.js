@@ -14,9 +14,9 @@ module.exports = defineConfig({
             'x-app-version': '1.1.4',
             'x-platform': 'android',
         },
-        // Automatic SQA Visual Diagnostics on Failure
-        screenshot: 'only-on-failure', // Take screenshots on failure
-        video: 'retain-on-failure',     // Record video of browser on failure
-        trace: 'retain-on-failure',     // Capture interactive trace logs on failure
+        // Automatic SQA Visual Diagnostics (Always record for rich reports)
+        screenshot: 'on', // Always take screenshots of steps
+        video: 'on',      // Always record video of browser execution
+        trace: 'on',      // Always capture interactive trace logs
     },
 });
