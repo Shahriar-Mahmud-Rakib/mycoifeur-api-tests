@@ -6,7 +6,6 @@
     "test": "npx playwright test",
     "test:report": "npx playwright test --reporter=html && npx playwright show-report",
     "test:headed": "npx playwright test --headed",
-    "test:ui": "npx playwright test --ui",
     "test:debug": "npx playwright test --debug",
     "test:auth": "npx playwright test tests/login.spec.js tests/user-login.spec.js tests/user-register.spec.js tests/forgot-password.spec.js tests/update-password.spec.js tests/verify-code.spec.js tests/refresh-token.spec.js tests/social-login.spec.js",
     "test:user": "npx playwright test tests/user-profile.spec.js tests/address.spec.js tests/cart.spec.js tests/orders.spec.js tests/balance-banks.spec.js",
@@ -15,7 +14,6 @@
     "test:admin": "npx playwright test tests/admin-overview.spec.js tests/admin-users.spec.js tests/admin-salons.spec.js tests/admin-orders.spec.js tests/admin-categories-services.spec.js tests/admin-financial.spec.js tests/admin-settings.spec.js tests/admin-admins.spec.js tests/admin-content.spec.js",
     "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
     "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
-    "test:web": "npx playwright test tests/ui/",
     "test:stress": "npx playwright test tests/stress-test.spec.js",
     "show-report": "npx playwright show-report"
   },
