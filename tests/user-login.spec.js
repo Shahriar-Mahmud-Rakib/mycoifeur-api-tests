@@ -11,6 +11,7 @@ const {
     BASE_URL,
     USER_CREDENTIALS,
     USER2_CREDENTIALS,
+    SALON_CREDENTIALS,
     MOBILE_HEADERS
 } = require('./helpers/auth.helper');
 
@@ -40,14 +41,14 @@ test.describe('User Login API Tests', () => {
     test('TC-02: Should login with second user credentials', async ({ request }) => {
         const response = await request.post(`${BASE_URL}/api/v1/auth/login`, {
             headers: MOBILE_HEADERS,
-            data: USER2_CREDENTIALS
+            data: SALON_CREDENTIALS
         });
 
         expect(response.status()).toBe(200);
         const json = await response.json();
         expect(json.success).toBe(true);
         expect(json.data.accessToken).toBeTruthy();
-        console.log('✅ User2 Login Success');
+        console.log('✅ User2 Login Success (Salon Credentials)');
     });
 
     // ❌ TC-03: Login with wrong password

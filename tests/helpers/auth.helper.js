@@ -15,12 +15,12 @@ const ADMIN_CREDENTIALS = {
 };
 
 const USER_CREDENTIALS = {
-    user: 'test1214@gmail.com',  // email
+    user: 'test19@example.com',  // email
     password: 'Password123456'
 };
 
 const USER2_CREDENTIALS = {
-    user: 'test19@example.com',  // email
+    user: 'test1214@gmail.com',  // email
     password: 'Password123456'
 };
 

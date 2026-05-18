@@ -6,7 +6,7 @@
 // Auth: Bearer token required
 // ============================================
 const { test, expect } = require('@playwright/test');
-const { BASE_URL, MOBILE_HEADERS, getUserToken } = require('./helpers/auth.helper');
+const { BASE_URL, MOBILE_HEADERS, getUserToken, USER_CREDENTIALS } = require('./helpers/auth.helper');
 
 test.describe('Update Password API Tests', () => {
 
@@ -19,8 +19,8 @@ test.describe('Update Password API Tests', () => {
                 'Authorization': `Bearer ${token}`
             },
             data: {
-                email: 'test1214@gmail.com',
-                newPassword: 'Password123456' // Same password to avoid breaking other tests
+                email: USER_CREDENTIALS.user,
+                newPassword: USER_CREDENTIALS.password // Same password to avoid breaking other tests
             }
         });
 
@@ -40,7 +40,7 @@ test.describe('Update Password API Tests', () => {
         const response = await request.post(`${BASE_URL}/api/v1/auth/update-password`, {
             headers: MOBILE_HEADERS,
             data: {
-                email: 'test1214@gmail.com',
+                email: USER_CREDENTIALS.user,
                 newPassword: 'NewPassword123'
             }
         });
@@ -70,7 +70,7 @@ test.describe('Update Password API Tests', () => {
                 ...MOBILE_HEADERS,
                 'Authorization': `Bearer ${token}`
             },
-            data: { email: 'test1214@gmail.com' }
+            data: { email: USER_CREDENTIALS.user }
         });
         expect(response.status()).not.toBe(200);
         console.log('✅ Missing newPassword correctly rejected, status:', response.status());
@@ -83,7 +83,7 @@ test.describe('Update Password API Tests', () => {
                 'Authorization': 'Bearer invalid-token-xyz'
             },
             data: {
-                email: 'test1214@gmail.com',
+                email: USER_CREDENTIALS.user,
                 newPassword: 'NewPassword123'
             }
         });

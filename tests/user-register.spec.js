@@ -7,7 +7,7 @@
 // ============================================
 
 const { test, expect } = require('@playwright/test');
-const { BASE_URL, MOBILE_HEADERS } = require('./helpers/auth.helper');
+const { BASE_URL, MOBILE_HEADERS, USER_CREDENTIALS } = require('./helpers/auth.helper');
 const { SQL_INJECTION_PAYLOADS, XSS_PAYLOADS, BOUNDARY } = require('./helpers/test-data.helper');
 
 const ENDPOINT = `${BASE_URL}/api/v1/auth/user/register`;
@@ -100,7 +100,7 @@ test.describe('Exhaustive Registration Tests', () => {
 
     test('TC-REG-VAL-02: [Validation] Registration fails on duplicate email', async ({ request }) => {
         // Known duplicate from test DB or previous run
-        const payload = uniquePayload({ email: 'test1214@gmail.com' });
+        const payload = uniquePayload({ email: USER_CREDENTIALS.user });
         const response = await request.post(ENDPOINT, {
             headers: MOBILE_HEADERS,
             multipart: payload,
