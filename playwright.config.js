@@ -4,7 +4,7 @@ const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
     testDir: './tests',
-    testIgnore: '**/exhaustive-suite/**',
+    // testIgnore: '**/exhaustive-suite/**',
     timeout: 60000,       // 60s per test (security/brute-force tests need more time)
     retries: 0,
     workers: 2,           // Reduced to 2 to avoid rate-limiting during security tests

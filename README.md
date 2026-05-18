@@ -38,7 +38,7 @@ BASE_URL=https://api.yourdomain.com
 
 # PostgreSQL Connection (For DB Hooks)
 DB_HOST=127.0.0.1
-DB_PORT=5432
+DB_PORT=1234
 DB_NAME=your_db_name
 DB_USER=your_user
 DB_PASSWORD=your_password
@@ -68,6 +68,7 @@ npm run test:salon      # Salon Provider tests
 npm run test:admin      # Admin panel tests
 npm run test:exhaustive # Project-Wide Exhaustive Swagger Tests (1140 cases)
 npm run test:advanced   # Controlled Architectural & Infrastructure Tests (6 cases)
+npm run test:web        # Frontend Web UI Tests (Admin Dashboard Login, etc.)
 npm run test:stress     # API Stress & Load Performance Tests
 ```
 
