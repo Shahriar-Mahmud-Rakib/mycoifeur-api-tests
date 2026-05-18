@@ -5,36 +5,38 @@
 // headers for all test files.
 // ============================================
 
-const BASE_URL = 'https://dev-api.mycoifeur.com.sa';
+require('dotenv').config();
+
+const BASE_URL = process.env.BASE_URL || 'https://dev-api.mycoifeur.com.sa';
 
 // ---------- Test Credentials ----------
 
 const ADMIN_CREDENTIALS = {
-    user: 'amrmuhamed9@gmail.com',
-    password: '123456'
+    user: process.env.ADMIN_USER || 'amrmuhamed9@gmail.com',
+    password: process.env.ADMIN_PASSWORD || '123456'
 };
 
 const USER_CREDENTIALS = {
-    user: 'test19@example.com',  // email
-    password: 'Password123456'
+    user: process.env.TEST_USER || 'test19@example.com',
+    password: process.env.TEST_USER_PASSWORD || 'Password123456'
 };
 
 const USER2_CREDENTIALS = {
-    user: 'test1214@gmail.com',  // email
-    password: 'Password123456'
+    user: process.env.TEST_USER2 || 'test1214@gmail.com',
+    password: process.env.TEST_USER2_PASSWORD || 'Password123456'
 };
 
 const SALON_CREDENTIALS = {
-    user: 'aalih.aaa986@gmail.com',
-    password: '123456'
+    user: process.env.SALON_USER || 'aalih.aaa986@gmail.com',
+    password: process.env.SALON_PASSWORD || '123456'
 };
 
 // ---------- Common Headers ----------
 
 const MOBILE_HEADERS = {
-    'x-custom-lang': 'en',
-    'x-app-version': '1.1.4',
-    'x-platform': 'ios'
+    'x-custom-lang': process.env.CUSTOM_LANG || 'en',
+    'x-app-version': process.env.APP_VERSION || '1.1.4',
+    'x-platform': process.env.PLATFORM || 'android'
 };
 
 // ---------- Login Helpers ----------

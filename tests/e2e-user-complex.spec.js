@@ -12,16 +12,17 @@
 // 8. Log In with New Password
 // ============================================
 
+require('dotenv').config();
 const { test, expect } = require('@playwright/test');
 const { Client } = require('pg');
 const { BASE_URL, MOBILE_HEADERS } = require('./helpers/auth.helper');
 
 const DB_CONFIG = {
-    host: '52.220.54.42',
-    port: 5432,
-    database: 'mycoifeur_dev_db',
-    user: 'mycoifeur_dev_user',
-    password: 'gY2TDhhC3vBCeNN7SZQc',
+    host: process.env.DB_HOST || '52.220.54.42',
+    port: parseInt(process.env.DB_PORT || '5432', 10),
+    database: process.env.DB_NAME || 'mycoifeur_dev_db',
+    user: process.env.DB_USER || 'mycoifeur_dev_user',
+    password: process.env.DB_PASSWORD || 'gY2TDhhC3vBCeNN7SZQc',
 };
 
 async function getOtpFromDb(phone) {
