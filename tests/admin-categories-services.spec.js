@@ -26,7 +26,7 @@ test.describe('✅ Admin Categories — Functional Tests', () => {
         if (json.data?.data?.length > 0) {
             testCategoryId = json.data.data[0].id;
             expect(json.data.data[0]).toHaveProperty('id');
-            expect(json.data.data[0]).toHaveProperty('name');
+            expect(json.data.data[0]).toHaveProperty('nameEn');
         }
         expect(Date.now() - start).toBeLessThan(5000);
         console.log(`✅ [TC-CAT-01] Categories: ${json.data?.data?.length || 0} items`);

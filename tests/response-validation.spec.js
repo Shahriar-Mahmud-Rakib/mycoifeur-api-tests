@@ -172,11 +172,11 @@ test.describe('📐 Response Schema Validation', () => {
             // Paginated response usually has data.data array
             if (Array.isArray(json.data.data)) {
                 expect(json.data).toHaveProperty('total');
-                expect(json.data).toHaveProperty('current_page');
+                expect(json.data).toHaveProperty('page');
                 if (json.data.data.length > 0) {
                     const item = json.data.data[0];
                     expect(item).toHaveProperty('id');
-                    expect(item).toHaveProperty('name');
+                    expect(item).toHaveProperty('nameEn');
                 }
             }
         }
@@ -269,10 +269,10 @@ test.describe('📐 Response Schema Validation', () => {
             expect(res.status()).toBe(200);
             const json = await res.json();
             expect(json.success).toBe(true);
-            // If paginated, must have current_page and total
+            // If paginated, must have page and total
             if (json.data?.data && Array.isArray(json.data.data)) {
-                expect(json.data).toHaveProperty('current_page');
-                expect(typeof json.data.current_page).toBe('number');
+                expect(json.data).toHaveProperty('page');
+                expect(typeof json.data.page).toBe('number');
                 console.log(`✅ [TC-RV-SCHEMA-09] ${ep} pagination schema valid`);
             }
         }

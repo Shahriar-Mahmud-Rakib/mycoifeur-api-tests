@@ -11,7 +11,7 @@
 // ============================================
 
 const { test, expect } = require('@playwright/test');
-const { BASE_URL, MOBILE_HEADERS, getUserToken } = require('./helpers/auth.helper');
+const { BASE_URL, MOBILE_HEADERS, getUserToken, USER_CREDENTIALS } = require('./helpers/auth.helper');
 
 test.describe('Advanced Architectural Tests (Controlled)', () => {
 
@@ -115,7 +115,7 @@ test.describe('Advanced Architectural Tests (Controlled)', () => {
         // Step 1: Login
         const loginRes = await request.post(`${BASE_URL}/api/v1/auth/login`, {
             headers: MOBILE_HEADERS,
-            data: { user: 'test1214@gmail.com', password: 'Password123456' }
+            data: USER_CREDENTIALS
         });
         expect(loginRes.status()).toBe(200);
         const loginData = await loginRes.json();
