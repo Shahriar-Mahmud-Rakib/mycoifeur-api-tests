@@ -8,7 +8,6 @@ module.exports = defineConfig({
     timeout: 60000,       // 60s per test (security/brute-force tests need more time)
     retries: 0,
     workers: 2,           // Reduced to 2 to avoid rate-limiting during security tests
-    globalTeardown: require.resolve('./tests/global.teardown.js'),
     reporter: [['html'], ['list']],
     use: {
         baseURL: process.env.BASE_URL || 'https://dev-api.mycoifeur.com.sa',
