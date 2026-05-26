@@ -1,12 +1,7 @@
 name: MyCoifeur API E2E Tests
 
 on:
-  push:
-    branches: [ main, master, develop ]
-  pull_request:
-    branches: [ main, master, develop ]
-  schedule:
-    - cron: '0 2 * * *' # Run automatically at 2:00 AM every night
+  workflow_dispatch:
 
 jobs:
   api-tests:
