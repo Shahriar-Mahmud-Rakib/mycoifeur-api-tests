@@ -8,9 +8,17 @@ module.exports = defineConfig({
     timeout: 60000,       // 60s per test (security/brute-force tests need more time)
     retries: 0,
     workers: 2,           // Reduced to 2 to avoid rate-limiting during security tests
-    reporter: [['html'], ['list']],
+    reporter: [
+        ['list'],
+        ['allure-playwright', {
+            detail: true,
+            outputFolder: 'allure-results',
+            suiteTitle: false
+        }],
+        ['html']
+    ],
     use: {
-        baseURL: process.env.BASE_URL || 'https://dev-api.mycoifeur.com.sa',
+        baseURL: process.env.BASE_URL || 'https://lambda-dev.mycoifeur.com.sa',
         extraHTTPHeaders: {
             'x-custom-lang': process.env.CUSTOM_LANG || 'en',
             'x-app-version': process.env.APP_VERSION || '1.1.4',

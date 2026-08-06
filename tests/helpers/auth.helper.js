@@ -7,7 +7,7 @@
 
 require('dotenv').config();
 
-const BASE_URL = process.env.BASE_URL || 'https://dev-api.mycoifeur.com.sa';
+const BASE_URL = process.env.BASE_URL || 'https://lambda-dev.mycoifeur.com.sa';
 
 // ---------- Test Credentials ----------
 
@@ -17,18 +17,24 @@ const ADMIN_CREDENTIALS = {
 };
 
 const USER_CREDENTIALS = {
-    user: process.env.TEST_USER || 'test19@example.com',
-    password: process.env.TEST_USER_PASSWORD || 'Password123456'
+    phone: process.env.TEST_USER || '123456786',
+    code: '1234',
+    countryCode: '966',
+    typeUser: 'user'
 };
 
 const USER2_CREDENTIALS = {
-    user: process.env.TEST_USER2 || 'test1214@gmail.com',
-    password: process.env.TEST_USER2_PASSWORD || 'Password123456'
+    phone: process.env.TEST_USER2 || '123456783',
+    code: '1234',
+    countryCode: '966',
+    typeUser: 'user'
 };
 
 const SALON_CREDENTIALS = {
-    user: process.env.SALON_USER || 'aalih.aaa986@gmail.com',
-    password: process.env.SALON_PASSWORD || '123456'
+    phone: process.env.SALON_USER || '123456879',
+    code: '1234',
+    countryCode: '966',
+    typeUser: 'freelancer'
 };
 
 // ---------- Common Headers ----------
@@ -63,14 +69,14 @@ async function adminLogin(request) {
 }
 
 /**
- * Login as User (email + password) and return the full response data
+ * Login as User using OTP and return the full response data
  * @param {import('@playwright/test').APIRequestContext} request
  * @param {object} [credentials] - Optional custom credentials
  * @returns {Promise<{accessToken: string, refreshToken: string, user: object}>}
  */
 async function userLogin(request, credentials = USER_CREDENTIALS) {
     const response = await request.post(
-        `${BASE_URL}/api/v1/auth/login`,
+        `${BASE_URL}/api/v1/auth/verify-code`,
         {
             headers: MOBILE_HEADERS,
             data: credentials
@@ -78,7 +84,7 @@ async function userLogin(request, credentials = USER_CREDENTIALS) {
     );
 
     if (response.status() !== 200) {
-        throw new Error(`User login failed with status ${response.status()}`);
+        throw new Error(`User OTP login failed with status ${response.status()}`);
     }
 
     const json = await response.json();
@@ -86,20 +92,21 @@ async function userLogin(request, credentials = USER_CREDENTIALS) {
 }
 
 /**
- * Login as Salon/Provider and return the full response data
+ * Login as Salon/Provider using OTP and return the full response data
  * @param {import('@playwright/test').APIRequestContext} request
  * @returns {Promise<{accessToken: string, refreshToken: string, user: object}>}
  */
 async function salonLogin(request) {
     const response = await request.post(
-        `${BASE_URL}/api/v1/auth/admin/login`,
+        `${BASE_URL}/api/v1/auth/verify-code`,
         {
+            headers: MOBILE_HEADERS,
             data: SALON_CREDENTIALS
         }
     );
 
     if (response.status() !== 200) {
-        throw new Error(`Salon login failed with status ${response.status()}`);
+        throw new Error(`Salon OTP login failed with status ${response.status()}`);
     }
 
     const json = await response.json();

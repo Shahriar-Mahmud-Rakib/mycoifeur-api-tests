@@ -54,7 +54,7 @@ CI=false
 
 > ✅ **Always execute commands from the project root folder.**
 
-### Run All Tests (960+ Cases):
+### Run All Tests (1900+ Cases):
 ```bash
 npx playwright test
 ```
@@ -77,11 +77,20 @@ npm run test:stress     # API Stress & Load Performance Tests
 npx playwright test tests/login.spec.js
 ```
 
-### Generate & View HTML Report:
+### Generate & View Beautiful Allure Report:
+We use **Allure Report** to generate a visually stunning dashboard with charts, timelines, and progress bars!
+
 ```bash
-npx playwright test --reporter=html
-npx playwright show-report
+# 1. Run the tests (results are saved to allure-results)
+npx playwright test
+
+# 2. Generate the HTML report from the results
+npx allure generate ./allure-results --clean
+
+# 3. Open the dashboard in your browser
+npx allure open ./allure-report
 ```
+*(Alternatively, if `allure open` doesn't work, you can run `python3 -m http.server 9323 -d allure-report` and view it at http://127.0.0.1:9323)*
 
 ---
 
