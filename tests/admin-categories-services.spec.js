@@ -16,6 +16,8 @@ const H = async (request) => ({
 // ─── CATEGORIES — FUNCTIONAL ────────────────
 test.describe('✅ Admin Categories — Functional Tests', () => {
 
+    // NOTE: TC-CAT-01 only reads existing data for schema validation.
+    // It does NOT set testCategoryId to avoid deleting production data.
     test('TC-CAT-01 [POSITIVE] Get categories list → 200 + schema', async ({ request }) => {
         const start = Date.now();
         const res = await request.get(`${BASE_URL}/api/v1/web/admin/categories`, { headers: await H(request) });
@@ -24,7 +26,7 @@ test.describe('✅ Admin Categories — Functional Tests', () => {
         expect(json.success).toBe(true);
         expect(json).toHaveProperty('data');
         if (json.data?.data?.length > 0) {
-            testCategoryId = json.data.data[0].id;
+            // Only validate schema, do NOT store the existing ID as testCategoryId
             expect(json.data.data[0]).toHaveProperty('id');
             expect(json.data.data[0]).toHaveProperty('nameEn');
         }
@@ -32,10 +34,11 @@ test.describe('✅ Admin Categories — Functional Tests', () => {
         console.log(`✅ [TC-CAT-01] Categories: ${json.data?.data?.length || 0} items`);
     });
 
+    // TC-CAT-02 creates a brand-new test category. Only this sets testCategoryId.
     test('TC-CAT-02 [POSITIVE] Create new category → check response', async ({ request }) => {
         const res = await request.post(`${BASE_URL}/api/v1/web/admin/categories`, {
             headers: await H(request),
-            multipart: { name: 'Auto Test Category', name_ar: 'فئة تجريبية', order: '1' },
+            multipart: { name: 'Auto Test Category ' + Date.now(), name_ar: 'فئة تجريبية', order: '99' },
         });
         const json = await res.json();
         if ([200, 201].includes(res.status())) {

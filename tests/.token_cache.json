@@ -1,0 +1,21 @@
+{
+  "admin": {
+    "data": {
+      "Authorization": "Bearer",
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwIjoia1JHTmJRRldsb05HUGhwWTpGYWZldWwzVnR5V1JIalR0ZGJYbkFnPT06S0lNblA3UWh1V0R3T2NwaDFYRk1ldHVtZXZjLzFrNlQvTnRDZDNOQld1d3lxb1JjUmJ3NzFjdFJUc3gzaW1ZM0JkdFp1Yjg5akZpanMrbXFvREhQVzVnVjZTa0MzN1VobDNxM085blI2a1pjVnluUklETW9HK2lLIiwiaWF0IjoxNzg2MDE0NTY4LCJleHAiOjE3ODg2MDY1Njh9.rERz4YJ-I0xRHA8Npl-iAT7-x83ZLzVm7g_pFF2kH-0",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwIjoia1JHTmJRRldsb05HUGhwWTpGYWZldWwzVnR5V1JIalR0ZGJYbkFnPT06S0lNblA3UWh1V0R3T2NwaDFYRk1ldHVtZXZjLzFrNlQvTnRDZDNOQld1d3lxb1JjUmJ3NzFjdFJUc3gzaW1ZM0JkdFp1Yjg5akZpanMrbXFvREhQVzVnVjZTa0MzN1VobDNxM085blI2a1pjVnluUklETW9HK2lLIiwiaWF0IjoxNzg2MDE0NTY4LCJleHAiOjE4MTc1NTA1Njh9.SReDeOsVtEflLlif1qGiTsfPQacQn3pC32DfBw5aLoA",
+      "tokenExpires": 1788606568553,
+      "user": {
+        "id": 250,
+        "email": "amrmuhamed9@gmail.com",
+        "firstName": "منصة",
+        "lastName": "test",
+        "phone": "5151",
+        "typeUser": "admin",
+        "status": "active",
+        "image": "uploads/images/admins/1778479210647_1777966533100_MY.jpg"
+      }
+    },
+    "cachedAt": 1786014568670
+  }
+}

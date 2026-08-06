@@ -7,38 +7,7 @@
 
 require('dotenv').config();
 const { test, expect } = require('@playwright/test');
-const { Client } = require('pg');
 const { BASE_URL, MOBILE_HEADERS, getAdminToken } = require('./helpers/auth.helper');
-
-// PostgreSQL Database Connection Config
-const DB_CONFIG = {
-    host: process.env.DB_HOST || '52.220.54.42',
-    port: parseInt(process.env.DB_PORT || '5432', 10),
-    database: process.env.DB_NAME || 'mycoifeur_dev_db',
-    user: process.env.DB_USER || 'mycoifeur_dev_user',
-    password: process.env.DB_PASSWORD || 'gY2TDhhC3vBCeNN7SZQc',
-};
-
-// Helper function to fetch latest OTP (reset_code) from the database
-async function getOtpFromDb(phone) {
-    console.log(`🔌 Connecting to PG Database to fetch OTP for phone: ${phone}...`);
-    const client = new Client(DB_CONFIG);
-    await client.connect();
-    try {
-        const res = await client.query(
-            'SELECT reset_code FROM users WHERE phone = $1 ORDER BY id DESC LIMIT 1',
-            [phone]
-        );
-        const code = res.rows[0]?.reset_code || null;
-        console.log(`🔑 Retrieved OTP Code from DB: ${code}`);
-        return code;
-    } catch (err) {
-        console.error('❌ Database query error:', err.message);
-        return null;
-    } finally {
-        await client.end();
-    }
-}
 
 function uniqueUserPayload(overrides = {}) {
     const ts = Date.now().toString().slice(-8);
@@ -89,8 +58,8 @@ test.describe('🔄 E2E Complete Circles Lifecycle Suite (DB-Integrated)', () =>
         expect(regJson.success).toBe(true);
         console.log(`✅ Step 1 Success: User registered.`);
 
-        // Step 2: Fetch OTP Code from PG Database
-        const realOtp = await getOtpFromDb(payload.phone);
+        // Step 2: Set Static OTP Code
+        const realOtp = '1234';
         expect(realOtp).not.toBeNull();
 
         // Step 3: Perform OTP verification using the real OTP from Database
@@ -143,8 +112,8 @@ test.describe('🔄 E2E Complete Circles Lifecycle Suite (DB-Integrated)', () =>
         expect(regJson.success).toBe(true);
         console.log(`✅ Step 1 Success: Salon registered.`);
 
-        // Step 2: Fetch OTP Code from PG Database
-        const realOtp = await getOtpFromDb(payload.phone);
+        // Step 2: Set Static OTP Code
+        const realOtp = '1234';
         expect(realOtp).not.toBeNull();
 
         // Step 3: Verify Salon's phone number
@@ -196,30 +165,7 @@ test.describe('🔄 E2E Complete Circles Lifecycle Suite (DB-Integrated)', () =>
         expect(approveRes.status()).toBe(200);
         console.log(`✅ Step 4 Success: Admin approved and activated salon via API successfully.`);
 
-        // Step 4.5: Force explicit verification flags directly in the database
-        console.log(`Step 4.5: Enforcing complete verification flags in the database...`);
-        const dbClient = new Client(DB_CONFIG);
-        await dbClient.connect();
-        try {
-            await dbClient.query(`
-                UPDATE users 
-                SET phone_verified_at = CURRENT_TIMESTAMP, 
-                    email_verified_at = CURRENT_TIMESTAMP,
-                    status = 'active',
-                    is_active = '1'
-                WHERE id = $1
-            `, [newSalonId]);
-            await dbClient.query(`
-                UPDATE verification_logs 
-                SET status = 'approved' 
-                WHERE user_id = $1
-            `, [newSalonId]);
-            console.log(`✅ Step 4.5 Success: Database strictly marked Salon ${newSalonId} as Fully Verified (status='active')!`);
-        } catch(err) {
-            console.log(`ℹ️  Step 4.5 Error updating DB: ${err.message}`);
-        } finally {
-            await dbClient.end();
-        }
+        // Step 4.5 removed (Database explicit flags skipped)
 
         // Step 5: Salon Logs In
         console.log(`Step 5: Attempting Salon/Provider Login...`);

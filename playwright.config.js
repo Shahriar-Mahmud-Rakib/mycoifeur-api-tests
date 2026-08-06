@@ -8,6 +8,7 @@ module.exports = defineConfig({
     timeout: 60000,       // 60s per test (security/brute-force tests need more time)
     retries: 0,
     workers: 2,           // Reduced to 2 to avoid rate-limiting during security tests
+    maxFailures: 0,       // Don't stop after any failures — run all tests
     reporter: [
         ['list'],
         ['allure-playwright', {
@@ -21,12 +22,13 @@ module.exports = defineConfig({
         baseURL: process.env.BASE_URL || 'https://lambda-dev.mycoifeur.com.sa',
         extraHTTPHeaders: {
             'x-custom-lang': process.env.CUSTOM_LANG || 'en',
-            'x-app-version': process.env.APP_VERSION || '1.1.4',
+            'x-app-version': process.env.APP_VERSION || '1.1.9',
             'x-platform': process.env.PLATFORM || 'android',
         },
-        // Automatic SQA Visual Diagnostics (Always record for rich reports)
-        screenshot: 'on', // Always take screenshots of steps
-        video: 'on',      // Always record video of browser execution
-        trace: 'on',      // Always capture interactive trace logs
+        // API-only tests do not need browser artifacts
+        screenshot: 'off',
+        video: 'off',
+        trace: 'off',
     },
 });
+

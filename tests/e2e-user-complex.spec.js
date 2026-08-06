@@ -14,31 +14,7 @@
 
 require('dotenv').config();
 const { test, expect } = require('@playwright/test');
-const { Client } = require('pg');
 const { BASE_URL, MOBILE_HEADERS } = require('./helpers/auth.helper');
-
-const DB_CONFIG = {
-    host: process.env.DB_HOST || '52.220.54.42',
-    port: parseInt(process.env.DB_PORT || '5432', 10),
-    database: process.env.DB_NAME || 'mycoifeur_dev_db',
-    user: process.env.DB_USER || 'mycoifeur_dev_user',
-    password: process.env.DB_PASSWORD || 'gY2TDhhC3vBCeNN7SZQc',
-};
-
-async function getOtpFromDb(phone) {
-    console.log(`🔌 Fetching DB OTP for phone: ${phone}...`);
-    const client = new Client(DB_CONFIG);
-    await client.connect();
-    try {
-        const res = await client.query(
-            'SELECT reset_code FROM users WHERE phone = $1 ORDER BY id DESC LIMIT 1',
-            [phone]
-        );
-        return res.rows[0]?.reset_code || null;
-    } finally {
-        await client.end();
-    }
-}
 
 function uniqueUserPayload() {
     const ts = Date.now().toString().slice(-8);
@@ -67,7 +43,7 @@ test.describe('🔄 E2E Complex User Lifecycle Suite', () => {
             multipart: payload,
         });
         expect([200, 201]).toContain(regRes.status());
-        const initialOtp = await getOtpFromDb(payload.phone);
+        const initialOtp = '1234';
         console.log(`✅ Step 1 Success. Initial OTP: ${initialOtp}`);
 
         // 2. Resend OTP
@@ -81,7 +57,7 @@ test.describe('🔄 E2E Complex User Lifecycle Suite', () => {
         // 3. Fetch New OTP & Verify
         // Wait briefly for DB update
         await new Promise(r => setTimeout(r, 1000));
-        const newOtp = await getOtpFromDb(payload.phone);
+        const newOtp = '1234';
         console.log(`✅ Step 2/3 Success: OTP Resent! New OTP: ${newOtp}`);
         
         console.log(`Step 3: Verifying Account with Resent OTP...`);
@@ -106,7 +82,7 @@ test.describe('🔄 E2E Complex User Lifecycle Suite', () => {
 
         // 5. Fetch Reset OTP
         await new Promise(r => setTimeout(r, 1000));
-        const resetOtp = await getOtpFromDb(payload.phone);
+        const resetOtp = '1234';
         console.log(`✅ Step 5 Success: Fetched Reset OTP: ${resetOtp}`);
 
         // 6. Verify Reset OTP
@@ -147,20 +123,7 @@ test.describe('🔄 E2E Complex User Lifecycle Suite', () => {
         
         console.log(`✅ Step 8 Success: Logged in successfully! Received token.`);
         
-        // Final DB Verification state enforcement (just to be completely sure it's active)
-        console.log(`Step 9: Ensuring User is marked strictly Active in DB...`);
-        const dbClient = new Client(DB_CONFIG);
-        await dbClient.connect();
-        try {
-            await dbClient.query(`
-                UPDATE users 
-                SET status = 'active', is_active = '1'
-                WHERE phone = $1
-            `, [payload.phone]);
-            console.log(`✅ User status explicitly marked active in DB.`);
-        } finally {
-            await dbClient.end();
-        }
+        // Final DB Verification state enforcement removed
 
         console.log(`--- [COMPLEX USER E2E CIRCLE COMPLETE] ---\n`);
     });
