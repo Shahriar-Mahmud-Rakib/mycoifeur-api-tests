@@ -31,7 +31,7 @@ const USER2_CREDENTIALS = {
 };
 
 const SALON_CREDENTIALS = {
-    phone: process.env.SALON_USER || '123456879',
+    phone: process.env.SALON_USER || '966506874002',
     code: '1234',
     countryCode: '966',
     typeUser: 'freelancer'
