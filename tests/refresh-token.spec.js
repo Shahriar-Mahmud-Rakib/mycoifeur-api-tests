@@ -41,13 +41,13 @@ test.describe('✅ User Refresh Token — Functional', () => {
 
         if (res.status() === 200) {
             // Schema validation
-            expect(json).toHaveProperty('accessToken');
-            expect(json).toHaveProperty('refreshToken');
-            expect(typeof json.accessToken).toBe('string');
-            expect(typeof json.refreshToken).toBe('string');
-            expect(json.accessToken.split('.').length).toBe(3); // Valid JWT
+            expect(json.data).toHaveProperty('accessToken');
+            expect(json.data).toHaveProperty('refreshToken');
+            expect(typeof json.data.accessToken).toBe('string');
+            expect(typeof json.data.refreshToken).toBe('string');
+            expect(json.data.accessToken.split('.').length).toBe(3); // Valid JWT
             // New token must be different from old
-            expect(json.accessToken).not.toBe(loginData.accessToken);
+            expect(json.data.accessToken).not.toBe(loginData.accessToken);
             // Response time
             expect(elapsed).toBeLessThan(5000);
             console.log('✅ [TC-RT-01] User token refreshed successfully');
@@ -67,7 +67,8 @@ test.describe('✅ User Refresh Token — Functional', () => {
             console.log(`ℹ️  [TC-RT-02] Skipped — refresh failed: ${refreshRes.status()}`);
             return;
         }
-        const newToken = (await refreshRes.json()).accessToken;
+        const json = await refreshRes.json();
+        const newToken = json.data ? json.data.accessToken : null;
 
         // Use new token on a protected endpoint
         const profileRes = await request.get(`${BASE_URL}/api/v1/user/profile`, {
@@ -190,9 +191,9 @@ test.describe('📊 User Refresh Token — Response Validation', () => {
         });
         if (res.status() === 200) {
             const json = await res.json();
-            expect(json).toHaveProperty('accessToken');
-            expect(json).toHaveProperty('refreshToken');
-            expect(json.accessToken.split('.').length).toBe(3);
+            expect(json.data).toHaveProperty('accessToken');
+            expect(json.data).toHaveProperty('refreshToken');
+            expect(json.data.accessToken.split('.').length).toBe(3);
             console.log('✅ [TC-RT-RV-01] Refresh schema valid');
         } else {
             console.log(`ℹ️  [TC-RT-RV-01] Status: ${res.status()}`);
@@ -244,8 +245,8 @@ test.describe('✅ Admin Refresh Token — Functional', () => {
         const json = await res.json();
         console.log(`   Admin refresh status: ${res.status()}`);
         if (res.status() === 200) {
-            expect(json).toHaveProperty('accessToken');
-            expect(json).toHaveProperty('refreshToken');
+            expect(json.data).toHaveProperty('accessToken');
+            expect(json.data).toHaveProperty('refreshToken');
             console.log('✅ [TC-ART-01] Admin token refreshed');
         } else {
             console.log(`ℹ️  [TC-ART-01] Admin refresh: ${JSON.stringify(json)}`);

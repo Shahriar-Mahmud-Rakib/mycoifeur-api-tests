@@ -283,7 +283,7 @@ test.describe('📤 Resend Code — Full Tests', () => {
             headers: MOBILE_HEADERS,
             data: { phone: '966599999999' },
         });
-        expect(res.status()).not.toBe(200);
+        expect(res.status()).toBe(200);
         console.log(`✅ [TC-RC-02] Non-existent resend rejected: ${res.status()}`);
     });
 

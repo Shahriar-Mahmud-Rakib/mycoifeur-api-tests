@@ -1,18 +1,20 @@
 // ============================================
 // Shared Auth Helper - MyCoifeur API Tests
 // ============================================
-// Provides reusable login functions and common
-// headers for all test files.
+// Auth flows:
+//   User/Salon: send-otp → verify-code (code: 1234) → get token
+//   Admin: email + password login
+// Phone format: 966 + 9 digits (e.g. 966512345678)
 // ============================================
 
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = process.env.BASE_URL || 'https://lambda-dev.mycoifeur.com.sa';
+const BASE_URL = process.env.BASE_URL || 'https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com';
 
 const TOKEN_CACHE_PATH = path.join(__dirname, '..', '.token_cache.json');
-const TOKEN_TTL_MS = 50 * 60 * 1000; // 50 minutes (JWT typically expires in 60 min)
+const TOKEN_TTL_MS = 50 * 60 * 1000; // 50 minutes
 
 function getCachedToken(key) {
     if (fs.existsSync(TOKEN_CACHE_PATH)) {
@@ -21,16 +23,11 @@ function getCachedToken(key) {
             const entry = cache[key];
             if (entry && entry.data && entry.cachedAt) {
                 const age = Date.now() - entry.cachedAt;
-                if (age < TOKEN_TTL_MS) {
-                    return entry.data;
-                }
-                // Token expired, remove it
+                if (age < TOKEN_TTL_MS) return entry.data;
                 delete cache[key];
                 fs.writeFileSync(TOKEN_CACHE_PATH, JSON.stringify(cache, null, 2));
             }
-        } catch (e) {
-            return null;
-        }
+        } catch (e) { return null; }
     }
     return null;
 }
@@ -38,11 +35,8 @@ function getCachedToken(key) {
 function setCachedToken(key, tokenData) {
     let cache = {};
     if (fs.existsSync(TOKEN_CACHE_PATH)) {
-        try {
-            cache = JSON.parse(fs.readFileSync(TOKEN_CACHE_PATH, 'utf-8'));
-        } catch (e) {
-            cache = {};
-        }
+        try { cache = JSON.parse(fs.readFileSync(TOKEN_CACHE_PATH, 'utf-8')); }
+        catch (e) { cache = {}; }
     }
     cache[key] = { data: tokenData, cachedAt: Date.now() };
     fs.writeFileSync(TOKEN_CACHE_PATH, JSON.stringify(cache, null, 2));
@@ -55,45 +49,41 @@ const ADMIN_CREDENTIALS = {
     password: process.env.ADMIN_PASSWORD || '123456'
 };
 
+// Existing test users (must already be registered in the dev DB)
 const USER_CREDENTIALS = {
-    user: process.env.TEST_USER_EMAIL || 'testuser1pw@example.com',
-    password: process.env.TEST_USER_PASSWORD || 'Password123456',
-    phone: process.env.TEST_USER || '123456786',
-    code: '1234',
+    phone: process.env.TEST_USER_PHONE || '966512345678',
     countryCode: '966',
-    typeUser: 'user'
+    typeUser: 'user',
+    code: '1234',
 };
 
 const USER2_CREDENTIALS = {
-    user: process.env.TEST_USER2_EMAIL || 'testuser2pw@example.com',
-    password: process.env.TEST_USER2_PASSWORD || 'Password123456',
-    phone: process.env.TEST_USER2 || '123456783',
-    code: '1234',
+    phone: process.env.TEST_USER2_PHONE || '966512345679',
     countryCode: '966',
-    typeUser: 'user'
+    typeUser: 'user',
+    code: '1234',
 };
 
 const SALON_CREDENTIALS = {
-    user: process.env.SALON_USER_EMAIL || 'Besh_18ab@hotmail.com',
-    password: process.env.SALON_PASSWORD || 'Password123456',
-    phone: process.env.SALON_USER || '966506874002',
-    code: '1234',
+    phone: process.env.SALON_USER_PHONE || '966506874002',
     countryCode: '966',
-    typeUser: 'freelancer'
+    typeUser: 'company',
+    code: '1234',
 };
 
 // ---------- Common Headers ----------
+// IMPORTANT: x-app-version must be 1.1.9 to avoid 426 force-update error
 
 const MOBILE_HEADERS = {
     'x-custom-lang': process.env.CUSTOM_LANG || 'en',
-    'x-app-version': process.env.APP_VERSION || '1.1.4',
-    'x-platform': process.env.PLATFORM || 'android'
+    'x-app-version': process.env.APP_VERSION || '1.1.9',
+    'x-platform': process.env.PLATFORM || 'android',
 };
 
-// ---------- Login Helpers ----------
+// ---------- Auth Helpers ----------
 
 /**
- * Login as Admin and return the full response data (with caching)
+ * Login as Admin (email + password) and cache the token.
  * @param {import('@playwright/test').APIRequestContext} request
  * @returns {Promise<{accessToken: string, refreshToken: string, user: object}>}
  */
@@ -101,89 +91,83 @@ async function adminLogin(request) {
     const cached = getCachedToken('admin');
     if (cached) return cached;
 
-    const response = await request.post(
-        `${BASE_URL}/api/v1/auth/admin/login`,
-        { data: ADMIN_CREDENTIALS }
-    );
+    const response = await request.post(`${BASE_URL}/api/v1/auth/admin/login`, {
+        headers: { 'x-custom-lang': 'en' },
+        data: ADMIN_CREDENTIALS
+    });
 
     if (response.status() !== 200) {
-        throw new Error(`Admin login failed with status ${response.status()}`);
+        const body = await response.text();
+        throw new Error(`Admin login failed: ${response.status()} — ${body}`);
     }
 
     const json = await response.json();
-    setCachedToken('admin', json.data);
-    return json.data;
+    const tokenData = json.data || json;
+    setCachedToken('admin', tokenData);
+    return tokenData;
 }
 
 /**
- * Login as User using OTP and return the full response data (with caching)
+ * Login as User via send-otp → verify-code flow and cache the token.
+ * Phone format: 966 + 9 digits. OTP bypass: 1234.
  * @param {import('@playwright/test').APIRequestContext} request
- * @param {object} [credentials] - Optional custom credentials
+ * @param {object} [creds] - Optional custom credentials
  * @returns {Promise<{accessToken: string, refreshToken: string, user: object}>}
  */
-async function userLogin(request, credentials = USER_CREDENTIALS) {
-    const isUser1 = !credentials.phone || credentials.phone === USER_CREDENTIALS.phone;
-    const cacheKey = isUser1 ? 'user1' : 'user2';
+async function userLogin(request, creds = USER_CREDENTIALS) {
+    const cacheKey = `user_${creds.phone}`;
     const cached = getCachedToken(cacheKey);
     if (cached) return cached;
 
-    const otpPayload = {
-        phone: credentials.phone || USER_CREDENTIALS.phone,
-        code: credentials.code || '1234',
-        countryCode: credentials.countryCode || '966',
-        typeUser: credentials.typeUser || 'user'
-    };
-
-    const response = await request.post(
-        `${BASE_URL}/api/v1/auth/verify-code`,
-        {
-            headers: MOBILE_HEADERS,
-            data: otpPayload
+    // Step 1: send-otp
+    const sendOtpRes = await request.post(`${BASE_URL}/api/v1/auth/send-otp`, {
+        headers: MOBILE_HEADERS,
+        data: {
+            phone: creds.phone,
+            countryCode: creds.countryCode || '966',
+            typeUser: creds.typeUser || 'user',
         }
-    );
+    });
 
-    if (response.status() !== 200) {
-        throw new Error(`User OTP login failed with status ${response.status()}`);
+    if (sendOtpRes.status() !== 200 && sendOtpRes.status() !== 429) {
+        const body = await sendOtpRes.text();
+        throw new Error(`send-otp failed: ${sendOtpRes.status()} — ${body}`);
     }
 
-    const json = await response.json();
-    setCachedToken(cacheKey, json.data);
-    return json.data;
+    // Step 2: verify-code (bypass OTP 1234)
+    const verifyRes = await request.post(`${BASE_URL}/api/v1/auth/verify-code`, {
+        headers: MOBILE_HEADERS,
+        data: {
+            phone: creds.phone,
+            code: creds.code || '1234',
+            typeUser: creds.typeUser || 'user',
+            countryCode: creds.countryCode || '966',
+        }
+    });
+
+    if (verifyRes.status() !== 200) {
+        const body = await verifyRes.text();
+        throw new Error(`verify-code failed: ${verifyRes.status()} — ${body}`);
+    }
+
+    const json = await verifyRes.json();
+    const tokenData = json.data || json;
+    setCachedToken(cacheKey, tokenData);
+    return tokenData;
 }
 
 /**
- * Login as Salon/Provider using OTP and return the full response data (with caching)
+ * Login as Salon/Provider via send-otp → verify-code flow.
  * @param {import('@playwright/test').APIRequestContext} request
+ * @param {object} [creds] - Optional custom credentials
  * @returns {Promise<{accessToken: string, refreshToken: string, user: object}>}
  */
-async function salonLogin(request) {
-    const cached = getCachedToken('salon');
-    if (cached) return cached;
-
-    const response = await request.post(
-        `${BASE_URL}/api/v1/auth/verify-code`,
-        {
-            headers: MOBILE_HEADERS,
-            data: {
-                phone: SALON_CREDENTIALS.phone,
-                code: SALON_CREDENTIALS.code,
-                countryCode: SALON_CREDENTIALS.countryCode,
-                typeUser: SALON_CREDENTIALS.typeUser
-            }
-        }
-    );
-
-    if (response.status() !== 200) {
-        throw new Error(`Salon OTP login failed with status ${response.status()}`);
-    }
-
-    const json = await response.json();
-    setCachedToken('salon', json.data);
-    return json.data;
+async function salonLogin(request, creds = SALON_CREDENTIALS) {
+    return userLogin(request, { ...creds, typeUser: creds.typeUser || 'company' });
 }
 
 /**
- * Get admin access token only
+ * Get admin access token only.
  * @param {import('@playwright/test').APIRequestContext} request
  * @returns {Promise<string>}
  */
@@ -193,12 +177,23 @@ async function getAdminToken(request) {
 }
 
 /**
- * Get user access token only
+ * Get user access token only.
+ * @param {import('@playwright/test').APIRequestContext} request
+ * @param {object} [creds] - Optional custom credentials
+ * @returns {Promise<string>}
+ */
+async function getUserToken(request, creds) {
+    const data = await userLogin(request, creds);
+    return data.accessToken;
+}
+
+/**
+ * Get salon access token only.
  * @param {import('@playwright/test').APIRequestContext} request
  * @returns {Promise<string>}
  */
-async function getUserToken(request) {
-    const data = await userLogin(request);
+async function getSalonToken(request) {
+    const data = await salonLogin(request);
     return data.accessToken;
 }
 
@@ -213,5 +208,6 @@ module.exports = {
     userLogin,
     salonLogin,
     getAdminToken,
-    getUserToken
+    getUserToken,
+    getSalonToken,
 };

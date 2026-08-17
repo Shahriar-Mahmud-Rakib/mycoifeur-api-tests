@@ -1,0 +1,3127 @@
+{
+  "Admin / Users": [
+    {
+      "path": "/api/v1/web/admin/users/vips",
+      "method": "GET",
+      "summary": "List VIPs",
+      "description": "Fetch a paginated list of all VIP configurations.",
+      "operationId": "AdminUserController_findAllVips_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/vips",
+      "method": "POST",
+      "summary": "Create VIP",
+      "description": "Add a new VIP configuration.",
+      "operationId": "AdminUserController_createVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/search",
+      "method": "GET",
+      "summary": "Search users by name or email",
+      "description": "",
+      "operationId": "AdminUserController_searchUsers_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/count",
+      "method": "GET",
+      "summary": "Get user count by type",
+      "description": "",
+      "operationId": "AdminUserController_getUsersByType_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/vips/{id}",
+      "method": "GET",
+      "summary": "Get VIP Details",
+      "description": "Fetch detailed information of a specific VIP configuration.",
+      "operationId": "AdminUserController_findOneVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/vips/{id}",
+      "method": "PATCH",
+      "summary": "Update VIP",
+      "description": "Update the information of an existing VIP configuration.",
+      "operationId": "AdminUserController_updateVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/vips/{id}",
+      "method": "DELETE",
+      "summary": "Delete VIP",
+      "description": "",
+      "operationId": "AdminUserController_removeVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users",
+      "method": "GET",
+      "summary": "List Users",
+      "description": "Fetch a paginated list of regular users with orders score.",
+      "operationId": "AdminUserController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users",
+      "method": "POST",
+      "summary": "Create User",
+      "description": "Manually create a new regular user.",
+      "operationId": "AdminUserController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}",
+      "method": "GET",
+      "summary": "Get User Details",
+      "description": "Fetch detailed information of a specific regular user.",
+      "operationId": "AdminUserController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}",
+      "method": "PATCH",
+      "summary": "Update User",
+      "description": "Update profile information for a regular user.",
+      "operationId": "AdminUserController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}",
+      "method": "DELETE",
+      "summary": "Soft Delete User",
+      "description": "Marks a user account as deleted and sets its status to deleted.",
+      "operationId": "AdminUserController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/block",
+      "method": "PATCH",
+      "summary": "Block User",
+      "description": "Suspend/block a user by setting their status to suspended.",
+      "operationId": "AdminUserController_blockUser_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/verification/{userId}/status",
+      "method": "PATCH",
+      "summary": "Approve or reject a salon verification submission",
+      "description": "",
+      "operationId": "AdminUserController_updateVerificationStatus_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{userId}/verification-status",
+      "method": "PATCH",
+      "summary": "Update user verification status directly",
+      "description": "",
+      "operationId": "AdminUserController_updateUserVerificationStatus_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}/commission",
+      "method": "PATCH",
+      "summary": "Update Provider Commission",
+      "description": "Update commission rate for a company or freelance provider.",
+      "operationId": "AdminUserController_updateCommission_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/providers",
+      "method": "POST",
+      "summary": "Admin: Create a new provider (freelancer or company)",
+      "description": "",
+      "operationId": "AdminUserController_createNewProviderProfileFromAdmin_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}/verification",
+      "method": "PATCH",
+      "summary": "Submit or update salon verification details for a user",
+      "description": "",
+      "operationId": "AdminUserController_createProviderProfile_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/verification/{userId}/history",
+      "method": "GET",
+      "summary": "Get all verification logs history for a specific user ID",
+      "description": "",
+      "operationId": "AdminUserController_getVerificationLogHistory_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/verification/{userId}/history-detail",
+      "method": "GET",
+      "summary": "Get full verification log history (no pagination) with user detail for a specific user ID. Pass ?verificationId=<id> to fetch a single log.",
+      "description": "",
+      "operationId": "AdminUserController_getVerificationLogHistoryDetail_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/detail/{userId}",
+      "method": "GET",
+      "summary": "Get user details with latest verification log documents",
+      "description": "",
+      "operationId": "AdminUserController_getUserWithVerification_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}/restore",
+      "method": "PATCH",
+      "summary": "Activate soft-deleted/blocked User",
+      "description": "Activates a previously soft-deleted/blocked user account.",
+      "operationId": "AdminUserController_restore_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/users/{id}/rewards",
+      "method": "GET",
+      "summary": "Get User Rewards",
+      "description": "Fetch a paginated list of rewards associated with a user.",
+      "operationId": "AdminUserController_rewards_v1"
+    }
+  ],
+  "Users": [
+    {
+      "path": "/api/v1/user/profile",
+      "method": "GET",
+      "summary": "Get current user profile",
+      "description": "",
+      "operationId": "UserController_getProfile1S_v1"
+    },
+    {
+      "path": "/api/v1/user/profile",
+      "method": "PATCH",
+      "summary": "Update current user profile",
+      "description": "",
+      "operationId": "UserController_updateProfile_v1"
+    },
+    {
+      "path": "/api/v1/user/profile",
+      "method": "DELETE",
+      "summary": "Soft delete current user account",
+      "description": "",
+      "operationId": "UserController_deleteAccount_v1"
+    },
+    {
+      "path": "/api/v1/user/verification-status",
+      "method": "GET",
+      "summary": "Get current user verification status",
+      "description": "",
+      "operationId": "UserController_getVerificationStatus_v1"
+    },
+    {
+      "path": "/api/v1/user/language",
+      "method": "PATCH",
+      "summary": "Update current user preferred language",
+      "description": "",
+      "operationId": "UserController_updateLanguage_v1"
+    },
+    {
+      "path": "/api/v1/user/salon-profile",
+      "method": "PATCH",
+      "summary": "Update current salon provider profile",
+      "description": "",
+      "operationId": "UserController_updateSalonProfile_v1"
+    },
+    {
+      "path": "/api/v2/user/salon-profile",
+      "method": "PATCH",
+      "summary": "Update current salon provider profile",
+      "description": "",
+      "operationId": "UserController_updateSalonProfileUpdated_v2"
+    },
+    {
+      "path": "/api/v1/user/reviews",
+      "method": "GET",
+      "summary": "Get current user reviews list",
+      "description": "",
+      "operationId": "UserController_getMyReviews_v1"
+    },
+    {
+      "path": "/api/v1/user/reviews/{id}",
+      "method": "PATCH",
+      "summary": "Edit an existing review (stars / comment)",
+      "description": "",
+      "operationId": "UserController_updateReview_v1"
+    },
+    {
+      "path": "/api/v1/user/rewards",
+      "method": "GET",
+      "summary": "Get current user reward points history",
+      "description": "",
+      "operationId": "UserController_getRewards_v1"
+    },
+    {
+      "path": "/api/v1/user/rewards/redeem",
+      "method": "POST",
+      "summary": "Redeem reward points for SAR wallet credit",
+      "description": "",
+      "operationId": "UserController_redeemRewards_v1"
+    }
+  ],
+  "Upload Files": [
+    {
+      "path": "/api/files/upload",
+      "method": "POST",
+      "summary": "",
+      "description": "",
+      "operationId": "FileUploadController_uploadFile"
+    }
+  ],
+  "Admin / File Galleries": [
+    {
+      "path": "/api/v1/admin/file-galleries",
+      "method": "POST",
+      "summary": "Create a new File Gallery record",
+      "description": "",
+      "operationId": "AdminFileGalleryController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/file-galleries",
+      "method": "GET",
+      "summary": "Get File Galleries by table_name and optional field_id",
+      "description": "",
+      "operationId": "AdminFileGalleryController_findByTableAndField_v1"
+    },
+    {
+      "path": "/api/v1/admin/file-galleries/{id}",
+      "method": "GET",
+      "summary": "Get File Gallery by ID",
+      "description": "",
+      "operationId": "AdminFileGalleryController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/file-galleries/{id}",
+      "method": "PUT",
+      "summary": "Update File Gallery record",
+      "description": "",
+      "operationId": "AdminFileGalleryController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/file-galleries/{id}",
+      "method": "DELETE",
+      "summary": "Delete File Gallery record",
+      "description": "",
+      "operationId": "AdminFileGalleryController_remove_v1"
+    }
+  ],
+  "Mobile / File Galleries": [
+    {
+      "path": "/api/v1/file-galleries",
+      "method": "GET",
+      "summary": "Get File Galleries by table_name and optional field_id (mobile)",
+      "description": "",
+      "operationId": "FileGalleryController_findByTableAndField_v1"
+    },
+    {
+      "path": "/api/v1/file-galleries/{id}",
+      "method": "GET",
+      "summary": "Get File Gallery by ID (mobile)",
+      "description": "",
+      "operationId": "FileGalleryController_findOne_v1"
+    }
+  ],
+  "Admin / Settings": [
+    {
+      "path": "/api/v1/web/admin/settings",
+      "method": "GET",
+      "summary": "Get Settings",
+      "description": "Retrieve the current system settings.",
+      "operationId": "AdminSettingWebController_getSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings",
+      "method": "POST",
+      "summary": "Upsert Settings",
+      "description": "Create or update the system settings. If settings already exist they will be updated; otherwise a new record is created.",
+      "operationId": "AdminSettingWebController_upsertSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/booking-reject-reasons",
+      "method": "GET",
+      "summary": "Get booking rejection reason presets",
+      "description": "",
+      "operationId": "AdminSettingWebController_getBookingRejectReasons_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/booking-delete-reasons",
+      "method": "GET",
+      "summary": "Get booking deletion reason presets",
+      "description": "",
+      "operationId": "AdminSettingWebController_getBookingDeleteReasons_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/mail-provider",
+      "method": "GET",
+      "summary": "Get Mail Provider Settings",
+      "description": "Retrieve settings related to the mail provider.",
+      "operationId": "AdminSettingWebController_getMailProviderSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/mail-provider",
+      "method": "POST",
+      "summary": "Upsert Mail Provider Settings",
+      "description": "Create or update settings related to the mail provider.",
+      "operationId": "AdminSettingWebController_upsertMailProviderSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/contacts",
+      "method": "GET",
+      "summary": "Get Contacts Settings",
+      "description": "Retrieve settings related to contacts.",
+      "operationId": "AdminSettingWebController_getContactsSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/connection",
+      "method": "POST",
+      "summary": "Upsert Connection Settings",
+      "description": "Create or update settings related to connections (emails, phones, etc.).",
+      "operationId": "AdminSettingWebController_upsertConnectionSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/notification-notes",
+      "method": "GET",
+      "summary": "Get Notification Notes",
+      "description": "Retrieve localized maintenance and force update notes.",
+      "operationId": "AdminSettingWebController_getNotificationNotes_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/settings/notification-notes",
+      "method": "POST",
+      "summary": "Upsert Notification Notes",
+      "description": "Create or update the localized maintenance and force update notes used in app notifications.",
+      "operationId": "AdminSettingWebController_upsertNotificationNotes_v1"
+    }
+  ],
+  "App Config": [
+    {
+      "path": "/api/v1/config/version",
+      "method": "GET",
+      "summary": "Get App Version Info",
+      "description": "",
+      "operationId": "AppConfigController_getVersionInfo_v1"
+    },
+    {
+      "path": "/api/v1/config/check-version",
+      "method": "POST",
+      "summary": "Check App Version",
+      "description": "",
+      "operationId": "AppConfigController_checkVersion_v1"
+    },
+    {
+      "path": "/api/v1/config/analytics",
+      "method": "POST",
+      "summary": "Record app version analytics",
+      "description": "Persist a mobile analytics beacon (platform, appVersion, buildNumber, deviceId, userId, lastActiveTime) for later aggregation in the admin dashboard.",
+      "operationId": "AppConfigController_recordAnalytics_v1"
+    },
+    {
+      "path": "/api/v1/config/site-static-content",
+      "method": "GET",
+      "summary": "Get Site Static Content",
+      "description": "",
+      "operationId": "AppConfigController_getSiteStaticContent_v1"
+    }
+  ],
+  "Admin / App Versions": [
+    {
+      "path": "/api/v1/web/admin/config/versions",
+      "method": "GET",
+      "summary": "Get all app versions",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_getAllVersions_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/clear-cache",
+      "method": "POST",
+      "summary": "Clear version cache",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_clearCache_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/{platform}",
+      "method": "POST",
+      "summary": "Update app version for a platform",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_updateVersion_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/{id}",
+      "method": "DELETE",
+      "summary": "Delete an app version",
+      "description": "Soft delete an app version configuration by ID.",
+      "operationId": "AdminAppConfigWebController_delete_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/{id}/active",
+      "method": "PATCH",
+      "summary": "Active app version",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_active_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/analytics",
+      "method": "GET",
+      "summary": "Get app version analytics",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_getAnalytics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/logs/statistics",
+      "method": "GET",
+      "summary": "Get app version usage statistics",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_getStatistics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/{id}/toggle-force-update",
+      "method": "PATCH",
+      "summary": "Toggle force update",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_toggleForceUpdate_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/config/versions/{id}/toggle-block-unknown",
+      "method": "PATCH",
+      "summary": "Toggle block unknown clients",
+      "description": "",
+      "operationId": "AdminAppConfigWebController_toggleBlockUnknown_v1"
+    }
+  ],
+  "Salon / Settings": [
+    {
+      "path": "/api/v1/web/salon/settings/booking-reject-reasons",
+      "method": "GET",
+      "summary": "Get booking rejection reason presets for salon",
+      "description": "",
+      "operationId": "SalonSettingWebController_getBookingRejectReasons_v1"
+    }
+  ],
+  "Salon Mobile / Settings": [
+    {
+      "path": "/api/v1/salon/settings/booking-reject-reasons",
+      "method": "GET",
+      "summary": "Get booking rejection reason presets for salon (mobile)",
+      "description": "",
+      "operationId": "SalonSettingMobileController_getBookingRejectReasons_v1"
+    }
+  ],
+  "Admin / Categories": [
+    {
+      "path": "/api/v1/web/admin/categories",
+      "method": "GET",
+      "summary": "List all categories",
+      "description": "Fetch a paginated list of all service categories.",
+      "operationId": "AdminCategoryController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories",
+      "method": "POST",
+      "summary": "Create category",
+      "description": "Add a new service category to the system.",
+      "operationId": "AdminCategoryController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories/export",
+      "method": "GET",
+      "summary": "Export categories",
+      "description": "Fetch all categories for export purposes.",
+      "operationId": "AdminCategoryController_export_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories/{id}",
+      "method": "GET",
+      "summary": "Get category details",
+      "description": "Fetch detailed information of a specific category.",
+      "operationId": "AdminCategoryController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories/{id}",
+      "method": "PUT",
+      "summary": "Update category",
+      "description": "Update the information of an existing category.",
+      "operationId": "AdminCategoryController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories/{id}",
+      "method": "DELETE",
+      "summary": "Delete category",
+      "description": "Soft-delete a category from the system.",
+      "operationId": "AdminCategoryController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/categories/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted category",
+      "description": "",
+      "operationId": "AdminCategoryController_restore_v1"
+    }
+  ],
+  "Admin / Type Services": [
+    {
+      "path": "/api/v1/web/admin/type-services",
+      "method": "GET",
+      "summary": "List all service types",
+      "description": "Fetch a paginated list of all service types available in the system.",
+      "operationId": "AdminTypeServiceController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/type-services",
+      "method": "POST",
+      "summary": "Create service type",
+      "description": "Add a new service type to the system.",
+      "operationId": "AdminTypeServiceController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/type-services/{id}",
+      "method": "GET",
+      "summary": "Get service type details",
+      "description": "Fetch detailed information of a specific service type.",
+      "operationId": "AdminTypeServiceController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/type-services/{id}",
+      "method": "PUT",
+      "summary": "Update service type",
+      "description": "Update the information of an existing service type.",
+      "operationId": "AdminTypeServiceController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/type-services/{id}",
+      "method": "DELETE",
+      "summary": "Delete service type",
+      "description": "Soft-delete a service type from the system.",
+      "operationId": "AdminTypeServiceController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/type-services/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted service type",
+      "description": "",
+      "operationId": "AdminTypeServiceController_restore_v1"
+    }
+  ],
+  "Admin / Services": [
+    {
+      "path": "/api/v1/web/admin/services",
+      "method": "GET",
+      "summary": "List all services",
+      "description": "Fetch a paginated list of all services in the system (admin view).",
+      "operationId": "AdminServiceController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/services/{id}/edit",
+      "method": "GET",
+      "summary": "Get service details",
+      "description": "Fetch detailed information of any service for editing.",
+      "operationId": "AdminServiceController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/services/{id}",
+      "method": "PUT",
+      "summary": "Update service",
+      "description": "Update any service fields, prices, and images.",
+      "operationId": "AdminServiceController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/services/{id}",
+      "method": "DELETE",
+      "summary": "Delete service",
+      "description": "Soft-delete a service from the system.",
+      "operationId": "AdminServiceController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/services/{id}/toggle",
+      "method": "POST",
+      "summary": "Toggle service status",
+      "description": "Toggle the visibility status of a service between show and hide.",
+      "operationId": "AdminServiceController_toggle_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/services/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted service",
+      "description": "",
+      "operationId": "AdminServiceController_restore_v1"
+    }
+  ],
+  "Web Salon / Services": [
+    {
+      "path": "/api/v1/web/salon/services",
+      "method": "GET",
+      "summary": "List own services",
+      "description": "Fetch a paginated list of services belonging to the authenticated salon.",
+      "operationId": "SalonWebServiceController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services",
+      "method": "POST",
+      "summary": "Create service",
+      "description": "Add a new service with price tiers for the authenticated salon.",
+      "operationId": "SalonWebServiceController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/create",
+      "method": "GET",
+      "summary": "Get categories list",
+      "description": "Fetch all categories to populate the service creation form.",
+      "operationId": "SalonWebServiceController_createForm_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/services_types/{type}",
+      "method": "GET",
+      "summary": "Get service types by user type",
+      "description": "",
+      "operationId": "SalonWebServiceController_getServiceTypes_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/category/{category_id}",
+      "method": "GET",
+      "summary": "List services by category",
+      "description": "Fetch a list of own services filtered by a specific category.",
+      "operationId": "SalonWebServiceController_findByCategory_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/{id}/edit",
+      "method": "GET",
+      "summary": "Get service details",
+      "description": "Fetch detailed information of a service (prices, images, etc.) for editing.",
+      "operationId": "SalonWebServiceController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/{id}",
+      "method": "PUT",
+      "summary": "Update service",
+      "description": "Update the information, prices, and images of an existing service.",
+      "operationId": "SalonWebServiceController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/{id}",
+      "method": "DELETE",
+      "summary": "Delete service",
+      "description": "Permanently remove a service belonging to the authenticated salon.",
+      "operationId": "SalonWebServiceController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/gallery/{img_id}",
+      "method": "DELETE",
+      "summary": "Delete service image",
+      "description": "Soft-delete an image from the service gallery.",
+      "operationId": "SalonWebServiceController_destroyImage_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted service",
+      "description": "",
+      "operationId": "SalonWebServiceController_restore_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/services/gallery/{img_id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted service image",
+      "description": "",
+      "operationId": "SalonWebServiceController_restoreImage_v1"
+    }
+  ],
+  "Salon / Services": [
+    {
+      "path": "/api/v1/salon/categories",
+      "method": "GET",
+      "summary": "All categories",
+      "description": "Fetch all service categories for the authenticated salon.",
+      "operationId": "SalonMobileServiceController_getCategories_v1"
+    },
+    {
+      "path": "/api/v1/salon/services_types/{type}",
+      "method": "GET",
+      "summary": "Get service types by user type",
+      "description": "",
+      "operationId": "SalonMobileServiceController_getServiceTypes_v1"
+    },
+    {
+      "path": "/api/v1/salon/services",
+      "method": "GET",
+      "summary": "List own services",
+      "description": "Fetch a paginated list of services for the authenticated salon (mobile optimized).",
+      "operationId": "SalonMobileServiceController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/salon/services/create",
+      "method": "POST",
+      "summary": "Create service (mobile)",
+      "description": "Add a new service with a single price tier (optimized for mobile).",
+      "operationId": "SalonMobileServiceController_create_v1"
+    },
+    {
+      "path": "/api/v1/salon/services/{id}",
+      "method": "PUT",
+      "summary": "Update service (mobile)",
+      "description": "Update a service with optional single image (optimized for mobile).",
+      "operationId": "SalonMobileServiceController_update_v1"
+    },
+    {
+      "path": "/api/v1/salon/services/{id}/delete",
+      "method": "DELETE",
+      "summary": "Delete service (mobile)",
+      "description": "Soft-delete a service belonging to the authenticated salon.",
+      "operationId": "SalonMobileServiceController_remove_v1"
+    },
+    {
+      "path": "/api/v1/salon/services/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted service (mobile)",
+      "description": "",
+      "operationId": "SalonMobileServiceController_restore_v1"
+    }
+  ],
+  "Services": [
+    {
+      "path": "/api/v1/categories",
+      "method": "GET",
+      "summary": "All categories",
+      "description": "",
+      "operationId": "PublicServiceController_getCategories_v1"
+    },
+    {
+      "path": "/api/v1/home-page/categories",
+      "method": "GET",
+      "summary": "Home page categories",
+      "description": "Fetch a list of all service categories for home page.",
+      "operationId": "PublicServiceController_getHomeCategories_v1"
+    },
+    {
+      "path": "/api/v1/services_types/{type}",
+      "method": "GET",
+      "summary": "Get service types by user type",
+      "description": "",
+      "operationId": "PublicServiceController_getServiceTypes_v1"
+    },
+    {
+      "path": "/api/v1/service-types",
+      "method": "GET",
+      "summary": "List all service types (Paginated)",
+      "description": "",
+      "operationId": "PublicServiceController_findAllServiceTypes_v1"
+    },
+    {
+      "path": "/api/v1/services",
+      "method": "GET",
+      "summary": "List services",
+      "description": "Fetch a paginated list of services.",
+      "operationId": "PublicServiceController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/services/{id}/show",
+      "method": "GET",
+      "summary": "Get service details",
+      "description": "Fetch detailed information of a specific service.",
+      "operationId": "PublicServiceController_findOne_v1"
+    }
+  ],
+  "User Auth": [
+    {
+      "path": "/api/v1/auth/user/register",
+      "method": "POST",
+      "summary": "User/Salon Registration",
+      "description": "Register a new user or salon with phone verification code sent via SMS",
+      "operationId": "UserAuthController_register_v1"
+    },
+    {
+      "path": "/api/v1/auth/verify-code",
+      "method": "POST",
+      "summary": "Verify Code",
+      "description": "",
+      "operationId": "UserAuthController_verifyCode_v1"
+    },
+    {
+      "path": "/api/v1/auth/resend-code",
+      "method": "POST",
+      "summary": "Resend Code",
+      "description": "",
+      "operationId": "UserAuthController_resendCode_v1"
+    },
+    {
+      "path": "/api/v1/auth/send-otp",
+      "method": "POST",
+      "summary": "Send OTP",
+      "description": "",
+      "operationId": "UserAuthController_sendOtp_v1"
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "summary": "Login",
+      "description": "",
+      "operationId": "UserAuthController_login_v1"
+    },
+    {
+      "path": "/api/v1/auth/forgot-password",
+      "method": "POST",
+      "summary": "Forgot Password",
+      "description": "",
+      "operationId": "UserAuthController_forgotPassword_v1"
+    },
+    {
+      "path": "/api/v1/auth/verification-code/{token}",
+      "method": "POST",
+      "summary": "Verify Reset Code",
+      "description": "",
+      "operationId": "UserAuthController_verificationCode_v1"
+    },
+    {
+      "path": "/api/v1/auth/reset-password/{token}",
+      "method": "POST",
+      "summary": "Reset Password",
+      "description": "",
+      "operationId": "UserAuthController_resetPassword_v1"
+    },
+    {
+      "path": "/api/v1/auth/refresh",
+      "method": "POST",
+      "summary": "Refresh Token",
+      "description": "",
+      "operationId": "UserAuthController_refresh_v1"
+    }
+  ],
+  "Admin Auth": [
+    {
+      "path": "/api/v1/auth/admin/login",
+      "method": "POST",
+      "summary": "Admin and Provider Login",
+      "description": "Login for admin, company, and freelancer users.",
+      "operationId": "AdminAuthController_adminLogin_v1"
+    },
+    {
+      "path": "/api/v1/auth/admin/refresh",
+      "method": "POST",
+      "summary": "Refresh Token",
+      "description": "",
+      "operationId": "AdminAuthController_refresh_v1"
+    }
+  ],
+  "Admin / Admins": [
+    {
+      "path": "/api/v1/web/admin/admins",
+      "method": "GET",
+      "summary": "List Admins",
+      "description": "Fetch a paginated list of all administrative users.",
+      "operationId": "AdminsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins",
+      "method": "POST",
+      "summary": "Create Admin",
+      "description": "Register a new administrative user manually.",
+      "operationId": "AdminsController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/me",
+      "method": "GET",
+      "summary": "Get Admin Profile",
+      "description": "",
+      "operationId": "AdminsController_me_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/{id}",
+      "method": "GET",
+      "summary": "Get Admin Details",
+      "description": "Fetch detailed information of a specific administrative user.",
+      "operationId": "AdminsController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/{id}",
+      "method": "PATCH",
+      "summary": "Update Admin",
+      "description": "Update the information of an existing administrative user.",
+      "operationId": "AdminsController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/{id}",
+      "method": "DELETE",
+      "summary": "Delete Admin",
+      "description": "Marks an administrative user account as deleted and sets its status to deleted.",
+      "operationId": "AdminsController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/{id}/verify",
+      "method": "PATCH",
+      "summary": "Verify Admin",
+      "description": "Set phone verification date and activate the administrative user status.",
+      "operationId": "AdminsController_verifyUser_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/admins/{id}/active",
+      "method": "PATCH",
+      "summary": "Activate Admin",
+      "description": "Activates a previously soft-deleted administrative user account.",
+      "operationId": "AdminsController_restore_v1"
+    }
+  ],
+  "Admin / Overview": [
+    {
+      "path": "/api/v1/web/admin/overview",
+      "method": "GET",
+      "summary": "Get Dashboard Overview",
+      "description": "Fetch dashboard overview data for admins.",
+      "operationId": "OverviewWebController_getOverview_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/calendar",
+      "method": "GET",
+      "summary": "Get Calendar Events",
+      "description": "Fetch all orders mapped as calendar events for the admin dashboard.",
+      "operationId": "OverviewWebController_getCalendar_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/artist-statics",
+      "method": "GET",
+      "summary": "Get Artist Statics",
+      "description": "Fetch chart data for artist (freelancer) statistics.",
+      "operationId": "OverviewWebController_getArtistStatics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/salons-statics",
+      "method": "GET",
+      "summary": "Get Salons Statics",
+      "description": "Fetch chart data for salon (company) statistics.",
+      "operationId": "OverviewWebController_getSalonsStatics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/user-statics",
+      "method": "GET",
+      "summary": "Get User Statics",
+      "description": "Fetch chart data for regular user statistics.",
+      "operationId": "OverviewWebController_getUserStatics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/orders-completed-statics",
+      "method": "GET",
+      "summary": "Get Completed Orders Statics",
+      "description": "Fetch chart data for completed orders statistics.",
+      "operationId": "OverviewWebController_getOrdersCompletedStatics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/orders-rejected-statics",
+      "method": "GET",
+      "summary": "Get Rejected Orders Statics",
+      "description": "Fetch chart data for rejected orders statistics.",
+      "operationId": "OverviewWebController_getOrdersRejectedStatics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/overview/orders-statics",
+      "method": "GET",
+      "summary": "Get All Orders Statics",
+      "description": "Fetch chart data for all orders statistics.",
+      "operationId": "OverviewWebController_getOrdersStatics_v1"
+    }
+  ],
+  "Admin / Administration": [
+    {
+      "path": "/api/v1/web/admin/administration/groups",
+      "method": "GET",
+      "summary": "List Permission Groups",
+      "description": "Fetch all permission groups except super admin groups.",
+      "operationId": "AdministrationWebController_findAllGroups_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/groups",
+      "method": "POST",
+      "summary": "Create Permission Group",
+      "description": "Create a new group with specific permissions.",
+      "operationId": "AdministrationWebController_createGroup_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/groups/lookup",
+      "method": "GET",
+      "summary": "Permission Groups Lookup",
+      "description": "Fetch a lightweight list of permission groups (id, name) for dropdowns/selects. Excludes super admin groups.",
+      "operationId": "AdministrationWebController_findGroupsLookup_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/groups/{id}",
+      "method": "GET",
+      "summary": "Get Group Details",
+      "description": "Fetch details of a specific permission group for editing.",
+      "operationId": "AdministrationWebController_findGroupById_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/groups/{id}",
+      "method": "PATCH",
+      "summary": "Update Permission Group",
+      "description": "Update an existing permission group.",
+      "operationId": "AdministrationWebController_updateGroup_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/groups/{id}",
+      "method": "DELETE",
+      "summary": "Delete Permission Group",
+      "description": "Remove a permission group from the system.",
+      "operationId": "AdministrationWebController_deleteGroup_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/administration/admins",
+      "method": "GET",
+      "summary": "List All Admins",
+      "description": "Fetch a paginated list of all administrative users.",
+      "operationId": "AdministrationWebController_findAllAdmins_v1"
+    }
+  ],
+  "Admin / Roles": [
+    {
+      "path": "/api/v1/web/admin/roles",
+      "method": "GET",
+      "summary": "List Roles",
+      "description": "Fetch a paginated list of all roles.",
+      "operationId": "RolesController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/roles",
+      "method": "POST",
+      "summary": "Create Role",
+      "description": "Create a new role and associate it with permissions.",
+      "operationId": "RolesController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/roles/create-list",
+      "method": "GET",
+      "summary": "Get Create Role Data",
+      "description": "Fetch the list of all permissions to populate the role creation form.",
+      "operationId": "RolesController_getCreateData_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/roles/{id}",
+      "method": "GET",
+      "summary": "Get Role Edit Data",
+      "description": "Fetch role details, all available permissions, and currently assigned permission IDs.",
+      "operationId": "RolesController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/roles/{id}",
+      "method": "PATCH",
+      "summary": "Update Role",
+      "description": "Update an existing role and its permissions.",
+      "operationId": "RolesController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/roles/{id}",
+      "method": "DELETE",
+      "summary": "Delete Role",
+      "description": "Soft delete a role from the system.",
+      "operationId": "RolesController_remove_v1"
+    }
+  ],
+  "Admin / Role User Permissions": [
+    {
+      "path": "/api/v1/web/admin/role-user-permissions",
+      "method": "GET",
+      "summary": "List Role User Permissions",
+      "description": "Fetch a paginated list of all role user permissions (admin users).",
+      "operationId": "RoleUserPermissionWebController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/role-user-permissions",
+      "method": "POST",
+      "summary": "Create Role User Permission",
+      "description": "Create a new role user permission and assign roles.",
+      "operationId": "RoleUserPermissionWebController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/role-user-permissions/create-list",
+      "method": "GET",
+      "summary": "Get Create Role User Permission Data",
+      "description": "Fetch the list of all roles to populate the role user permission creation form.",
+      "operationId": "RoleUserPermissionWebController_getCreateData_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/role-user-permissions/{id}/edit",
+      "method": "GET",
+      "summary": "Get Edit Role User Permission Data",
+      "description": "Fetch role user permission details, all available roles, and currently assigned role IDs.",
+      "operationId": "RoleUserPermissionWebController_getEditData_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/role-user-permissions/{id}",
+      "method": "PATCH",
+      "summary": "Update Role User Permission",
+      "description": "Update role user permission information and roles.",
+      "operationId": "RoleUserPermissionWebController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/role-user-permissions/{id}",
+      "method": "DELETE",
+      "summary": "Delete Role User Permission",
+      "description": "Soft delete a role user permission.",
+      "operationId": "RoleUserPermissionWebController_remove_v1"
+    }
+  ],
+  "Customer / Orders": [
+    {
+      "path": "/api/v1/cart/add_promo",
+      "method": "POST",
+      "summary": "Apply promo code to cart",
+      "description": "",
+      "operationId": "CustomerOrderController_applyPromo_v1"
+    },
+    {
+      "path": "/api/v1/cart/remove_promo",
+      "method": "DELETE",
+      "summary": "Remove promo code from cart",
+      "description": "",
+      "operationId": "CustomerOrderController_removePromo_v1"
+    },
+    {
+      "path": "/api/v1/cart/add",
+      "method": "POST",
+      "summary": "Add item to cart",
+      "description": "",
+      "operationId": "CustomerOrderController_addToCart_v1"
+    },
+    {
+      "path": "/api/v1/cart/i",
+      "method": "DELETE",
+      "summary": "Clear cart",
+      "description": "",
+      "operationId": "CustomerOrderController_clearCart_v1"
+    },
+    {
+      "path": "/api/v1/cart/i",
+      "method": "GET",
+      "summary": "Get current customer cart",
+      "description": "",
+      "operationId": "CustomerOrderController_getCurrentOrder_v1"
+    },
+    {
+      "path": "/api/v1/cart/i/choose/payment",
+      "method": "POST",
+      "summary": "Choose payment method for current cart",
+      "description": "",
+      "operationId": "CustomerOrderController_choosePayment_v1"
+    },
+    {
+      "path": "/api/v1/cart/{item_id}/delete",
+      "method": "GET",
+      "summary": "Delete item from cart",
+      "description": "",
+      "operationId": "CustomerOrderController_deleteItem_v1"
+    },
+    {
+      "path": "/api/v1/cart/{item_id}/quantity",
+      "method": "PATCH",
+      "summary": "Update item quantity in cart (0 removes the item)",
+      "description": "",
+      "operationId": "CustomerOrderController_updateItemQuantity_v1"
+    },
+    {
+      "path": "/api/v1/cart/{item_id}/restore",
+      "method": "GET",
+      "summary": "Restore item to cart",
+      "description": "",
+      "operationId": "CustomerOrderController_restoreItem_v1"
+    },
+    {
+      "path": "/api/v1/cart/i/complet",
+      "method": "POST",
+      "summary": "Complete current cart into an order",
+      "description": "",
+      "operationId": "CustomerOrderController_completOrder_v1"
+    },
+    {
+      "path": "/api/v1/cart/available_times",
+      "method": "GET",
+      "summary": "Get available times for booking",
+      "description": "",
+      "operationId": "CustomerOrderController_getAvailableTimes_v1"
+    },
+    {
+      "path": "/api/v1/orders/i",
+      "method": "GET",
+      "summary": "List customer orders",
+      "description": "",
+      "operationId": "CustomerOrderController_index_v1"
+    },
+    {
+      "path": "/api/v1/orders/{id}/show",
+      "method": "GET",
+      "summary": "Get order details",
+      "description": "",
+      "operationId": "CustomerOrderController_show_v1"
+    },
+    {
+      "path": "/api/v1/orders/{id}/cancel",
+      "method": "PATCH",
+      "summary": "Cancel an order",
+      "description": "",
+      "operationId": "CustomerOrderController_cancelOrder_v1"
+    },
+    {
+      "path": "/api/v1/orders/{id}/restore",
+      "method": "GET",
+      "summary": "Restore a cancelled order",
+      "description": "",
+      "operationId": "CustomerOrderController_restoreOrder_v1"
+    },
+    {
+      "path": "/api/v1/orders/cancel/reasons",
+      "method": "GET",
+      "summary": "Get order cancel reasons",
+      "description": "",
+      "operationId": "CustomerOrderController_getCancelReasons_v1"
+    },
+    {
+      "path": "/api/v1/orders/set/rates",
+      "method": "POST",
+      "summary": "Rate a salon after order completion",
+      "description": "",
+      "operationId": "CustomerOrderController_setRate_v1"
+    }
+  ],
+  "Salon / Orders": [
+    {
+      "path": "/api/v1/salon/orders/i",
+      "method": "GET",
+      "summary": "List salon orders",
+      "description": "",
+      "operationId": "SalonOrderController_index_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_restore",
+      "method": "GET",
+      "summary": "Restore a deleted order (salon)",
+      "description": "",
+      "operationId": "SalonOrderController_restoreOrder_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{id}/show",
+      "method": "GET",
+      "summary": "Get order details for salon",
+      "description": "",
+      "operationId": "SalonOrderController_show_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_accept",
+      "method": "GET",
+      "summary": "Accept an order",
+      "description": "",
+      "operationId": "SalonOrderController_orderAccept_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_in_way",
+      "method": "GET",
+      "summary": "Mark provider as on the way",
+      "description": "",
+      "operationId": "SalonOrderController_artistInWay_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/provider_arrived",
+      "method": "GET",
+      "summary": "Mark provider as arrived (At-Home bookings only)",
+      "description": "",
+      "operationId": "SalonOrderController_providerArrived_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_start",
+      "method": "GET",
+      "summary": "Mark artist as started work",
+      "description": "",
+      "operationId": "SalonOrderController_artistStart_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_complete",
+      "method": "GET",
+      "summary": "Mark order as completed",
+      "description": "",
+      "operationId": "SalonOrderController_artistComplete_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/i/calendar",
+      "method": "GET",
+      "summary": "Get salon calendar (all orders sorted by book date)",
+      "description": "",
+      "operationId": "SalonOrderController_getCalendar_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{order_id}/artist_reject",
+      "method": "POST",
+      "summary": "Reject an order",
+      "description": "",
+      "operationId": "SalonOrderController_rejectOrder_v1"
+    }
+  ],
+  "Admin / Orders": [
+    {
+      "path": "/api/v1/web/admin/orders",
+      "method": "GET",
+      "summary": "List all orders",
+      "description": "",
+      "operationId": "AdminOrderController_index_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/carts",
+      "method": "GET",
+      "summary": "List cart orders",
+      "description": "",
+      "operationId": "AdminOrderController_cartsList_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/pending",
+      "method": "GET",
+      "summary": "List pending orders",
+      "description": "",
+      "operationId": "AdminOrderController_pendingList_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/other",
+      "method": "GET",
+      "summary": "List other orders (not cart/pending/review)",
+      "description": "",
+      "operationId": "AdminOrderController_otherList_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{id}/show",
+      "method": "GET",
+      "summary": "Get order details",
+      "description": "",
+      "operationId": "AdminOrderController_show_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{id}/delete",
+      "method": "POST",
+      "summary": "Delete an order",
+      "description": "",
+      "operationId": "AdminOrderController_destroy_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{id}/restore",
+      "method": "GET",
+      "summary": "Restore a deleted order",
+      "description": "",
+      "operationId": "AdminOrderController_restoreOrder_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{id}/logs",
+      "method": "GET",
+      "summary": "Get order audit logs",
+      "description": "",
+      "operationId": "AdminOrderController_getLogs_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{id}/assign",
+      "method": "POST",
+      "summary": "Assign order to another salon",
+      "description": "",
+      "operationId": "AdminOrderController_assignToSalon_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/salon/{salonId}",
+      "method": "GET",
+      "summary": "Get booking history for a specific salon",
+      "description": "",
+      "operationId": "AdminOrderController_getSalonHistory_v1"
+    }
+  ],
+  "Web Salon / Offers": [
+    {
+      "path": "/api/v1/web/salon/offers",
+      "method": "GET",
+      "summary": "List own offers",
+      "description": "Fetch a paginated list of offers belonging to the authenticated salon.",
+      "operationId": "SalonWebOfferController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers",
+      "method": "POST",
+      "summary": "Create offer",
+      "description": "Add a new offer and link services for the authenticated salon.",
+      "operationId": "SalonWebOfferController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/{id}/edit",
+      "method": "GET",
+      "summary": "Get offer details",
+      "description": "Fetch detailed information of a specific offer for editing.",
+      "operationId": "SalonWebOfferController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/{id}",
+      "method": "PUT",
+      "summary": "Update offer",
+      "description": "Update the information and linked services of an existing offer.",
+      "operationId": "SalonWebOfferController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/{id}",
+      "method": "DELETE",
+      "summary": "Delete offer",
+      "description": "Permanently remove an offer belonging to the authenticated salon.",
+      "operationId": "SalonWebOfferController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/gallery/{img_id}",
+      "method": "DELETE",
+      "summary": "Delete gallery image",
+      "description": "Permanently remove an image from the offer gallery.",
+      "operationId": "SalonWebOfferController_destroyImage_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted offer",
+      "description": "",
+      "operationId": "SalonWebOfferController_restore_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/offers/gallery/{img_id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted gallery image",
+      "description": "",
+      "operationId": "SalonWebOfferController_restoreImage_v1"
+    }
+  ],
+  "Guest / Offers": [
+    {
+      "path": "/api/v1/guest/offers",
+      "method": "GET",
+      "summary": "Public offer listing",
+      "description": "Fetch a paginated list of offers filtered by country_id or salonId.",
+      "operationId": "GuestOfferController_findAllGuest_v1"
+    },
+    {
+      "path": "/api/v1/guest/offers/{id}/show",
+      "method": "GET",
+      "summary": "Get offer details (guest)",
+      "description": "Fetch detailed information of a specific service offer for guests.",
+      "operationId": "GuestOfferController_findOneGuest_v1"
+    },
+    {
+      "path": "/api/v1/guest/salons/{salon_id}/offers",
+      "method": "GET",
+      "summary": "List salon offers (guest)",
+      "description": "Fetch all active offers for a specific salon (public).",
+      "operationId": "GuestOfferController_findSalonOffersGuest_v1"
+    }
+  ],
+  "Customer / Offers": [
+    {
+      "path": "/api/v1/offers",
+      "method": "GET",
+      "summary": "List offers",
+      "description": "Fetch a paginated list of offers for the authenticated customer based on their country.",
+      "operationId": "CustomerOfferController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/offers/{id}/show",
+      "method": "GET",
+      "summary": "Get offer details",
+      "description": "Fetch detailed information of a specific service offer.",
+      "operationId": "CustomerOfferController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/salons/{salon_id}/offers",
+      "method": "GET",
+      "summary": "List salon offers",
+      "description": "Fetch all active offers for a specific salon.",
+      "operationId": "CustomerOfferController_findSalonOffers_v1"
+    }
+  ],
+  "Web Salon / Packages": [
+    {
+      "path": "/api/v1/web/salon/packages",
+      "method": "GET",
+      "summary": "List own packages",
+      "description": "Fetch a paginated list of packages belonging to the authenticated salon.",
+      "operationId": "SalonWebPackageController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages",
+      "method": "POST",
+      "summary": "Create package",
+      "description": "Add a new package with linked services for the authenticated salon.",
+      "operationId": "SalonWebPackageController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/{id}/edit",
+      "method": "GET",
+      "summary": "Get package details",
+      "description": "Fetch detailed information of a specific package for editing.",
+      "operationId": "SalonWebPackageController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/{id}",
+      "method": "PUT",
+      "summary": "Update package",
+      "description": "Update the information and linked services of an existing package.",
+      "operationId": "SalonWebPackageController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/{id}",
+      "method": "DELETE",
+      "summary": "Delete package",
+      "description": "Permanently remove a package belonging to the authenticated salon.",
+      "operationId": "SalonWebPackageController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/gallery/{img_id}",
+      "method": "DELETE",
+      "summary": "Delete gallery image",
+      "description": "Permanently remove an image from the package gallery.",
+      "operationId": "SalonWebPackageController_destroyImage_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted package",
+      "description": "",
+      "operationId": "SalonWebPackageController_restore_v1"
+    },
+    {
+      "path": "/api/v1/web/salon/packages/gallery/{img_id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted gallery image",
+      "description": "",
+      "operationId": "SalonWebPackageController_restoreImage_v1"
+    }
+  ],
+  "Packages": [
+    {
+      "path": "/api/v1/packages",
+      "method": "GET",
+      "summary": "Package listing",
+      "description": "Fetch a paginated list of packages filtered by salonId.",
+      "operationId": "PublicPackageController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/packages/{id}/show",
+      "method": "GET",
+      "summary": "Get package details",
+      "description": "Fetch detailed information of a specific package.",
+      "operationId": "PublicPackageController_findOne_v1"
+    }
+  ],
+  "Admin / Promocodes": [
+    {
+      "path": "/api/v1/admin/promocodes",
+      "method": "GET",
+      "summary": "List all promocodes (paginated)",
+      "description": "",
+      "operationId": "AdminPromocodeController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/promocodes",
+      "method": "POST",
+      "summary": "Create promocode",
+      "description": "",
+      "operationId": "AdminPromocodeController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/promocodes/{id}",
+      "method": "GET",
+      "summary": "Get a promocode by id",
+      "description": "",
+      "operationId": "AdminPromocodeController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/promocodes/{id}",
+      "method": "PATCH",
+      "summary": "Update a promocode",
+      "description": "",
+      "operationId": "AdminPromocodeController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/promocodes/{id}",
+      "method": "DELETE",
+      "summary": "Delete a promocode",
+      "description": "",
+      "operationId": "AdminPromocodeController_remove_v1"
+    }
+  ],
+  "App / Promocode": [
+    {
+      "path": "/api/v1/promocodes/me",
+      "method": "GET",
+      "summary": "List all active, whitelisted promocodes for the currently authenticated user's mobile session",
+      "description": "",
+      "operationId": "AppPromocodeController_findMine_v1"
+    }
+  ],
+  "Admin / Notifications": [
+    {
+      "path": "/api/v1/web/admin/notifications",
+      "method": "GET",
+      "summary": "List admin notifications (paginated)",
+      "description": "",
+      "operationId": "AdminNotificationsController_list_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/campaign-notifications",
+      "method": "GET",
+      "summary": "List campaign notifications with search and progress",
+      "description": "",
+      "operationId": "AdminNotificationsController_getCampaignNotifications_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/campaign-notifications",
+      "method": "POST",
+      "summary": "Create campaign notification",
+      "description": "",
+      "operationId": "AdminNotificationsController_createCampaignNotification_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/campaign-notifications/{id}",
+      "method": "GET",
+      "summary": "Get campaign notification by ID with progress",
+      "description": "",
+      "operationId": "AdminNotificationsController_getCampaignNotificationById_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/{id}/read",
+      "method": "PATCH",
+      "summary": "Mark a notification as read",
+      "description": "",
+      "operationId": "AdminNotificationsController_markRead_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/live-feed",
+      "method": "GET",
+      "summary": "Get Live Operations Feed",
+      "description": "",
+      "operationId": "AdminNotificationsController_getLiveFeed_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/notifications/alerts",
+      "method": "GET",
+      "summary": "Get System Alerts",
+      "description": "",
+      "operationId": "AdminNotificationsController_getAlerts_v1"
+    }
+  ],
+  "Salon / Notifications": [
+    {
+      "path": "/api/v1/salon/notifications",
+      "method": "GET",
+      "summary": "List salon notifications (paginated)",
+      "description": "",
+      "operationId": "SalonNotificationsController_list_v1"
+    },
+    {
+      "path": "/api/v1/salon/notifications/{id}/read",
+      "method": "PATCH",
+      "summary": "Mark a notification as read",
+      "description": "",
+      "operationId": "SalonNotificationsController_markRead_v1"
+    },
+    {
+      "path": "/api/v1/salon/notifications/read-all",
+      "method": "PATCH",
+      "summary": "Mark all notifications as read",
+      "description": "",
+      "operationId": "SalonNotificationsController_markAllRead_v1"
+    }
+  ],
+  "Notification Settings": [
+    {
+      "path": "/api/v1/notification-settings",
+      "method": "GET",
+      "summary": "Get notification settings for the authenticated user",
+      "description": "Returns the current notification preferences. If the user has never saved settings before, defaults are returned.",
+      "operationId": "NotificationSettingsController_index_v1"
+    },
+    {
+      "path": "/api/v1/notification-settings/update",
+      "method": "POST",
+      "summary": "Update notification settings",
+      "description": "Partial update — send only the fields you want to change. All fields are optional.",
+      "operationId": "NotificationSettingsController_update_v1"
+    }
+  ],
+  "User Notifications": [
+    {
+      "path": "/api/v1/user/notifications",
+      "method": "GET",
+      "summary": "Get current user notifications (paginated)",
+      "description": "",
+      "operationId": "UserNotificationsController_getNotifications_v1"
+    },
+    {
+      "path": "/api/v1/user/notifications/{id}/read",
+      "method": "PATCH",
+      "summary": "Mark a notification as read",
+      "description": "",
+      "operationId": "UserNotificationsController_markNotificationRead_v1"
+    },
+    {
+      "path": "/api/v1/user/notifications/read-all",
+      "method": "PATCH",
+      "summary": "Mark all notifications as read",
+      "description": "",
+      "operationId": "UserNotificationsController_markAllRead_v1"
+    },
+    {
+      "path": "/api/v1/user/notifications/device-token",
+      "method": "POST",
+      "summary": "Update device token for FCM",
+      "description": "",
+      "operationId": "UserNotificationsController_updateDeviceToken_v1"
+    }
+  ],
+  "Locations": [
+    {
+      "path": "/api/v1/locations/countries",
+      "method": "GET",
+      "summary": "Get all countries",
+      "description": "Returns a list of all available countries",
+      "operationId": "LocationsController_listCountries_v1"
+    },
+    {
+      "path": "/api/v1/locations/states",
+      "method": "GET",
+      "summary": "Get states",
+      "description": "Returns a list of states, optionally filtered by country_id",
+      "operationId": "LocationsController_listStates_v1"
+    },
+    {
+      "path": "/api/v1/locations/cities",
+      "method": "GET",
+      "summary": "Get cities",
+      "description": "Returns a list of cities, optionally filtered by state_id",
+      "operationId": "LocationsController_listCities_v1"
+    },
+    {
+      "path": "/api/v1/locations/districts",
+      "method": "GET",
+      "summary": "Get districts",
+      "description": "Returns a list of districts, optionally filtered by region_id",
+      "operationId": "LocationsController_listDistricts_v1"
+    },
+    {
+      "path": "/api/v1/locations/map-search",
+      "method": "GET",
+      "summary": "Search address using Google Places Autocomplete",
+      "description": "",
+      "operationId": "LocationsController_searchAddress_v1"
+    }
+  ],
+  "Admin / Earnings": [
+    {
+      "path": "/api/v1/web/admin/earnings",
+      "method": "GET",
+      "summary": "Settlement report list (settled earnings)",
+      "description": "",
+      "operationId": "AdminEarningsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/earnings/{id}",
+      "method": "GET",
+      "summary": "Get single earning by id",
+      "description": "",
+      "operationId": "AdminEarningsController_findOne_v1"
+    }
+  ],
+  "Provider / Earnings": [
+    {
+      "path": "/api/v1/provider/earnings",
+      "method": "GET",
+      "summary": "List my earnings",
+      "description": "",
+      "operationId": "ProviderEarningsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/provider/earnings/{id}",
+      "method": "GET",
+      "summary": "Get single earning by id",
+      "description": "",
+      "operationId": "ProviderEarningsController_findOne_v1"
+    }
+  ],
+  "Webhooks / Tap Payment": [
+    {
+      "path": "/api/v1/tap/callback",
+      "method": "POST",
+      "summary": "Tap order payment callback",
+      "description": "Called by Tap when an order charge status changes (CAPTURED, DECLINED, etc.)",
+      "operationId": "WebhookPaymentController_orderCallback_v1"
+    },
+    {
+      "path": "/api/v1/tap/balance/callback",
+      "method": "POST",
+      "summary": "Tap wallet balance top-up callback",
+      "description": "Called by Tap when a wallet top-up charge status changes.",
+      "operationId": "WebhookPaymentController_balanceCallback_v1"
+    },
+    {
+      "path": "/api/v1/tap/commissions/callback",
+      "method": "POST",
+      "summary": "Tap commission payment callback",
+      "description": "Called by Tap when a commission charge status changes.",
+      "operationId": "WebhookPaymentController_commissionsCallback_v1"
+    },
+    {
+      "path": "/api/v1/tap/refund/callback",
+      "method": "POST",
+      "summary": "Tap refund callback",
+      "description": "Called by Tap when a refund completes. Body includes `charge_id` (original charge) and `status: REFUNDED`.",
+      "operationId": "WebhookPaymentController_refundCallback_v1"
+    }
+  ],
+  "Admin / Wallet": [
+    {
+      "path": "/api/v1/web/admin/wallet",
+      "method": "GET",
+      "summary": "Wallet overview — balance + paginated transfer history for current admin",
+      "description": "",
+      "operationId": "AdminWalletController_overview_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/wallet/send-money",
+      "method": "POST",
+      "summary": "Transfer wallet balance to user by phone number",
+      "description": "",
+      "operationId": "AdminWalletController_sendMoney_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/wallet/balances",
+      "method": "GET",
+      "summary": "List all wallet balance top-up requests",
+      "description": "",
+      "operationId": "AdminWalletController_listBalances_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/wallet/balances/{id}/accept",
+      "method": "GET",
+      "summary": "Accept balance request — credits user wallet",
+      "description": "",
+      "operationId": "AdminWalletController_acceptBalance_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/wallet/balances/{id}/reject",
+      "method": "POST",
+      "summary": "Reject balance request",
+      "description": "",
+      "operationId": "AdminWalletController_rejectBalance_v1"
+    }
+  ],
+  "Admin / Payments": [
+    {
+      "path": "/api/v1/web/admin/payments",
+      "method": "GET",
+      "summary": "List all Tap payment records",
+      "description": "",
+      "operationId": "AdminPaymentController_findAll_v1"
+    }
+  ],
+  "App / Wallet": [
+    {
+      "path": "/api/v1/balance",
+      "method": "GET",
+      "summary": "Get wallet balance and top-up history",
+      "description": "",
+      "operationId": "CustomerWalletController_getBalance_v1"
+    },
+    {
+      "path": "/api/v1/balance/new",
+      "method": "POST",
+      "summary": "Initiate wallet top-up via Tap (card or Apple Pay source)",
+      "description": "",
+      "operationId": "CustomerWalletController_addBalance_v1"
+    },
+    {
+      "path": "/api/v1/balance/apple-pay",
+      "method": "POST",
+      "summary": "Process Apple Pay wallet top-up with Tap token",
+      "description": "",
+      "operationId": "CustomerWalletController_addBalanceApplePay_v1"
+    }
+  ],
+  "App / Banks Account": [
+    {
+      "path": "/api/v1/bank-accounts",
+      "method": "GET",
+      "summary": "List own bank accounts",
+      "description": "",
+      "operationId": "CustomerBankController_list_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts",
+      "method": "POST",
+      "summary": "Add a new bank account",
+      "description": "",
+      "operationId": "CustomerBankController_create_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts/{id}",
+      "method": "GET",
+      "summary": "Get a specific bank account",
+      "description": "",
+      "operationId": "CustomerBankController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts/{id}",
+      "method": "PUT",
+      "summary": "Update a bank account",
+      "description": "",
+      "operationId": "CustomerBankController_update_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts/{id}",
+      "method": "DELETE",
+      "summary": "Delete a bank account",
+      "description": "",
+      "operationId": "CustomerBankController_remove_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted bank account",
+      "description": "",
+      "operationId": "CustomerBankController_restore_v1"
+    },
+    {
+      "path": "/api/v1/bank-accounts/{id}/set-default",
+      "method": "GET",
+      "summary": "Set a bank account as default",
+      "description": "",
+      "operationId": "CustomerBankController_setDefault_v1"
+    }
+  ],
+  "App / Cards": [
+    {
+      "path": "/api/v1/cards",
+      "method": "GET",
+      "summary": "List own cards",
+      "description": "",
+      "operationId": "CustomerCardController_list_v1"
+    },
+    {
+      "path": "/api/v1/cards",
+      "method": "POST",
+      "summary": "Add a new card",
+      "description": "",
+      "operationId": "CustomerCardController_create_v1"
+    },
+    {
+      "path": "/api/v1/cards/{id}",
+      "method": "GET",
+      "summary": "Get a specific card",
+      "description": "",
+      "operationId": "CustomerCardController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/cards/{id}",
+      "method": "PUT",
+      "summary": "Update a card",
+      "description": "",
+      "operationId": "CustomerCardController_update_v1"
+    },
+    {
+      "path": "/api/v1/cards/{id}",
+      "method": "DELETE",
+      "summary": "Delete a card (soft delete)",
+      "description": "",
+      "operationId": "CustomerCardController_remove_v1"
+    },
+    {
+      "path": "/api/v1/cards/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted card",
+      "description": "",
+      "operationId": "CustomerCardController_restore_v1"
+    },
+    {
+      "path": "/api/v1/cards/{id}/set-default",
+      "method": "GET",
+      "summary": "Set a card as default",
+      "description": "",
+      "operationId": "CustomerCardController_setDefault_v1"
+    }
+  ],
+  "Payment / Redirect": [
+    {
+      "path": "/api/v1/thanks",
+      "method": "GET",
+      "summary": "Tap payment redirect — processes charge and redirects to result page",
+      "description": "",
+      "operationId": "PaymentRedirectController_handleThanksRedirect_v1"
+    },
+    {
+      "path": "/api/v1/thanks-web",
+      "method": "GET",
+      "summary": "Tap payment redirect (web) — processes charge and redirects to frontend",
+      "description": "",
+      "operationId": "PaymentRedirectController_handleThanksWebRedirect_v1"
+    },
+    {
+      "path": "/api/v1/payment/order/success",
+      "method": "GET",
+      "summary": "Order payment success page",
+      "description": "",
+      "operationId": "PaymentRedirectController_orderSuccess_v1"
+    },
+    {
+      "path": "/api/v1/payment/order/failed",
+      "method": "GET",
+      "summary": "Order payment failed page",
+      "description": "",
+      "operationId": "PaymentRedirectController_orderFailed_v1"
+    },
+    {
+      "path": "/api/v1/payment/order/cancelled",
+      "method": "GET",
+      "summary": "Order payment cancelled page",
+      "description": "",
+      "operationId": "PaymentRedirectController_orderCancelled_v1"
+    },
+    {
+      "path": "/api/v1/payment/commission/success",
+      "method": "GET",
+      "summary": "Commission payment success page",
+      "description": "",
+      "operationId": "PaymentRedirectController_commissionSuccess_v1"
+    },
+    {
+      "path": "/api/v1/payment/commission/failed",
+      "method": "GET",
+      "summary": "Commission payment failed page",
+      "description": "",
+      "operationId": "PaymentRedirectController_commissionFailed_v1"
+    },
+    {
+      "path": "/api/v1/payment/commission/cancelled",
+      "method": "GET",
+      "summary": "Commission payment cancelled page",
+      "description": "",
+      "operationId": "PaymentRedirectController_commissionCancelled_v1"
+    },
+    {
+      "path": "/api/v1/payment/wallet/success",
+      "method": "GET",
+      "summary": "Wallet top-up success page",
+      "description": "",
+      "operationId": "PaymentRedirectController_walletSuccess_v1"
+    },
+    {
+      "path": "/api/v1/payment/wallet/failed",
+      "method": "GET",
+      "summary": "Wallet top-up failed page",
+      "description": "",
+      "operationId": "PaymentRedirectController_walletFailed_v1"
+    },
+    {
+      "path": "/api/v1/payment/wallet/cancelled",
+      "method": "GET",
+      "summary": "Wallet top-up cancelled page",
+      "description": "",
+      "operationId": "PaymentRedirectController_walletCancelled_v1"
+    }
+  ],
+  "Admin / Gateway Charges": [
+    {
+      "path": "/api/v1/web/admin/gateway-charges",
+      "method": "GET",
+      "summary": "List all payment gateway charges",
+      "description": "",
+      "operationId": "AdminGatewayChargeController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/gateway-charges/{id}",
+      "method": "GET",
+      "summary": "Get a single gateway charge by id",
+      "description": "",
+      "operationId": "AdminGatewayChargeController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/gateway-charges/{id}",
+      "method": "PATCH",
+      "summary": "Update gateway charge fees or status",
+      "description": "",
+      "operationId": "AdminGatewayChargeController_update_v1"
+    }
+  ],
+  "Admin / Banks": [
+    {
+      "path": "/api/v1/admin/bank-info",
+      "method": "GET",
+      "summary": "List all banks",
+      "description": "",
+      "operationId": "AdminBankInfoController_list_v1"
+    },
+    {
+      "path": "/api/v1/admin/bank-info",
+      "method": "POST",
+      "summary": "Create a new bank",
+      "description": "",
+      "operationId": "AdminBankInfoController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/bank-info/{id}",
+      "method": "GET",
+      "summary": "Get a specific bank",
+      "description": "",
+      "operationId": "AdminBankInfoController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/bank-info/{id}",
+      "method": "PUT",
+      "summary": "Update a bank",
+      "description": "",
+      "operationId": "AdminBankInfoController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/bank-info/{id}",
+      "method": "DELETE",
+      "summary": "Soft-delete a bank",
+      "description": "",
+      "operationId": "AdminBankInfoController_remove_v1"
+    },
+    {
+      "path": "/api/v1/admin/bank-info/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a soft-deleted bank",
+      "description": "",
+      "operationId": "AdminBankInfoController_restore_v1"
+    }
+  ],
+  "Public / Banks": [
+    {
+      "path": "/api/v1/public/bank-info",
+      "method": "GET",
+      "summary": "List all active banks (id, nameEn, nameAr, logo)",
+      "description": "",
+      "operationId": "BankInfoController_list_v1"
+    }
+  ],
+  "Admin / Salons": [
+    {
+      "path": "/api/v1/web/admin/salons",
+      "method": "GET",
+      "summary": "List all salons (company & freelancer) paginated",
+      "description": "",
+      "operationId": "AdminSalonController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons",
+      "method": "POST",
+      "summary": "Create a new salon (freelancer or company)",
+      "description": "",
+      "operationId": "AdminSalonController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/vip-options",
+      "method": "GET",
+      "summary": "Get available VIP options for salons",
+      "description": "",
+      "operationId": "AdminSalonController_getVipOptions_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}",
+      "method": "GET",
+      "summary": "Get a salon by ID",
+      "description": "",
+      "operationId": "AdminSalonController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}",
+      "method": "PUT",
+      "summary": "Update a salon",
+      "description": "",
+      "operationId": "AdminSalonController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}",
+      "method": "DELETE",
+      "summary": "Delete a salon",
+      "description": "",
+      "operationId": "AdminSalonController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/ban",
+      "method": "POST",
+      "summary": "Ban or suspend a salon",
+      "description": "",
+      "operationId": "AdminSalonController_ban_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/gallery",
+      "method": "GET",
+      "summary": "Get gallery images for a salon",
+      "description": "",
+      "operationId": "AdminSalonController_getGallery_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/gallery/{imgId}",
+      "method": "DELETE",
+      "summary": "Delete a salon gallery image",
+      "description": "",
+      "operationId": "AdminSalonController_destroyGalleryImage_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted salon",
+      "description": "",
+      "operationId": "AdminSalonController_restore_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/gallery/{imgId}/restore",
+      "method": "POST",
+      "summary": "Restore a deleted salon gallery image",
+      "description": "",
+      "operationId": "AdminSalonController_restoreGalleryImage_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/working-days",
+      "method": "GET",
+      "summary": "Get working days for a salon",
+      "description": "",
+      "operationId": "AdminSalonController_getWorkingDays_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/vip",
+      "method": "GET",
+      "summary": "Get VIP status of a salon",
+      "description": "",
+      "operationId": "AdminSalonController_getVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/{id}/vip",
+      "method": "POST",
+      "summary": "Set or remove VIP status for a salon",
+      "description": "",
+      "operationId": "AdminSalonController_setVip_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/salons/reviews/{salonId}",
+      "method": "GET",
+      "summary": "Get paginated reviews list",
+      "description": "",
+      "operationId": "AdminSalonController_getReviewsList_v1"
+    }
+  ],
+  "Salon / Profile": [
+    {
+      "path": "/api/v1/salon/profile/profile",
+      "method": "GET",
+      "summary": "Get current user profile",
+      "description": "",
+      "operationId": "SalonProfileController_getProfile_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/clients",
+      "method": "GET",
+      "summary": "Get salon clients list",
+      "description": "",
+      "operationId": "SalonProfileController_getClients_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/income/summary",
+      "method": "GET",
+      "summary": "Get income summary and daily chart",
+      "description": "",
+      "operationId": "SalonProfileController_getIncomeSummary_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/gallery",
+      "method": "GET",
+      "summary": "Get artist gallery images for the current salon",
+      "description": "",
+      "operationId": "SalonProfileController_getGallery_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/gallery",
+      "method": "POST",
+      "summary": "Upload gallery images for the current salon",
+      "description": "",
+      "operationId": "SalonProfileController_uploadGallery_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/gallery/{id}",
+      "method": "DELETE",
+      "summary": "Delete a gallery image for the current salon",
+      "description": "",
+      "operationId": "SalonProfileController_deleteGalleryImage_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/gallery/{id}/hero",
+      "method": "PATCH",
+      "summary": "Set a gallery image as the hero image or not hero",
+      "description": "",
+      "operationId": "SalonProfileController_setHeroImage_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/dashboard",
+      "method": "GET",
+      "summary": "Get dashboard summary",
+      "description": "",
+      "operationId": "SalonProfileController_getDashboardSummary_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/income/services",
+      "method": "GET",
+      "summary": "Get income breakdown by service",
+      "description": "",
+      "operationId": "SalonProfileController_getIncomeServiceBreakdown_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/reviews/summary",
+      "method": "GET",
+      "summary": "Get rating summary and breakdown",
+      "description": "",
+      "operationId": "SalonProfileController_getRatingSummary_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/reviews",
+      "method": "GET",
+      "summary": "Get paginated reviews list",
+      "description": "",
+      "operationId": "SalonProfileController_getReviews_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/files",
+      "method": "GET",
+      "summary": "Get authenticated salon uploaded files (SalonInfo records)",
+      "description": "",
+      "operationId": "SalonProfileController_getMyFiles_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/working-days",
+      "method": "GET",
+      "summary": "Get authenticated salon working days",
+      "description": "",
+      "operationId": "SalonProfileController_getWorkingDays_v1"
+    },
+    {
+      "path": "/api/v1/salon/profile/working-days",
+      "method": "PUT",
+      "summary": "Replace working days for authenticated salon",
+      "description": "",
+      "operationId": "SalonProfileController_updateWorkingDays_v1"
+    }
+  ],
+  "Salons": [
+    {
+      "path": "/api/v1/salons/search/filters",
+      "method": "GET",
+      "summary": "Get available search filter options",
+      "description": "",
+      "operationId": "CustomerSalonController_getSearchFilters_v1"
+    },
+    {
+      "path": "/api/v1/salons/search",
+      "method": "GET",
+      "summary": "Search and filter salons",
+      "description": "Available to both guests and authenticated customers. When called with a valid token, results include an is_favourite flag.",
+      "operationId": "CustomerSalonController_search_v1"
+    },
+    {
+      "path": "/api/v1/salons",
+      "method": "GET",
+      "summary": "List all active salons (authenticated customer)",
+      "description": "",
+      "operationId": "CustomerSalonController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/salons/favorite",
+      "method": "GET",
+      "summary": "Get favorite salons",
+      "description": "Returns all salons the authenticated customer has favorited with optional search, filter, and pagination.",
+      "operationId": "CustomerSalonController_getFavorites_v1"
+    },
+    {
+      "path": "/api/v1/salons/{id}",
+      "method": "GET",
+      "summary": "Get salon details",
+      "description": "Available to both guests and authenticated customers. When called with a valid token, the response includes an isFavourite flag.",
+      "operationId": "CustomerSalonController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/salons/{id}/working-days",
+      "method": "GET",
+      "summary": "Get working days for a salon",
+      "description": "",
+      "operationId": "CustomerSalonController_getWorkingDays_v1"
+    },
+    {
+      "path": "/api/v1/salons/{id}/reviews",
+      "method": "GET",
+      "summary": "Get reviews for a salon",
+      "description": "",
+      "operationId": "CustomerSalonController_getReviews_v1"
+    },
+    {
+      "path": "/api/v1/salons/{id}/favorites",
+      "method": "POST",
+      "summary": "Toggle favorite salon",
+      "description": "Add salon to favorites if not already added, remove if already favorited.",
+      "operationId": "CustomerSalonController_toggleFavorite_v1"
+    }
+  ],
+  "Salon / Calendar": [
+    {
+      "path": "/api/v1/salon/calendar",
+      "method": "GET",
+      "summary": "Get salon calendar orders",
+      "description": "",
+      "operationId": "SalonCalendarController_index_v1"
+    }
+  ],
+  "Salon / Availability": [
+    {
+      "path": "/api/v1/salon/availability",
+      "method": "GET",
+      "summary": "List availability slots",
+      "description": "",
+      "operationId": "SalonAvailabilityController_list_v1"
+    },
+    {
+      "path": "/api/v1/salon/availability",
+      "method": "POST",
+      "summary": "Create availability slots (multi-date fan-out)",
+      "description": "",
+      "operationId": "SalonAvailabilityController_create_v1"
+    },
+    {
+      "path": "/api/v1/salon/availability/calendar",
+      "method": "GET",
+      "summary": "Calendar view: slots + bookings grouped by date",
+      "description": "",
+      "operationId": "SalonAvailabilityController_calendar_v1"
+    },
+    {
+      "path": "/api/v1/salon/availability/{id}",
+      "method": "PUT",
+      "summary": "Update an availability slot",
+      "description": "",
+      "operationId": "SalonAvailabilityController_update_v1"
+    },
+    {
+      "path": "/api/v1/salon/availability/{id}",
+      "method": "DELETE",
+      "summary": "Delete an availability slot",
+      "description": "",
+      "operationId": "SalonAvailabilityController_remove_v1"
+    }
+  ],
+  "Admin / Blogs": [
+    {
+      "path": "/api/v1/admin/blogs",
+      "method": "GET",
+      "summary": "Get all blogs",
+      "description": "",
+      "operationId": "AdminBlogsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/blogs",
+      "method": "POST",
+      "summary": "Create blog (all users)",
+      "description": "",
+      "operationId": "AdminBlogsController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/blogs/{id}",
+      "method": "GET",
+      "summary": "Get blog by id",
+      "description": "",
+      "operationId": "AdminBlogsController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/blogs/{id}",
+      "method": "PUT",
+      "summary": "Update blog",
+      "description": "",
+      "operationId": "AdminBlogsController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/blogs/{id}",
+      "method": "DELETE",
+      "summary": "Delete blog",
+      "description": "",
+      "operationId": "AdminBlogsController_softDelete_v1"
+    }
+  ],
+  "Blogs": [
+    {
+      "path": "/api/v1/blogs",
+      "method": "GET",
+      "summary": "Get public blogs",
+      "description": "",
+      "operationId": "BlogsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/blogs/blog-show/{id}",
+      "method": "GET",
+      "summary": "Get public blog by id",
+      "description": "",
+      "operationId": "BlogsController_findOne_v1"
+    }
+  ],
+  "Admin / Pages": [
+    {
+      "path": "/api/v1/admin/pages",
+      "method": "GET",
+      "summary": "Get all pages",
+      "description": "",
+      "operationId": "AdminPagesController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/pages",
+      "method": "POST",
+      "summary": "Create page",
+      "description": "",
+      "operationId": "AdminPagesController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/pages/{id}",
+      "method": "GET",
+      "summary": "Get page by id",
+      "description": "",
+      "operationId": "AdminPagesController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/pages/{id}",
+      "method": "PUT",
+      "summary": "Update page",
+      "description": "",
+      "operationId": "AdminPagesController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/pages/{id}",
+      "method": "DELETE",
+      "summary": "Delete page",
+      "description": "",
+      "operationId": "AdminPagesController_remove_v1"
+    }
+  ],
+  "Public / Pages": [
+    {
+      "path": "/api/v1/public/pages/{url}",
+      "method": "GET",
+      "summary": "Get public page by url",
+      "description": "",
+      "operationId": "PagesController_findByUrl_v1"
+    }
+  ],
+  "Admin / Contact Us": [
+    {
+      "path": "/api/v1/admin/contact_us",
+      "method": "GET",
+      "summary": "Get all contact us messages",
+      "description": "",
+      "operationId": "AdminContactUsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/contact_us/{id}/show",
+      "method": "GET",
+      "summary": "Get contact us by id",
+      "description": "",
+      "operationId": "AdminContactUsController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/contact_us/{id}/delete",
+      "method": "DELETE",
+      "summary": "Delete contact us message",
+      "description": "",
+      "operationId": "AdminContactUsController_remove_v1"
+    }
+  ],
+  "Customer / Contact Us": [
+    {
+      "path": "/api/v1/contact_us",
+      "method": "POST",
+      "summary": "Create contact us message",
+      "description": "",
+      "operationId": "CustomerContactUsController_create_v1"
+    }
+  ],
+  "Customer / Address": [
+    {
+      "path": "/api/v1/address",
+      "method": "GET",
+      "summary": "List customer addresses",
+      "description": "",
+      "operationId": "CustomerAddressController_index_v1"
+    },
+    {
+      "path": "/api/v1/address/create",
+      "method": "POST",
+      "summary": "Create a new address",
+      "description": "",
+      "operationId": "CustomerAddressController_create_v1"
+    },
+    {
+      "path": "/api/v1/address/update",
+      "method": "POST",
+      "summary": "Update an existing address",
+      "description": "",
+      "operationId": "CustomerAddressController_update_v1"
+    },
+    {
+      "path": "/api/v1/address/{id}/delete",
+      "method": "GET",
+      "summary": "Delete an address",
+      "description": "",
+      "operationId": "CustomerAddressController_deleteAddress_v1"
+    },
+    {
+      "path": "/api/v1/address/{id}/restore",
+      "method": "GET",
+      "summary": "Restore a deleted address",
+      "description": "",
+      "operationId": "CustomerAddressController_restore_v1"
+    }
+  ],
+  "Admin / Commissions": [
+    {
+      "path": "/api/v1/web/admin/commissions",
+      "method": "GET",
+      "summary": "List all commissions",
+      "description": "",
+      "operationId": "AdminCommissionController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions",
+      "method": "POST",
+      "summary": "Create commission record (status = hold)",
+      "description": "",
+      "operationId": "AdminCommissionController_create_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions/{id}",
+      "method": "PUT",
+      "summary": "Update commission",
+      "description": "",
+      "operationId": "AdminCommissionController_update_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions/{id}",
+      "method": "DELETE",
+      "summary": "Delete commission",
+      "description": "",
+      "operationId": "AdminCommissionController_remove_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions/{id}/accept",
+      "method": "GET",
+      "summary": "Accept commission",
+      "description": "",
+      "operationId": "AdminCommissionController_accept_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions/{id}/reject",
+      "method": "GET",
+      "summary": "Reject commission",
+      "description": "",
+      "operationId": "AdminCommissionController_reject_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/commissions/{id}/restore",
+      "method": "GET",
+      "summary": "Restore commission",
+      "description": "",
+      "operationId": "AdminCommissionController_restore_v1"
+    }
+  ],
+  "App / Salon Commissions": [
+    {
+      "path": "/api/v1/salon/commissions",
+      "method": "GET",
+      "summary": "List finished orders with commission status for this salon",
+      "description": "",
+      "operationId": "SalonCommissionController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/salon/commissions",
+      "method": "POST",
+      "summary": "Initiate commission payment via Tap for a finished order",
+      "description": "",
+      "operationId": "SalonCommissionController_create_v1"
+    }
+  ],
+  "Admin / Reports": [
+    {
+      "path": "/api/v1/web/admin/reports/sales/overview",
+      "method": "GET",
+      "summary": "Get Today Overview",
+      "description": "",
+      "operationId": "AdminSalesReportController_getOverview_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/sales/statistics",
+      "method": "GET",
+      "summary": "Get Today Operations Statistics",
+      "description": "",
+      "operationId": "AdminSalesReportController_getStatistics_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/sales",
+      "method": "GET",
+      "summary": "Get Sales Report",
+      "description": "",
+      "operationId": "AdminSalesReportController_getSalesReport_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/sales/salons",
+      "method": "GET",
+      "summary": "Get Salons List for Report Filter",
+      "description": "",
+      "operationId": "AdminSalesReportController_getSalons_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/sales/categories",
+      "method": "GET",
+      "summary": "Get Categories List for Report Filter",
+      "description": "",
+      "operationId": "AdminSalesReportController_getCategories_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/sales/services",
+      "method": "GET",
+      "summary": "Get Services List for Report Filter",
+      "description": "",
+      "operationId": "AdminSalesReportController_getServices_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/settlement",
+      "method": "GET",
+      "summary": "Paginated settlement report list",
+      "description": "",
+      "operationId": "AdminSettlementReportController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/reports/settlement/export",
+      "method": "GET",
+      "summary": "Download settlement report as .xlsx",
+      "description": "",
+      "operationId": "AdminSettlementReportController_export_v1"
+    }
+  ],
+  "Admin / Payouts": [
+    {
+      "path": "/api/v1/web/admin/payouts/trigger",
+      "method": "POST",
+      "summary": "Manually trigger weekly payout job",
+      "description": "",
+      "operationId": "AdminPayoutsController_trigger_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/payouts",
+      "method": "GET",
+      "summary": "List all payouts",
+      "description": "",
+      "operationId": "AdminPayoutsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/payouts/{id}",
+      "method": "GET",
+      "summary": "Get single payout by id",
+      "description": "",
+      "operationId": "AdminPayoutsController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/payouts/{id}/status",
+      "method": "PATCH",
+      "summary": "Upload proof image for a payout",
+      "description": "",
+      "operationId": "AdminPayoutsController_uploadProof_v1"
+    }
+  ],
+  "Provider / Payouts": [
+    {
+      "path": "/api/v1/provider/payouts",
+      "method": "GET",
+      "summary": "List my payouts",
+      "description": "",
+      "operationId": "ProviderPayoutsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/provider/payouts/summary",
+      "method": "GET",
+      "summary": "Get payout summary — total, pending (owed), settled counts and net amounts",
+      "description": "",
+      "operationId": "ProviderPayoutsController_getSummary_v1"
+    },
+    {
+      "path": "/api/v1/provider/payouts/{id}",
+      "method": "GET",
+      "summary": "Get single payout by id",
+      "description": "",
+      "operationId": "ProviderPayoutsController_findOne_v1"
+    }
+  ],
+  "App / Disputes": [
+    {
+      "path": "/api/v1/disputes",
+      "method": "POST",
+      "summary": "Open a new dispute for a booking",
+      "description": "",
+      "operationId": "DisputeAppController_create_v1"
+    },
+    {
+      "path": "/api/v1/disputes",
+      "method": "GET",
+      "summary": "List own disputes (as client or provider)",
+      "description": "",
+      "operationId": "DisputeAppController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/disputes/settings/public",
+      "method": "GET",
+      "summary": "Public dispute settings the app needs (window, upload limit)",
+      "description": "",
+      "operationId": "DisputeAppController_publicSettings_v1"
+    },
+    {
+      "path": "/api/v1/disputes/case-types",
+      "method": "GET",
+      "summary": "Case types the caller may open for a given booking",
+      "description": "",
+      "operationId": "DisputeAppController_allowedCaseTypes_v1"
+    },
+    {
+      "path": "/api/v1/disputes/{id}",
+      "method": "GET",
+      "summary": "Get own dispute detail",
+      "description": "",
+      "operationId": "DisputeAppController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/disputes/{id}/logs",
+      "method": "GET",
+      "summary": "Get own dispute audit log",
+      "description": "",
+      "operationId": "DisputeAppController_findLogs_v1"
+    },
+    {
+      "path": "/api/v1/disputes/{id}/evidence",
+      "method": "POST",
+      "summary": "Attach evidence to own dispute",
+      "description": "",
+      "operationId": "DisputeAppController_addEvidence_v1"
+    },
+    {
+      "path": "/api/v1/disputes/{id}/response",
+      "method": "POST",
+      "summary": "Submit a follow-up response while the dispute awaits your input (WAITING_FOR_CLIENT / WAITING_FOR_PROVIDER)",
+      "description": "",
+      "operationId": "DisputeAppController_submitResponse_v1"
+    },
+    {
+      "path": "/api/v1/disputes/{id}/cancel",
+      "method": "PATCH",
+      "summary": "Cancel own open dispute",
+      "description": "",
+      "operationId": "DisputeAppController_cancel_v1"
+    }
+  ],
+  "Admin / Disputes": [
+    {
+      "path": "/api/v1/web/admin/disputes",
+      "method": "GET",
+      "summary": "List all disputes (filters + search)",
+      "description": "",
+      "operationId": "AdminDisputeController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/settings",
+      "method": "GET",
+      "summary": "View dispute settings",
+      "description": "",
+      "operationId": "AdminDisputeController_findAllSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/settings",
+      "method": "PATCH",
+      "summary": "Update dispute settings (create-if-missing)",
+      "description": "",
+      "operationId": "AdminDisputeController_updateSettings_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/{id}",
+      "method": "GET",
+      "summary": "Dispute detail including decision history + evidence",
+      "description": "",
+      "operationId": "AdminDisputeController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/{id}/logs",
+      "method": "GET",
+      "summary": "Dispute audit log (who did what)",
+      "description": "",
+      "operationId": "AdminDisputeController_findLogs_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/{id}/status",
+      "method": "PATCH",
+      "summary": "Manually transition a dispute status",
+      "description": "",
+      "operationId": "AdminDisputeController_updateStatus_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/{id}/decide",
+      "method": "PATCH",
+      "summary": "Apply (or override) a decision on a dispute",
+      "description": "",
+      "operationId": "AdminDisputeController_decide_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/disputes/{id}/evidence",
+      "method": "POST",
+      "summary": "Attach evidence to a dispute (admin)",
+      "description": "",
+      "operationId": "AdminDisputeController_addEvidence_v1"
+    }
+  ],
+  "Admin / FAQs": [
+    {
+      "path": "/api/v1/admin/faqs",
+      "method": "GET",
+      "summary": "Get all FAQs (admin)",
+      "description": "",
+      "operationId": "AdminFaqsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/faqs",
+      "method": "POST",
+      "summary": "Create a new FAQ",
+      "description": "",
+      "operationId": "AdminFaqsController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/faqs/{id}",
+      "method": "GET",
+      "summary": "Get FAQ by ID",
+      "description": "",
+      "operationId": "AdminFaqsController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/faqs/{id}",
+      "method": "PUT",
+      "summary": "Update FAQ",
+      "description": "",
+      "operationId": "AdminFaqsController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/faqs/{id}",
+      "method": "DELETE",
+      "summary": "Delete FAQ",
+      "description": "",
+      "operationId": "AdminFaqsController_remove_v1"
+    }
+  ],
+  "FAQs": [
+    {
+      "path": "/api/v1/faqs",
+      "method": "GET",
+      "summary": "List visible FAQs (public)",
+      "description": "",
+      "operationId": "FaqsController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/faqs/{id}",
+      "method": "GET",
+      "summary": "Get visible FAQ by ID (public)",
+      "description": "",
+      "operationId": "FaqsController_findOne_v1"
+    }
+  ],
+  "Admin / Privacy Policy": [
+    {
+      "path": "/api/v1/admin/privacy",
+      "method": "GET",
+      "summary": "Get all privacy policy sections (admin)",
+      "description": "",
+      "operationId": "AdminPrivacyWebController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/admin/privacy",
+      "method": "POST",
+      "summary": "Create a new privacy policy section",
+      "description": "",
+      "operationId": "AdminPrivacyWebController_create_v1"
+    },
+    {
+      "path": "/api/v1/admin/privacy/{id}",
+      "method": "GET",
+      "summary": "Get privacy policy section by ID",
+      "description": "",
+      "operationId": "AdminPrivacyWebController_findOne_v1"
+    },
+    {
+      "path": "/api/v1/admin/privacy/{id}",
+      "method": "PUT",
+      "summary": "Update privacy policy section",
+      "description": "",
+      "operationId": "AdminPrivacyWebController_update_v1"
+    },
+    {
+      "path": "/api/v1/admin/privacy/{id}",
+      "method": "DELETE",
+      "summary": "Delete privacy policy section",
+      "description": "",
+      "operationId": "AdminPrivacyWebController_remove_v1"
+    }
+  ],
+  "Mobile / Privacy Policy": [
+    {
+      "path": "/api/v1/privacy",
+      "method": "GET",
+      "summary": "Get all visible privacy policy sections (mobile)",
+      "description": "",
+      "operationId": "PrivacyAppController_findAll_v1"
+    },
+    {
+      "path": "/api/v1/privacy/{id}",
+      "method": "GET",
+      "summary": "Get privacy policy section by ID (mobile)",
+      "description": "",
+      "operationId": "PrivacyAppController_findOne_v1"
+    }
+  ],
+  "translations": [
+    {
+      "path": "/api/translations",
+      "method": "GET",
+      "summary": "Fetch translations by language, app, and/or group",
+      "description": "Used by frontend apps to load translations. `lang` is required; `app` and `group` are optional filters.",
+      "operationId": "TranslationController_findPublic"
+    },
+    {
+      "path": "/api/translations/grouped",
+      "method": "GET",
+      "summary": "Fetch all translations for an app grouped by group name",
+      "description": "Returns a nested object: `{ \"<group>\": { \"<key>\": \"<value>\" } }`. Useful for loading all translations for an app in one request.",
+      "operationId": "TranslationController_findGrouped"
+    }
+  ],
+  "admin-translations": [
+    {
+      "path": "/api/admin/translations",
+      "method": "POST",
+      "summary": "Create a translation (Admin only)",
+      "description": "",
+      "operationId": "AdminTranslationController_create"
+    },
+    {
+      "path": "/api/admin/translations",
+      "method": "GET",
+      "summary": "List translations with filters and pagination (Admin only)",
+      "description": "",
+      "operationId": "AdminTranslationController_findAll"
+    },
+    {
+      "path": "/api/admin/translations/bulk",
+      "method": "POST",
+      "summary": "Bulk create / upsert translations (Admin only)",
+      "description": "",
+      "operationId": "AdminTranslationController_bulkUpsert"
+    },
+    {
+      "path": "/api/admin/translations/groups",
+      "method": "GET",
+      "summary": "Get distinct translation groups (Admin only)",
+      "description": "",
+      "operationId": "AdminTranslationController_getGroups"
+    },
+    {
+      "path": "/api/admin/translations/{id}",
+      "method": "GET",
+      "summary": "Get a single translation row with all languages (Admin only)",
+      "description": "",
+      "operationId": "AdminTranslationController_findOne"
+    },
+    {
+      "path": "/api/admin/translations/{id}",
+      "method": "PATCH",
+      "summary": "Update a translation row (Admin only)",
+      "description": "Patch app/group/key and/or merge into the translations object. Provided language keys overwrite existing ones; unspecified languages are left untouched.",
+      "operationId": "AdminTranslationController_update"
+    },
+    {
+      "path": "/api/admin/translations/{id}",
+      "method": "DELETE",
+      "summary": "Delete a translation (Admin only)",
+      "description": "Without query params: deletes the entire row. With ?language=en: removes only that language; if it was the last one, the row is deleted.",
+      "operationId": "AdminTranslationController_remove"
+    }
+  ]
+}
