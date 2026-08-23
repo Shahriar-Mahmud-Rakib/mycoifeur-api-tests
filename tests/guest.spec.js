@@ -26,7 +26,7 @@ let testPackageId = null;
 test.describe('Guest Home API Tests', () => {
 
     test('TC-01: Should get guest home page data', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/home`, {
+        const response = await request.get(`${BASE_URL}/api/v1/home-page/categories`, {
             headers: MOBILE_HEADERS
         });
         const json = await response.json();
@@ -34,12 +34,11 @@ test.describe('Guest Home API Tests', () => {
         expect(response.status()).toBe(200);
         expect(json.success).toBe(true);
         expect(json.data).toBeTruthy();
-        console.log('✅ Guest home data fetched');
-        console.log('   Keys:', Object.keys(json.data || {}));
+        console.log('✅ Guest home categories fetched');
     });
 
     test('TC-02: Should get guest home in Arabic', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/home`, {
+        const response = await request.get(`${BASE_URL}/api/v1/home-page/categories`, {
             headers: { ...MOBILE_HEADERS, 'x-custom-lang': 'ar' }
         });
         expect(response.status()).toBe(200);
@@ -50,7 +49,7 @@ test.describe('Guest Home API Tests', () => {
 test.describe('Guest Salons API Tests', () => {
 
     test('TC-03: Should get list of salons (guest)', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/salons`, {
+        const response = await request.get(`${BASE_URL}/api/v1/salons/search`, {
             headers: MOBILE_HEADERS
         });
         const json = await response.json();
@@ -60,13 +59,11 @@ test.describe('Guest Salons API Tests', () => {
         if (json.data && json.data.data && json.data.data.length > 0) {
             testSalonId = json.data.data[0].id;
             console.log('✅ Salons fetched, first salon id:', testSalonId);
-        } else {
-            console.log('✅ Salons list returned (empty or different structure)');
         }
     });
 
     test('TC-04: Should get salons with pagination', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/salons?page=1&limit=5`, {
+        const response = await request.get(`${BASE_URL}/api/v1/salons/search?page=1&limit=5`, {
             headers: MOBILE_HEADERS
         });
         expect(response.status()).toBe(200);
@@ -74,7 +71,7 @@ test.describe('Guest Salons API Tests', () => {
     });
 
     test('TC-05: Should get salons with search filter', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/salons?search=salon`, {
+        const response = await request.get(`${BASE_URL}/api/v1/salons/search?search=salon`, {
             headers: MOBILE_HEADERS
         });
         expect(response.status()).toBe(200);
@@ -82,7 +79,7 @@ test.describe('Guest Salons API Tests', () => {
     });
 
     test('TC-06: Should get salons with location filter', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/salons?lat=24.7136&long=46.6753`, {
+        const response = await request.get(`${BASE_URL}/api/v1/salons/search?lat=24.7136&long=46.6753`, {
             headers: MOBILE_HEADERS
         });
         console.log('Salons location filter status:', response.status());
@@ -92,7 +89,7 @@ test.describe('Guest Salons API Tests', () => {
     });
 
     test('TC-07: Should get best salons (guest)', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/salons/best`, {
+        const response = await request.get(`${BASE_URL}/api/v1/salons/search?is_featured=1`, {
             headers: MOBILE_HEADERS
         });
         const json = await response.json();
@@ -103,8 +100,7 @@ test.describe('Guest Salons API Tests', () => {
     });
 
     test('TC-08: Should get salon offers (guest)', async ({ request }) => {
-        // Use a known salon ID or skip if not available
-        const salonId = testSalonId || 1;
+        const salonId = testSalonId || 1007485;
         const response = await request.get(`${BASE_URL}/api/v1/guest/salons/${salonId}/offers`, {
             headers: MOBILE_HEADERS
         });
@@ -123,7 +119,6 @@ test.describe('Guest Salons API Tests', () => {
             headers: MOBILE_HEADERS
         });
         const json = await response.json();
-        // API may return 200 with empty data or 404 - both are acceptable behaviors
         if (response.status() === 200) {
             console.log('ℹ️  Non-existent salon returns 200 with empty/null data (acceptable)');
         } else {
@@ -136,7 +131,7 @@ test.describe('Guest Salons API Tests', () => {
 test.describe('Guest Services API Tests', () => {
 
     test('TC-10: Should get list of services (guest)', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/services`, {
+        const response = await request.get(`${BASE_URL}/api/v1/services`, {
             headers: MOBILE_HEADERS
         });
         const json = await response.json();
@@ -150,7 +145,7 @@ test.describe('Guest Services API Tests', () => {
     });
 
     test('TC-11: Should get services with pagination', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/guest/services?page=1&limit=5`, {
+        const response = await request.get(`${BASE_URL}/api/v1/services?page=1&limit=5`, {
             headers: MOBILE_HEADERS
         });
         expect(response.status()).toBe(200);

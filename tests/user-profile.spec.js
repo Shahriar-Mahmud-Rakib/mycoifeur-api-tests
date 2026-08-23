@@ -36,7 +36,7 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { firstName: 'UpdatedNameAuto' }
+            data: { firstName: 'UpdatedNameAuto', lastName: 'User' }
         });
         expect([200, 201]).toContain(response.status());
     });
@@ -74,7 +74,7 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { email: 'not-an-email' }
+            data: { email: 'not-an-email' }
         });
         expect([400, 422, 500]).toContain(response.status()); // API should reject
     });
@@ -83,7 +83,7 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { firstName: BOUNDARY.MAX_STRING_255 }
+            data: { firstName: BOUNDARY.MAX_STRING_255 }
         });
         // Should either truncate, accept, or throw 400. But never 500 internal server error.
         expect(response.status()).not.toBe(500); 
@@ -93,7 +93,7 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { firstName: '' }
+            data: { firstName: '' }
         });
         expect(response.status()).not.toBe(500); 
     });
@@ -103,7 +103,7 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { firstName: SQL_INJECTION_PAYLOADS[0] } // e.g. "' OR 1=1--"
+            data: { firstName: SQL_INJECTION_PAYLOADS[0] } // e.g. "' OR 1=1--"
         });
         expect(response.status()).not.toBe(500); 
     });
@@ -112,9 +112,9 @@ test.describe('Exhaustive Profile Tests', () => {
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: { firstName: XSS_PAYLOADS[0] } // e.g. "<script>alert(1)</script>"
+            data: { firstName: XSS_PAYLOADS[0] } // e.g. "<script>alert(1)</script>"
         });
-        expect(response.status()).not.toBe(500); 
+        expect(response.status()).not.toBe(500);  
         
         // Fetch it back to see if it's sanitized
         const getRes = await request.get(`${BASE_URL}/api/v1/user/profile`, {
@@ -137,17 +137,10 @@ test.describe('Exhaustive Profile Tests', () => {
     // 11. File upload APIs
     // Updating profile picture
     test('TC-PROF-UPL-01: [File Upload] Update profile avatar', async ({ request }) => {
-        // We will pass a dummy string for file if actual file is not available in test runner
         const token = await getUserToken(request);
         const response = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` },
-            multipart: {
-                image: {
-                    name: 'test-avatar.jpg',
-                    mimeType: 'image/jpeg',
-                    buffer: Buffer.from('fake-image-content-for-testing')
-                }
-            }
+            data: { photo: 'uploads/images/users/test-avatar.jpg' }
         });
         expect(response.status()).not.toBe(500);
     });

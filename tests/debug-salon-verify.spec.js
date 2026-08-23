@@ -14,12 +14,17 @@ test('Check Salon Verify Field', async ({ request }) => {
     });
 
     const json = await res.json();
-    console.log('Salon Data Keys:', Object.keys(json.data));
-    console.log('Salon verify fields:', {
-        is_verified: json.data.is_verified,
-        isVerified: json.data.isVerified,
-        status: json.data.status,
-        isActive: json.data.isActive,
-        is_active: json.data.is_active
-    });
+    if (json.data) {
+        console.log('Salon Data Keys:', Object.keys(json.data));
+        console.log('Salon verify fields:', {
+            is_verified: json.data.is_verified,
+            isVerified: json.data.isVerified,
+            status: json.data.status,
+            isActive: json.data.isActive,
+            is_active: json.data.is_active
+        });
+    } else {
+        console.log('Salon info response:', json);
+    }
+    expect([200, 404]).toContain(res.status());
 });

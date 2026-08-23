@@ -19,7 +19,7 @@ module.exports = defineConfig({
         ['html']
     ],
     use: {
-        baseURL: process.env.BASE_URL || 'https://lambda-dev.mycoifeur.com.sa',
+        baseURL: process.env.BASE_URL || 'https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com',
         extraHTTPHeaders: {
             'x-custom-lang': process.env.CUSTOM_LANG || 'en',
             'x-app-version': process.env.APP_VERSION || '1.1.9',

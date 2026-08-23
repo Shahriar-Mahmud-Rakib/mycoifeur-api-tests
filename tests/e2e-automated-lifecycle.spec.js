@@ -29,14 +29,8 @@ test.describe('🔄 Fully Automated E2E Lifecycle Testing with Data Cleanup', ()
         expect(testUser.id).toBeDefined();
         console.log(`Test user created with ID: ${testUser.id}`);
 
-        // 2. Perform Login to get User Token
-        const loginRes = await request.post(`${BASE_URL}/api/v1/auth/login`, {
-            headers: MOBILE_HEADERS,
-            data: { user: testUser.payload.email, password: testUser.payload.password }
-        });
-        expect(loginRes.status()).toBe(200);
-        const loginJson = await loginRes.json();
-        const userToken = loginJson.data?.accessToken;
+        // 2. User Token is already returned from OTP registration flow
+        const userToken = testUser.accessToken;
         expect(userToken).toBeDefined();
 
         // 3. Test GET Profile
@@ -56,8 +50,8 @@ test.describe('🔄 Fully Automated E2E Lifecycle Testing with Data Cleanup', ()
                 ...MOBILE_HEADERS,
                 'Authorization': `Bearer ${userToken}`
             },
-            multipart: {
-                firstName: 'UpdatedName',   // UpdateUserDto uses firstName not fname
+            data: {
+                firstName: 'UpdatedName',
             }
         });
         expect(updateRes.status()).toBe(200);

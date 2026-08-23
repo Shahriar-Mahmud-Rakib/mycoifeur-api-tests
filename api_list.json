@@ -213,6 +213,13 @@
       "operationId": "UserController_updateSalonProfileUpdated_v2"
     },
     {
+      "path": "/api/v1/user/{id}/salon-verification",
+      "method": "PATCH",
+      "summary": "Submit or update salon verification details for a user",
+      "description": "",
+      "operationId": "UserController_createProviderProfile_v1"
+    },
+    {
       "path": "/api/v1/user/reviews",
       "method": "GET",
       "summary": "Get current user reviews list",
@@ -248,6 +255,13 @@
       "summary": "",
       "description": "",
       "operationId": "FileUploadController_uploadFile"
+    },
+    {
+      "path": "/api/v1/files/uploadable-presigned-url",
+      "method": "POST",
+      "summary": "Generate a presigned URL for direct client-side upload",
+      "description": "Returns a short-lived URL the client can PUT the file bytes to directly, bypassing this API entirely. The returned `key` is the storage path to submit in subsequent requests (e.g. verification submission) once the upload completes.",
+      "operationId": "FileUploadController_getPresignedUploadUrl_v1"
     }
   ],
   "Admin / File Galleries": [
@@ -803,13 +817,6 @@
   ],
   "User Auth": [
     {
-      "path": "/api/v1/auth/user/register",
-      "method": "POST",
-      "summary": "User/Salon Registration",
-      "description": "Register a new user or salon with phone verification code sent via SMS",
-      "operationId": "UserAuthController_register_v1"
-    },
-    {
       "path": "/api/v1/auth/verify-code",
       "method": "POST",
       "summary": "Verify Code",
@@ -829,13 +836,6 @@
       "summary": "Send OTP",
       "description": "",
       "operationId": "UserAuthController_sendOtp_v1"
-    },
-    {
-      "path": "/api/v1/auth/login",
-      "method": "POST",
-      "summary": "Login",
-      "description": "",
-      "operationId": "UserAuthController_login_v1"
     },
     {
       "path": "/api/v1/auth/forgot-password",
@@ -1156,7 +1156,7 @@
       "path": "/api/v1/cart/add",
       "method": "POST",
       "summary": "Add item to cart",
-      "description": "",
+      "description": "Available to both guests and authenticated customers. Guests receive a guestCartId in the response — pass it back on subsequent calls.",
       "operationId": "CustomerOrderController_addToCart_v1"
     },
     {
@@ -1212,7 +1212,7 @@
       "path": "/api/v1/cart/available_times",
       "method": "GET",
       "summary": "Get available times for booking",
-      "description": "",
+      "description": "Available to both guests and authenticated customers. Guests should pass salonId explicitly (and guestCartId, once one has been issued, to exclude their own held slot).",
       "operationId": "CustomerOrderController_getAvailableTimes_v1"
     },
     {
@@ -1256,6 +1256,13 @@
       "summary": "Rate a salon after order completion",
       "description": "",
       "operationId": "CustomerOrderController_setRate_v1"
+    },
+    {
+      "path": "/api/v1/orders/{orderId}/logs",
+      "method": "GET",
+      "summary": "Get order audit logs",
+      "description": "",
+      "operationId": "CustomerOrderController_getLogsByOrderId_v1"
     }
   ],
   "Salon / Orders": [
@@ -1328,6 +1335,13 @@
       "summary": "Reject an order",
       "description": "",
       "operationId": "SalonOrderController_rejectOrder_v1"
+    },
+    {
+      "path": "/api/v1/salon/orders/{orderId}/logs",
+      "method": "GET",
+      "summary": "Get order audit logs",
+      "description": "",
+      "operationId": "SalonOrderController_getLogsByOrderId_v1"
     }
   ],
   "Admin / Orders": [
@@ -1344,6 +1358,13 @@
       "summary": "List cart orders",
       "description": "",
       "operationId": "AdminOrderController_cartsList_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/carts/{id}/show",
+      "method": "GET",
+      "summary": "Get cart details",
+      "description": "",
+      "operationId": "AdminOrderController_cartShow_v1"
     },
     {
       "path": "/api/v1/web/admin/orders/pending",
@@ -1386,6 +1407,13 @@
       "summary": "Get order audit logs",
       "description": "",
       "operationId": "AdminOrderController_getLogs_v1"
+    },
+    {
+      "path": "/api/v1/web/admin/orders/{orderId}/logs",
+      "method": "GET",
+      "summary": "Get order audit logs by order id",
+      "description": "",
+      "operationId": "AdminOrderController_getLogsByOrderId_v1"
     },
     {
       "path": "/api/v1/web/admin/orders/{id}/assign",
@@ -1744,6 +1772,13 @@
       "summary": "Update device token for FCM",
       "description": "",
       "operationId": "UserNotificationsController_updateDeviceToken_v1"
+    },
+    {
+      "path": "/api/v1/user/notifications/test-publish",
+      "method": "POST",
+      "summary": "TEST ONLY — publish a raw envelope to the dispatcher pipeline",
+      "description": "",
+      "operationId": "UserNotificationsController_testPublish_v1"
     }
   ],
   "Locations": [

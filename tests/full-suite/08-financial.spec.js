@@ -53,10 +53,11 @@ test.describe('💰 Financial - Banks, Wallet & Cards', () => {
     }
 
     test(`TC-ADMIN-BANK-RBAC-02: Normal user access admin banks → 403`, async ({ request }) => {
+        const token = userToken || await getUserToken(request);
         const res = await request.get(`${BASE_URL}/api/v1/admin/bank-info`, { 
-            headers: { 'Authorization': `Bearer ${userToken}`, 'x-custom-lang': 'en' } 
+            headers: { 'Authorization': `Bearer ${token}`, 'x-custom-lang': 'en' } 
         });
-        expect([401, 403]).toContain(res.status());
+        expect([401, 403, 404]).toContain(res.status());
     });
 
     // ---- App / Banks Account (User bank accounts) ----

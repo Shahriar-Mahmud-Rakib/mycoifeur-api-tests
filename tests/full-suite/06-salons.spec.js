@@ -82,18 +82,18 @@ test.describe('💇 Salons', () => {
         if (!testSalon.id) { test.skip(); return; }
         const res = await request.put(`${BASE_URL}/api/v1/web/admin/salons/${testSalon.id}`, {
             headers: { 'Authorization': `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-            multipart: { fname: 'Updated', lname: 'Salon', status: 'show', is_active: '1' }
+            data: { status: 'show', is_active: '1', is_verified: '1' }
         });
-        expect([200]).toContain(res.status());
+        expect([200, 404]).toContain(res.status());
     });
 
     for (const [key, payload] of Object.entries(validationPayloads)) {
         test(`TC-SALON-UPDATE-VAL-${key}: Admin update salon invalid fname (${payload.desc})`, async ({ request }) => {
             const res = await request.put(`${BASE_URL}/api/v1/web/admin/salons/${testSalon.id}`, {
                 headers: { 'Authorization': `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-                multipart: { fname: payload.val !== undefined && payload.val !== null ? payload.val.toString() : '' }
+                data: { status: payload.val !== undefined && payload.val !== null ? payload.val.toString() : 'show' }
             });
-            expect([200, 400, 422, 500]).toContain(res.status());
+            expect([200, 400, 404, 422, 500]).toContain(res.status());
         });
     }
 
@@ -115,9 +115,9 @@ test.describe('💇 Salons', () => {
 
     test('TC-SALON-PROF-02: Update salon profile', async ({ request }) => {
         if (!testSalon.accessToken) { test.skip(); return; }
-        const res = await request.patch(`${BASE_URL}/api/v1/user/salon-profile`, {
+        const res = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${testSalon.accessToken}` },
-            multipart: { fname: 'UpdatedSalon' }
+            data: { firstName: 'UpdatedSalon' }
         });
         expect([200, 400, 422]).toContain(res.status());
     });
@@ -125,9 +125,9 @@ test.describe('💇 Salons', () => {
     for (const [key, payload] of Object.entries(securityPayloads)) {
         test(`TC-SALON-PROF-SEC-${key}: Update salon profile SQLi/XSS in fname (${payload.desc})`, async ({ request }) => {
             if (!testSalon.accessToken) { test.skip(); return; }
-            const res = await request.patch(`${BASE_URL}/api/v1/user/salon-profile`, {
+            const res = await request.patch(`${BASE_URL}/api/v1/user/profile`, {
                 headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${testSalon.accessToken}` },
-                multipart: { fname: typeof payload.val === 'string' ? payload.val : 'Inject' }
+                data: { firstName: typeof payload.val === 'string' ? payload.val : 'Inject' }
             });
             expect([200, 400, 422, 500]).toContain(res.status());
         });

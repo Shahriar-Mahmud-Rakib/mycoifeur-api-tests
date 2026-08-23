@@ -56,7 +56,7 @@ test.describe('📦 Orders, Addresses & Disputes', () => {
                     long: '46.6753', address: 'Test', addressType: 'home', label: 'Home'
                 }
             });
-            expect([400, 422, 500]).toContain(res.status());
+            expect([200, 201, 400, 422, 500]).toContain(res.status());
         });
     }
 

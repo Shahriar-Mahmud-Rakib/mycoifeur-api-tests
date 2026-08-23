@@ -20,7 +20,7 @@ test.describe('Authenticated Home API Tests', () => {
 
     test('TC-01: Should get home page data (authenticated)', async ({ request }) => {
         const token = await getUserToken(request);
-        const response = await request.get(`${BASE_URL}/api/v1/home`, {
+        const response = await request.get(`${BASE_URL}/api/v1/home-page/categories`, {
             headers: { ...MOBILE_HEADERS, 'Authorization': `Bearer ${token}` }
         });
         const json = await response.json();
@@ -29,28 +29,21 @@ test.describe('Authenticated Home API Tests', () => {
         expect(json.success).toBe(true);
         expect(json.data).toBeTruthy();
         console.log('✅ Authenticated home fetched');
-        console.log('   Keys:', Object.keys(json.data || {}));
     });
 
     test('TC-02: Should get home in Arabic', async ({ request }) => {
         const token = await getUserToken(request);
-        const response = await request.get(`${BASE_URL}/api/v1/home`, {
+        const response = await request.get(`${BASE_URL}/api/v1/home-page/categories`, {
             headers: { ...MOBILE_HEADERS, 'x-custom-lang': 'ar', 'Authorization': `Bearer ${token}` }
         });
         expect(response.status()).toBe(200);
         console.log('✅ Home in Arabic fetched');
     });
 
-    test('TC-03: Should fail home without auth', async ({ request }) => {
-        const response = await request.get(`${BASE_URL}/api/v1/home`, { headers: MOBILE_HEADERS });
+    test('TC-03: Should fail home without auth or return public home', async ({ request }) => {
+        const response = await request.get(`${BASE_URL}/api/v1/home-page/categories`, { headers: MOBILE_HEADERS });
         console.log('Home no auth status:', response.status());
-        // Document behavior - may or may not require auth
-        const json = await response.json();
-        if (response.status() === 200) {
-            console.log('ℹ️  Home is public (no auth needed)');
-        } else {
-            console.log('✅ Home requires auth, status:', response.status());
-        }
+        expect([200, 401]).toContain(response.status());
     });
 });
 

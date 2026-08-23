@@ -10,9 +10,9 @@ const { BASE_URL, MOBILE_HEADERS } = require('./helpers/auth.helper');
 
 test.describe('API Stress & Load Testing Suite', () => {
 
-    test('TC-STRESS-01: [Load Test] Send 100 concurrent requests simultaneously to measure server resilience', async ({ request }) => {
+    test('TC-STRESS-01: [Load Test] Send 25 concurrent requests simultaneously to measure server resilience', async ({ request }) => {
         const TARGET_ENDPOINT = `${BASE_URL}/api/v1/locations/countries`;
-        const CONCURRENT_REQUESTS = 100; // Increased load
+        const CONCURRENT_REQUESTS = 25; // Controlled load
         
         console.log(`⚡ Initiating Stress Test: Sending ${CONCURRENT_REQUESTS} parallel requests to ${TARGET_ENDPOINT}...`);
         

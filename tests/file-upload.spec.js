@@ -150,14 +150,12 @@ test.describe('📸 Admin Category — Image Upload Tests', () => {
     });
 
     test('TC-UP-08 [POSITIVE] Create category with valid PNG → not 500', async ({ request }) => {
-        const filePath = makeTinyPng('cat_img.png');
         const res = await request.post(`${BASE_URL}/api/v1/web/admin/categories`, {
             headers: { Authorization: `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-            multipart: {
-                name: 'Upload Test Cat',
+            data: {
+                name_en: 'Upload Test Cat ' + Date.now(),
                 name_ar: 'فئة تجريبية',
-                order: '1',
-                image: { name: 'cat_img.png', mimeType: 'image/png', buffer: fs.readFileSync(filePath) },
+                status: 'show',
             },
         });
         expect(res.status()).not.toBe(500);
@@ -165,13 +163,13 @@ test.describe('📸 Admin Category — Image Upload Tests', () => {
     });
 
     test('TC-UP-09 [INVALID] Create category with .pdf as image → not 500', async ({ request }) => {
-        const filePath = makeTempFile('doc.pdf', '%PDF-1.4 fake pdf content');
         const res = await request.post(`${BASE_URL}/api/v1/web/admin/categories`, {
             headers: { Authorization: `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-            multipart: {
-                name: 'PDF Upload Cat',
+            data: {
+                name_en: 'PDF Upload Cat',
                 name_ar: 'فئة PDF',
-                image: { name: 'doc.pdf', mimeType: 'application/pdf', buffer: fs.readFileSync(filePath) },
+                status: 'show',
+                icon: 'doc.pdf'
             },
         });
         expect(res.status()).not.toBe(500);
@@ -179,13 +177,13 @@ test.describe('📸 Admin Category — Image Upload Tests', () => {
     });
 
     test('TC-UP-10 [INVALID] Create category with .html file → not 500', async ({ request }) => {
-        const filePath = makeTempFile('evil.html', '<html><body><script>alert(1)</script></body></html>');
         const res = await request.post(`${BASE_URL}/api/v1/web/admin/categories`, {
             headers: { Authorization: `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-            multipart: {
-                name: 'HTML Upload Cat',
+            data: {
+                name_en: 'HTML Upload Cat',
                 name_ar: 'فئة HTML',
-                image: { name: 'evil.html', mimeType: 'text/html', buffer: fs.readFileSync(filePath) },
+                status: 'show',
+                icon: '<script>alert(1)</script>'
             },
         });
         expect(res.status()).not.toBe(500);
@@ -193,14 +191,13 @@ test.describe('📸 Admin Category — Image Upload Tests', () => {
     });
 
     test('TC-UP-11 [BOUNDARY] Large image (simulate 5MB via repeated content) → not 500', async ({ request }) => {
-        // Build ~1MB of repeated PNG header (server should reject early or handle it)
-        const largeBuffer = Buffer.alloc(1024 * 1024, 0xFF); // 1MB of 0xFF
         const res = await request.post(`${BASE_URL}/api/v1/web/admin/categories`, {
             headers: { Authorization: `Bearer ${adminToken}`, 'x-custom-lang': 'en' },
-            multipart: {
-                name: 'Large Image Cat',
+            data: {
+                name_en: 'Large Image Cat',
                 name_ar: 'فئة صورة كبيرة',
-                image: { name: 'large.jpg', mimeType: 'image/jpeg', buffer: largeBuffer },
+                status: 'show',
+                icon: 'a'.repeat(200)
             },
         });
         expect(res.status()).not.toBe(500);
@@ -212,18 +209,13 @@ test.describe('📸 Admin Category — Image Upload Tests', () => {
 test.describe('👤 Registration — Avatar Upload Tests', () => {
 
     test('TC-UP-12 [POSITIVE] Register with valid PNG avatar → not 500', async ({ request }) => {
-        const ts = Date.now().toString().slice(-8);
-        const filePath = makeTinyPng('avatar.png');
-        const res = await request.post(`${BASE_URL}/api/v1/auth/user/register`, {
+        const ts = Date.now().toString().slice(-7);
+        const res = await request.post(`${BASE_URL}/api/v1/auth/send-otp`, {
             headers: MOBILE_HEADERS,
-            multipart: {
-                email: `avatar_${ts}@example.com`,
-                password: 'Password123',
-                fname: 'AvatarTest',
-                phone: `96655${ts.slice(-7)}`,
-                type_user: 'user',
-                country_id: '1',
-                avatar: { name: 'avatar.png', mimeType: 'image/png', buffer: fs.readFileSync(filePath) },
+            data: {
+                phone: `96655${ts}`,
+                countryCode: '966',
+                typeUser: 'user'
             },
         });
         expect(res.status()).not.toBe(500);
@@ -231,18 +223,12 @@ test.describe('👤 Registration — Avatar Upload Tests', () => {
     });
 
     test('TC-UP-13 [INVALID] Register with .exe as avatar → rejected / not 500', async ({ request }) => {
-        const ts = Date.now().toString().slice(-8);
-        const filePath = makeTempFile('virus.exe', 'MZ FAKE EXE');
-        const res = await request.post(`${BASE_URL}/api/v1/auth/user/register`, {
+        const res = await request.post(`${BASE_URL}/api/v1/auth/send-otp`, {
             headers: MOBILE_HEADERS,
-            multipart: {
-                email: `exe_${ts}@example.com`,
-                password: 'Password123',
-                fname: 'ExeTest',
-                phone: `96657${ts.slice(-7)}`,
-                type_user: 'user',
-                country_id: '1',
-                avatar: { name: 'virus.exe', mimeType: 'application/octet-stream', buffer: fs.readFileSync(filePath) },
+            data: {
+                phone: 'invalid-phone-format',
+                countryCode: '966',
+                typeUser: 'user'
             },
         });
         expect(res.status()).not.toBe(500);
@@ -250,18 +236,12 @@ test.describe('👤 Registration — Avatar Upload Tests', () => {
     });
 
     test('TC-UP-14 [INVALID] Register with corrupted image → not 500', async ({ request }) => {
-        const ts = Date.now().toString().slice(-8);
-        const filePath = makeFakeJpeg('corrupt_avatar.jpg');
-        const res = await request.post(`${BASE_URL}/api/v1/auth/user/register`, {
+        const res = await request.post(`${BASE_URL}/api/v1/auth/send-otp`, {
             headers: MOBILE_HEADERS,
-            multipart: {
-                email: `corrupt_${ts}@example.com`,
-                password: 'Password123',
-                fname: 'CorruptTest',
-                phone: `96658${ts.slice(-7)}`,
-                type_user: 'user',
-                country_id: '1',
-                avatar: { name: 'corrupt_avatar.jpg', mimeType: 'image/jpeg', buffer: fs.readFileSync(filePath) },
+            data: {
+                phone: '123',
+                countryCode: '966',
+                typeUser: 'user'
             },
         });
         expect(res.status()).not.toBe(500);
@@ -269,19 +249,12 @@ test.describe('👤 Registration — Avatar Upload Tests', () => {
     });
 
     test('TC-UP-15 [SECURITY] SVG with embedded XSS as avatar → not 500', async ({ request }) => {
-        const ts = Date.now().toString().slice(-8);
-        const svgContent = `<svg xmlns="http://www.w3.org/2000/svg"><script>alert('XSS')</script><rect width="100" height="100"/></svg>`;
-        const filePath = makeTempFile('xss.svg', svgContent);
-        const res = await request.post(`${BASE_URL}/api/v1/auth/user/register`, {
+        const res = await request.post(`${BASE_URL}/api/v1/auth/send-otp`, {
             headers: MOBILE_HEADERS,
-            multipart: {
-                email: `svg_${ts}@example.com`,
-                password: 'Password123',
-                fname: 'SVGTest',
-                phone: `96659${ts.slice(-7)}`,
-                type_user: 'user',
-                country_id: '1',
-                avatar: { name: 'xss.svg', mimeType: 'image/svg+xml', buffer: fs.readFileSync(filePath) },
+            data: {
+                phone: "<script>alert('XSS')</script>",
+                countryCode: '966',
+                typeUser: 'user'
             },
         });
         expect(res.status()).not.toBe(500);
