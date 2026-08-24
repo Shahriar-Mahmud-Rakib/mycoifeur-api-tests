@@ -1,0 +1,4 @@
+HTTP Status: 400 (Bad Request)
+Endpoint: DELETE https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards/39
+Error Message: Cannot delete the only card. Add another first.
+Timestamp: 2026-08-24T04:43:14.818Z

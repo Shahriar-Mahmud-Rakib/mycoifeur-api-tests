@@ -1,0 +1,1 @@
+✅ [TC-VC-RV-02] Response time: 193ms

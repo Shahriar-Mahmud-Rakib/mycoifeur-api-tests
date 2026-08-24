@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-06] Admin salons schema valid

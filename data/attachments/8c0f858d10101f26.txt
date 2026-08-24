@@ -1,0 +1,1 @@
+✅ Missing Apple token rejected, status: 404 Cannot POST /api/v1/auth/apple/login

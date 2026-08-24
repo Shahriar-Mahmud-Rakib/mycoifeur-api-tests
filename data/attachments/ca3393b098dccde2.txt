@@ -1,0 +1,2 @@
+Banks status: 200
+✅ No banks yet

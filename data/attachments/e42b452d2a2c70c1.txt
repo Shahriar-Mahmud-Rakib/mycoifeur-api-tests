@@ -1,0 +1,2 @@
+Get addresses status: 200
+✅ Addresses fetched

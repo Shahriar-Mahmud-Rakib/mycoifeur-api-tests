@@ -1,0 +1,4 @@
+HTTP Status: 422 (Unprocessable Entity)
+Endpoint: POST https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards
+Error Message: Unprocessable Entity Exception
+Timestamp: 2026-08-24T04:43:15.560Z

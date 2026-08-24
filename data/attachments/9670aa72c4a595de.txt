@@ -1,0 +1,1 @@
+✅ [TC-L-RV-01] Response schema fully validated

@@ -1,0 +1,1 @@
+✅ [TC-UP-07] SQL inject type field → 404

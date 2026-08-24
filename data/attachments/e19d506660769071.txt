@@ -1,0 +1,2 @@
+Missing email status: 422
+✅ Missing email correctly rejected

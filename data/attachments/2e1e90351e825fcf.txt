@@ -1,0 +1,2 @@
+Delete VIP status: 200
+✅ VIP deleted

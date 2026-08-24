@@ -1,0 +1,2 @@
+Package 1 show status: 404
+ℹ️  Package show response: Cannot GET /api/v1/guest/packages/1/show

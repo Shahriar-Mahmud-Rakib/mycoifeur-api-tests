@@ -1,0 +1,2 @@
+Salons by category status: 200
+✅ Salons by category fetched

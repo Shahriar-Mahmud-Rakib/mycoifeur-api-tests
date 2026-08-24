@@ -1,0 +1,1 @@
+✅ [TC-RBAC-IT-06] Special chars token rejected: 401

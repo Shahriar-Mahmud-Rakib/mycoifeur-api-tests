@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-04] Admin users schema valid + no password field

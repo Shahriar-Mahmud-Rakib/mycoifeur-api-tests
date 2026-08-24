@@ -1,0 +1,1 @@
+✅ [TC-CAT-08] No auth → 401

@@ -1,0 +1,2 @@
+Terms page status: 404
+ℹ️  Terms page response: Cannot GET /api/v1/pages/terms-conditions

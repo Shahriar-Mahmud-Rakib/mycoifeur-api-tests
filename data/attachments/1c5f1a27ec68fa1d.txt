@@ -1,0 +1,1 @@
+✅ [TC-CAT-SRH-02] SQL inject search → 200

@@ -1,0 +1,1 @@
+✅ [TC-VRC-02] Missing code rejected: 422

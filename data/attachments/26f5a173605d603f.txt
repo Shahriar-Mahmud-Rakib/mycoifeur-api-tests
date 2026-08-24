@@ -1,0 +1,2 @@
+Promo codes status: 200
+✅ Promo codes fetched, count: 4

@@ -1,0 +1,1 @@
+✅ [TC-SL-02] Wrong salon password rejected: 422

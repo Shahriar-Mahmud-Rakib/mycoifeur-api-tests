@@ -1,0 +1,1 @@
+✅ [TC-RV-SC-07] Invalid endpoint → 404

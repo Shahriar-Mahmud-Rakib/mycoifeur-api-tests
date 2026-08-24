@@ -1,0 +1,2 @@
+Package detail status: 404
+ℹ️  Package detail: Cannot GET /api/v1/web/salon/packages/71

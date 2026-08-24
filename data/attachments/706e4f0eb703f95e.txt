@@ -1,0 +1,2 @@
+VIP detail status: 200
+✅ VIP details fetched

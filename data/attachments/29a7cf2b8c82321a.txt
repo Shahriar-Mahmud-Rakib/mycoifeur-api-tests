@@ -1,0 +1,2 @@
+Admin calendar status: 200
+✅ Admin calendar fetched

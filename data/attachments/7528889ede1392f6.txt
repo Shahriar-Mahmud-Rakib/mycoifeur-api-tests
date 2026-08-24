@@ -1,0 +1,1 @@
+✅ [TC-UP-15] SVG XSS avatar → 400

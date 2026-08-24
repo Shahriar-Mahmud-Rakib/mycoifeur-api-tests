@@ -1,0 +1,2 @@
+Missing message status: 422
+✅ Missing message correctly rejected

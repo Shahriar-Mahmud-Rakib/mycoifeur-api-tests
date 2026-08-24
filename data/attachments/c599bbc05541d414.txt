@@ -1,0 +1,2 @@
+Web salon offers status: 200
+✅ Offers fetched, count: 0

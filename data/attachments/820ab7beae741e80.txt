@@ -1,0 +1,1 @@
+✅ [TC-AS-08] Long app_name → 404

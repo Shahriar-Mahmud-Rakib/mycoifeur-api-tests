@@ -1,0 +1,9 @@
+Balance status: 200
+✅ Balance fetched: {
+  wallet: 0,
+  lockedBalance: 0,
+  totalIn: 0,
+  totalOut: 0,
+  history: [],
+  total: 0
+}

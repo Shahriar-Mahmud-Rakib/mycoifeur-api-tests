@@ -1,0 +1,1 @@
+✅ [TC-L-DT-02] Array as password handled: 500

@@ -1,0 +1,2 @@
+Services by category status: 200
+✅ Services by category fetched

@@ -1,0 +1,1 @@
+✅ [TC-UL-03] Non-existent user rejected: 404

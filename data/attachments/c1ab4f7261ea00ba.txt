@@ -1,0 +1,14 @@
+✅ [TC-RV-SCHEMA-05] Overview schema valid, keys: [
+  'artist_statics',
+  'salon_statics',
+  'users_statics',
+  'orders_statics',
+  'rejected_orders_statics',
+  'all_orders_statics',
+  'total_sales',
+  'salons_count',
+  'artist_count',
+  'userCounts',
+  'orderCounts',
+  'chartLabels'
+]

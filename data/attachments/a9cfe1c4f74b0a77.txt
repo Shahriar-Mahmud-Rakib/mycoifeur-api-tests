@@ -1,0 +1,1 @@
+✅ [TC-VRC-01] Invalid token rejected: 403

@@ -1,0 +1,1 @@
+✅ [TC-CAT-15] Empty name → 422

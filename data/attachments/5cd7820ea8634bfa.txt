@@ -1,0 +1,2 @@
+Add bank status: 422
+ℹ️  Add bank: Unprocessable Entity Exception

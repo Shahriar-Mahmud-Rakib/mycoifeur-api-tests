@@ -1,0 +1,1 @@
+✅ [TC-RT-RV-04] Invalid refresh → 4xx: 401

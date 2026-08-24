@@ -1,0 +1,1 @@
+ℹ️  Non-existent salon returns 200 with empty/null data (acceptable)

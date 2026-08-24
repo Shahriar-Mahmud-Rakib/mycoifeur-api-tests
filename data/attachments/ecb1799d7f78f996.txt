@@ -1,0 +1,2 @@
+Cities status: 200
+✅ Cities fetched successfully

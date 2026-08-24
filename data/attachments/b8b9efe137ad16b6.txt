@@ -1,0 +1,2 @@
+About us page status: 404
+ℹ️  About us response: Cannot GET /api/v1/pages/about-us

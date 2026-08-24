@@ -1,0 +1,1 @@
+✅ [TC-RBAC-IT-04] Empty Bearer rejected: 401

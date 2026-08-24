@@ -1,0 +1,1 @@
+✅ [TC-WD-05] Invalid day name → 404

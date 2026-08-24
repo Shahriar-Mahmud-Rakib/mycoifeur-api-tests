@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "body": {
+    "statusCode": 200,
+    "success": true,
+    "message": "Default card set successfully",
+    "data": {
+      "id": 39,
+      "cardNumber": "5123450000000008",
+      "cardholderName": "Test User",
+      "expiryDate": "01/39",
+      "cvv": "100",
+      "isDefault": true,
+      "userId": 1010571,
+      "createdAt": "2026-08-24T04:43:13.090Z",
+      "updatedAt": "2026-08-24T04:43:13.951Z"
+    }
+  }
+}

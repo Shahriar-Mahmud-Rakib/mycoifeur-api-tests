@@ -1,0 +1,2 @@
+Guest packages status: 404
+ℹ️  Guest packages response: 404 Cannot GET /api/v1/guest/packages

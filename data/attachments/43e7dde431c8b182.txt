@@ -1,0 +1,2 @@
+Ads list status: 404
+ℹ️  Ads endpoint returned: 404

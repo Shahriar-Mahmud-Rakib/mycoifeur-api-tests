@@ -1,0 +1,1 @@
+✅ [TC-SRH-03] Search salons "salon" → 200

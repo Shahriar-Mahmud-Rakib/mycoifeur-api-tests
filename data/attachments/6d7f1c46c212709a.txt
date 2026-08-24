@@ -1,0 +1,2 @@
+Missing title status: 422
+✅ Missing title correctly rejected

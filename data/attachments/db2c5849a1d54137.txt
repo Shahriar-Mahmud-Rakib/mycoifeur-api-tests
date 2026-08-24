@@ -1,0 +1,2 @@
+Reject commission status: 404
+ℹ️  Reject commission: Cannot PATCH /api/v1/web/admin/commissions/30/reject

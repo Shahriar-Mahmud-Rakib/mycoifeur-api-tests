@@ -1,0 +1,1 @@
+✅ [TC-WD-08] SQL inject day field → 404

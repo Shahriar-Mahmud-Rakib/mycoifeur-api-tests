@@ -1,0 +1,11 @@
+
+--- [1. USER E2E START] ---
+Step 1: Sending Registration OTP: 966556606862
+✅ Step 1 Success: OTP sent successfully.
+Step 2: Performing OTP verification using code: 1234
+✅ Step 2 Success: Phone verified. Received token: eyJhbGciOiJIUzI...
+Step 3: Completing profile for user: e2e_user_6606862@example.com
+✅ Step 3 Success: Profile updated.
+✅ Step 4 Success: Profile verified in active session.
+--- [USER E2E CIRCLE COMPLETE] ---
+

@@ -1,0 +1,2 @@
+Guest home status: 200
+✅ Guest home categories fetched

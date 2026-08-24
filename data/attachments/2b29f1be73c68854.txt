@@ -1,0 +1,2 @@
+Salon 1 working days status: 404
+ℹ️  Working days response: Salon not found

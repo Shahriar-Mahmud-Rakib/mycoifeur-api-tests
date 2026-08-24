@@ -1,0 +1,2 @@
+Artist start status: 404
+ℹ️  Artist start: Cannot PATCH /api/v1/salon/orders/1/artist_start

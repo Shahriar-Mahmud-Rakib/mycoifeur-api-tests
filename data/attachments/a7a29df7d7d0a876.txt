@@ -1,0 +1,2 @@
+Artist complete status: 404
+ℹ️  Artist complete: Cannot PATCH /api/v1/salon/orders/1/artist_complete

@@ -1,0 +1,1 @@
+✅ [TC-CAT-11] Delete non-existent → 404

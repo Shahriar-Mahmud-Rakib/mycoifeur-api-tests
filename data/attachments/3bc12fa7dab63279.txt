@@ -1,0 +1,1 @@
+✅ [TC-SS-09] Non-existent category → 400

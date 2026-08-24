@@ -1,0 +1,2 @@
+Create promo status: 422
+ℹ️  Create promo: Unprocessable Entity Exception

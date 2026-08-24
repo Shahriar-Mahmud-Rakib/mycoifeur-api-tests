@@ -1,0 +1,1 @@
+✅ [TC-RV-SC-03] No token → 401

@@ -1,0 +1,1 @@
+✅ [TC-CART-16] Missing promo field → 422

@@ -1,0 +1,2 @@
+Type-service detail status: 200
+✅ Type-service detail fetched

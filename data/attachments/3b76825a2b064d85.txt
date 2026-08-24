@@ -1,0 +1,1 @@
+✅ [TC-FP-07] Email as phone handled: 400

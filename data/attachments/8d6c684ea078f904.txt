@@ -1,0 +1,2 @@
+Home status: 200
+✅ Authenticated home fetched

@@ -1,0 +1,1 @@
+✅ SQL inject forgot-password blocked [1]: 400

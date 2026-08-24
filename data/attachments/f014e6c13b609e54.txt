@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-09] Invalid sort direction handled → 401

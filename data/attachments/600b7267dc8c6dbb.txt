@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-06] Invalid promo → 404

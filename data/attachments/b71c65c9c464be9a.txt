@@ -1,0 +1,2 @@
+Commission detail status: 404
+ℹ️  Commission: Cannot GET /api/v1/web/admin/commissions/30

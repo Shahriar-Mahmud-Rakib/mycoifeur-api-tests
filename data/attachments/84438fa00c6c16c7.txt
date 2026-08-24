@@ -1,0 +1,1 @@
+✅ [TC-CART-28] SQL inject cart item ID → 404

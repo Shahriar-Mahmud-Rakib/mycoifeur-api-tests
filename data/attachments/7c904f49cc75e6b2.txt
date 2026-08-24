@@ -1,0 +1,1 @@
+✅ XSS search handled [3]: 200

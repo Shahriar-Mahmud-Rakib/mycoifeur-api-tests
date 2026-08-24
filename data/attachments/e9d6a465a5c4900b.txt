@@ -1,0 +1,1 @@
+✅ [TC-FP-RV-03] Invalid phone → 4xx: 200

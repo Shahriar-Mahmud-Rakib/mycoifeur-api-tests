@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-02] Invalid endpoint → 404

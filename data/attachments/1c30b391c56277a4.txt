@@ -1,0 +1,2 @@
+Create ad status: 404
+ℹ️  Create ad: Cannot POST /api/v1/admin/advertisements

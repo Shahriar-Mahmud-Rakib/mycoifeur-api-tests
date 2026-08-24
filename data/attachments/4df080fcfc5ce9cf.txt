@@ -1,0 +1,1 @@
+✅ [TC-CART-31] Invalid payment method → 422

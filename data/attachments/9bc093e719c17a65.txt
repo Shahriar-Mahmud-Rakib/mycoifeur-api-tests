@@ -1,0 +1,1 @@
+✅ [TC-VC-BV-05] Negative code handled: 404

@@ -1,0 +1,1 @@
+ℹ️  [TC-SL-01] Salon login: 422 — Unprocessable Entity Exception

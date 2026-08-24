@@ -1,0 +1,1 @@
+✅ [TC-L-06] Missing user field rejected: 422

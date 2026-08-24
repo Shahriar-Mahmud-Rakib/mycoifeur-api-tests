@@ -1,0 +1,2 @@
+User rewards status: 200
+✅ User rewards fetched

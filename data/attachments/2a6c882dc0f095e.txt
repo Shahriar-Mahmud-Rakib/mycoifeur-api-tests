@@ -1,0 +1,1 @@
+✅ [TC-CARD-NEG-01] No auth rejected: 401

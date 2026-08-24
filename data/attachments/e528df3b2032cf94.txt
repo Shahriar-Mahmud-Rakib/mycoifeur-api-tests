@@ -1,0 +1,2 @@
+   Resend status: 404 | 192ms | User not found
+ℹ️  [TC-VC-01] Resend response: User not found

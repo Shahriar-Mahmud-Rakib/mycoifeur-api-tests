@@ -1,0 +1,1 @@
+✅ [TC-RT-02] New token works on protected endpoint: 200

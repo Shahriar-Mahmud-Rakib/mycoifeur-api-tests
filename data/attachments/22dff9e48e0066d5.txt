@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-01] Admin login schema fully valid

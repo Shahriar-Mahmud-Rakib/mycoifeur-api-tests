@@ -1,0 +1,2 @@
+Restore bank status: 404
+ℹ️  Restore bank: Cannot PATCH /api/v1/bank-accounts/1/restore

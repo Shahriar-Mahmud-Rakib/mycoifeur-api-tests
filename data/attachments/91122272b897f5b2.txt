@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-02] Error schema valid: "please check your email and password"

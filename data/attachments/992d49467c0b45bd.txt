@@ -1,0 +1,1 @@
+✅ [TC-CART-10] quantity=0 → 400

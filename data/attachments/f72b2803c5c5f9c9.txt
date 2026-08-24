@@ -1,0 +1,1 @@
+✅ [TC-FP-06] Special chars phone handled: 400

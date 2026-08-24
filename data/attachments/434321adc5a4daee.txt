@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-03] Categories list schema valid

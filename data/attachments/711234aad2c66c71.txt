@@ -1,0 +1,1 @@
+✅ [TC-MP-01] Mail provider → 200

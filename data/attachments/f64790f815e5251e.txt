@@ -1,0 +1,2 @@
+   Forgot pw status: 400 | 192ms | Phone number not found
+ℹ️  [TC-FP-01] Response: Phone number not found

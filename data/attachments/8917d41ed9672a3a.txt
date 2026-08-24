@@ -1,0 +1,2 @@
+Invalid email format status: 422
+✅ Invalid email format rejected

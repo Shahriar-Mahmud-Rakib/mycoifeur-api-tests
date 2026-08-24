@@ -1,0 +1,1 @@
+✅ XSS in contact form handled [1]: 404

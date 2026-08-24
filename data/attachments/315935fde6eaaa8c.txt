@@ -1,0 +1,1 @@
+✅ [TC-SS-04] Missing fields → 422

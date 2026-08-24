@@ -1,0 +1,2 @@
+   Refresh status: 200 | 192ms
+✅ [TC-RT-01] User token refreshed successfully

@@ -1,0 +1,1 @@
+✅ No auth rejected for cancel, status: 404

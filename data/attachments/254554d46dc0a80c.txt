@@ -1,0 +1,1 @@
+✅ [TC-SRH-01] Search "test" users → 20 results

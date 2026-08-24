@@ -1,0 +1,2 @@
+Blog 1 show status: 404
+ℹ️  Blog show response: Cannot GET /api/v1/blogs/blogs_show/1

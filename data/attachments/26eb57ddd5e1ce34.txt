@@ -1,0 +1,1 @@
+✅ [TC-SP-05] XSS type field → 404

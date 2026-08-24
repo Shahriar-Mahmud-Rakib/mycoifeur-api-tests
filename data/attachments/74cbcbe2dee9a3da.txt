@@ -1,0 +1,1 @@
+✅ [TC-VC-BV-04] Code=0 rejected: 404

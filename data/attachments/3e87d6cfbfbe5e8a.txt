@@ -1,0 +1,2 @@
+Restore address status: 404
+ℹ️  Restore address response: Cannot PATCH /api/v1/address/1/restore

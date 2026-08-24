@@ -1,0 +1,1 @@
+✅ Missing newPassword correctly rejected, status: 404

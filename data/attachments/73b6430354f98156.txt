@@ -1,0 +1,1 @@
+✅ [TC-SS-05] No auth create → 401

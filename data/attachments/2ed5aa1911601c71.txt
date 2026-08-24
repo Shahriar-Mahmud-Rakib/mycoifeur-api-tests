@@ -1,0 +1,4 @@
+HTTP Status: 401 (Unauthorized)
+Endpoint: POST https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards
+Error Message: Missing or invalid token
+Timestamp: 2026-08-24T04:43:15.309Z

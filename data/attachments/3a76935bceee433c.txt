@@ -1,0 +1,2 @@
+Salons list status: 200
+✅ Salons list returned

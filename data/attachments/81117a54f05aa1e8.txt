@@ -1,0 +1,1 @@
+✅ [TC-AS-05] User token on admin settings → 401

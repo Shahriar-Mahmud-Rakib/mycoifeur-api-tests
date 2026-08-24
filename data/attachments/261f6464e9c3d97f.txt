@@ -1,0 +1,2 @@
+Salon categories status: 401
+ℹ️  Salon categories response: Unauthorized access.

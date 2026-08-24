@@ -1,0 +1,1 @@
+✅ [TC-RT-06] Fake JWT rejected: 401

@@ -1,0 +1,1 @@
+✅ [TC-CART-08] Missing salon_id → 400

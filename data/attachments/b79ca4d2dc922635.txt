@@ -1,0 +1,2 @@
+Salon 1 detail status: 404
+ℹ️  Salon detail response: Salon not found

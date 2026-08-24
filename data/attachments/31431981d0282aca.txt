@@ -1,0 +1,2 @@
+Missing amount status: 422
+✅ Missing amount rejected

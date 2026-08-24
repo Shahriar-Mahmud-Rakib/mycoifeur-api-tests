@@ -1,0 +1,2 @@
+Guest salons status: 200
+✅ Salons fetched, first salon id: 1854

@@ -1,0 +1,1 @@
+✅ [TC-SEC-SDE-04] No obvious secret keys in settings response

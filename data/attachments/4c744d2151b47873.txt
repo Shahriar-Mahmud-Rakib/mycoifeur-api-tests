@@ -1,0 +1,1 @@
+✅ [TC-L-02] Wrong password rejected: 401 — please check your email and password

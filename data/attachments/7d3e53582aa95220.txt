@@ -1,0 +1,1 @@
+✅ [TC-RT-08] Empty bearer rejected: 401

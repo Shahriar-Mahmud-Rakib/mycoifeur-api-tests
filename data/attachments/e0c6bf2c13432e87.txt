@@ -1,0 +1,1 @@
+✅ No auth rejected for create, status: 401

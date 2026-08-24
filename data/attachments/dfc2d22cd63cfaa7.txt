@@ -1,0 +1,2 @@
+Rate order status: 422
+ℹ️  Rate order: Unprocessable Entity Exception

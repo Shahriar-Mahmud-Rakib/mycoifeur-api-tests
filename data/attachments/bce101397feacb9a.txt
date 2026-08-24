@@ -1,0 +1,1 @@
+✅ No auth rejected for rating, status: 401

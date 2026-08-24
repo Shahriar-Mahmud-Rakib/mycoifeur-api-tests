@@ -1,0 +1,2 @@
+Role detail status: 200
+✅ Role details fetched

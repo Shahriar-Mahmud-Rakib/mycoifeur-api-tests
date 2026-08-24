@@ -1,0 +1,1 @@
+✅ [TC-SEC-HDR-01] Malicious Accept-Language handled: 200

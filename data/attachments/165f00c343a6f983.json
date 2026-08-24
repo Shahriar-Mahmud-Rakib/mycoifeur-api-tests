@@ -1,0 +1,21 @@
+{
+  "status": 201,
+  "statusText": "Created",
+  "ok": true,
+  "body": {
+    "statusCode": 201,
+    "success": true,
+    "message": "Card created successfully",
+    "data": {
+      "id": 40,
+      "cardNumber": "5123450000000008",
+      "cardholderName": "' OR '1'='1",
+      "expiryDate": "01/39",
+      "cvv": "100",
+      "isDefault": false,
+      "userId": 1010571,
+      "createdAt": "2026-08-24T04:43:16.132Z",
+      "updatedAt": "2026-08-24T04:43:16.132Z"
+    }
+  }
+}

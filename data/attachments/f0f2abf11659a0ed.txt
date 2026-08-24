@@ -1,0 +1,1 @@
+✅ [TC-CART-01] Cart fetched in 213ms, items: 0

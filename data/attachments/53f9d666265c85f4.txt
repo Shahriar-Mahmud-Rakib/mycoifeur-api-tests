@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-01] Guest cart fetched → 404

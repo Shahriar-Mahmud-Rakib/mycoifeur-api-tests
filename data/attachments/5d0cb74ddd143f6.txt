@@ -1,0 +1,2 @@
+Create VIP status: 201
+✅ VIP created, id: 136

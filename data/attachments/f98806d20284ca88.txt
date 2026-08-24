@@ -1,0 +1,1 @@
+✅ [TC-SVC-09] Search services → 200

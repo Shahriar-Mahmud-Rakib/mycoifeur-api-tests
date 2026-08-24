@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-05] Salon filter city_id=1 → 401

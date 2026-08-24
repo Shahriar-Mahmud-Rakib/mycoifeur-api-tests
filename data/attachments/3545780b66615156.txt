@@ -1,0 +1,2 @@
+Guest packages paginated status: 404
+ℹ️  Packages pagination response: Cannot GET /api/v1/guest/packages?page=1&limit=5

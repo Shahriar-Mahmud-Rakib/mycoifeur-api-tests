@@ -1,0 +1,1 @@
+✅ [TC-AS-09] No password in settings response

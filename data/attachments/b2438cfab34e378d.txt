@@ -1,0 +1,2 @@
+Reject order status: 404
+ℹ️  Reject order: Cannot PATCH /api/v1/salon/orders/1/artist_reject

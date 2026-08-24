@@ -1,0 +1,2 @@
+Ban salon status: 404
+ℹ️  Ban salon: Cannot PATCH /api/v1/web/admin/salons/1007485/ban

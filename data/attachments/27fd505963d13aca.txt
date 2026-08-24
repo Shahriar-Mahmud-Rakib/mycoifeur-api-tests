@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-03] Item added to guest cart → 404

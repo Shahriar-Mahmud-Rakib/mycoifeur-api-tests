@@ -1,0 +1,2 @@
+Categories search status: 200
+✅ Categories search works

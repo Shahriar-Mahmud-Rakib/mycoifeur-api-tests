@@ -1,0 +1,2 @@
+Promo detail status: 200
+✅ Promo detail fetched

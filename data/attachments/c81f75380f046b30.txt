@@ -1,0 +1,1 @@
+✅ [TC-FP-04] Empty phone rejected: 422

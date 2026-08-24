@@ -1,0 +1,2 @@
+Districts status: 200
+✅ Districts fetched successfully

@@ -1,0 +1,1 @@
+✅ Salon categories without token rejected, status: 401

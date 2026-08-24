@@ -1,0 +1,2 @@
+Artist received status: 404
+ℹ️  Artist received: Cannot PATCH /api/v1/salon/orders/1/artist_recived

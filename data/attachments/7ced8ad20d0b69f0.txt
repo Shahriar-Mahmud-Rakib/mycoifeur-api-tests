@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-01] Public categories page=1 → 200

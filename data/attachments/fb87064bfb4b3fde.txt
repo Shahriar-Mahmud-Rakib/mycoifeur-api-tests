@@ -1,0 +1,1 @@
+✅ [TC-CART-34] Complete no auth → 401

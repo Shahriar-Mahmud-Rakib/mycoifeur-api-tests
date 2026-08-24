@@ -1,0 +1,16 @@
+{
+  "title": "Update card ID 39",
+  "method": "PUT",
+  "url": "https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards/39",
+  "timestamp": "2026-08-24T04:43:14.400Z",
+  "headers": {
+    "x-custom-lang": "en",
+    "x-app-version": "1.1.9",
+    "x-platform": "android",
+    "Authorization": "Bearer [HIDDEN_TOKEN]"
+  },
+  "body": {
+    "cardholderName": "Updated Test User",
+    "expiryDate": "12/35"
+  }
+}

@@ -1,0 +1,1 @@
+✅ Empty body Apple login rejected, status: 404

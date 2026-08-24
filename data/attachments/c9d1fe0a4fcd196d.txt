@@ -1,0 +1,1 @@
+✅ [TC-SS-12] Restore service → 200

@@ -1,0 +1,1 @@
+✅ [TC-SEC-HDR-02] Large header handled: 200

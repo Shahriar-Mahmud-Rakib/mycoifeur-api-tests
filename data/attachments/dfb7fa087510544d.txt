@@ -1,0 +1,1 @@
+✅ [TC-ARCH-04] Invalid Content-Type rejected correctly: 500

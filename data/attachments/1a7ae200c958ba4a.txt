@@ -1,0 +1,1 @@
+✅ [TC-RV-EM-02] Validation error message: "Unprocessable Entity Exception"

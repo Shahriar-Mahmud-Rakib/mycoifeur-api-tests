@@ -1,0 +1,2 @@
+✅ [TC-SEC-BF-01] 5 brute force attempts: statuses 401, 401, 401, 401, 401
+ℹ️  No 429 detected — rate limiting may not be implemented

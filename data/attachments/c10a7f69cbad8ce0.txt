@@ -1,0 +1,2 @@
+Delete type-service status: 204
+✅ Type-service deleted

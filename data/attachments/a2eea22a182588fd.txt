@@ -1,0 +1,1 @@
+✅ [TC-VRC-05] Long token handled: 403

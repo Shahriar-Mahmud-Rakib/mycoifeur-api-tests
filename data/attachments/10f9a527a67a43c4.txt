@@ -1,0 +1,2 @@
+Accept order status: 404
+ℹ️  Accept order: Cannot PATCH /api/v1/salon/orders/1/artist_accept

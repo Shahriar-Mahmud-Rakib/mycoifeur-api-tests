@@ -1,0 +1,1 @@
+✅ [TC-SRH-14] Arabic search handled → 200

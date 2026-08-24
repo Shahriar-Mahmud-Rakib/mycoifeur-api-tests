@@ -1,0 +1,2 @@
+Blogs status: 200
+✅ Blogs list returned (empty or different structure)

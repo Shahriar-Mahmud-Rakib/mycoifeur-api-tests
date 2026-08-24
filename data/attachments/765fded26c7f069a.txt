@@ -1,0 +1,2 @@
+Best salons status: 200
+✅ Best salons fetched

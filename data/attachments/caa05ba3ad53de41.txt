@@ -1,0 +1,2 @@
+Salons with location status: 200
+✅ Salons with location filter

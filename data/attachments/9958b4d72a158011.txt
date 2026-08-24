@@ -1,0 +1,20 @@
+Contact us status: 200
+Response: {
+  "statusCode": 200,
+  "success": true,
+  "message": "common.contactUsCreatedSuccessfully",
+  "data": {
+    "id": 191,
+    "subject": "Test Subject",
+    "name": "Test User",
+    "email": "test1214@gmail.com",
+    "attach": null,
+    "message": "This is a test message from automated testing.",
+    "read": "0",
+    "reply": "0",
+    "createdAt": "2026-08-24T04:43:22.843Z",
+    "updatedAt": "2026-08-24T04:43:22.843Z",
+    "deletedAt": null
+  }
+}
+✅ Contact us message sent successfully

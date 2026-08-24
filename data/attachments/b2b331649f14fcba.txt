@@ -1,0 +1,2 @@
+Create type-service status: 500
+ℹ️  Create type-service: Cannot delete property '0' of [object Uint8Array]

@@ -1,0 +1,2 @@
+Web salon packages status: 200
+✅ Packages fetched, count: 2

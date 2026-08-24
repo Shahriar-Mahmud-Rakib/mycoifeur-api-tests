@@ -1,0 +1,2 @@
+Guest offers status: 200
+✅ Guest offers fetched, first id: null

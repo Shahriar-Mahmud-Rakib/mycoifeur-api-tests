@@ -1,0 +1,1 @@
+✅ [TC-SP-04] SQL inject token → 404

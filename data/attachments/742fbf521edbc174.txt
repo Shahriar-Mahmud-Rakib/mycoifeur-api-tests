@@ -1,0 +1,1 @@
+✅ [TC-SVC-07] Services page=0 → 400

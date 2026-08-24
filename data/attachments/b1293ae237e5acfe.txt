@@ -1,0 +1,1 @@
+✅ [TC-RV-EM-06] No 500 errors on common bad inputs

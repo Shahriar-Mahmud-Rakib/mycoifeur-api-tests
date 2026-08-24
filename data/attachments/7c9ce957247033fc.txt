@@ -1,0 +1,3 @@
+Categories status: 200
+✅ Categories fetched
+   Count: 454

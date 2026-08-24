@@ -1,0 +1,2 @@
+Salon 1007485 detail status: 200
+✅ Salon details fetched

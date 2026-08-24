@@ -1,0 +1,2 @@
+VIPs list status: 200
+✅ VIPs fetched, count: 20

@@ -1,0 +1,1 @@
+✅ [TC-AS-04] Invalid token → 401

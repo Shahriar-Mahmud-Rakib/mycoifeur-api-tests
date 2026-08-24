@@ -1,0 +1,2 @@
+Missing lat/long status: 422
+✅ Missing lat/long correctly rejected

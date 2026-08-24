@@ -1,0 +1,1 @@
+✅ [TC-RBAC-IT-03] Expired JWT rejected: 401

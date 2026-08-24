@@ -1,0 +1,2 @@
+Create package status: 500
+ℹ️  Create package: Cannot delete property '0' of [object Uint8Array]

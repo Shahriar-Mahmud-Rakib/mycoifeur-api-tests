@@ -1,0 +1,1 @@
+✅ [TC-CAT-10] Non-existent ID → 404

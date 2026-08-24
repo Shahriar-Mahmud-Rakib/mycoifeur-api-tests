@@ -1,0 +1,1 @@
+✅ [TC-CARD-06] Delete card response (400): Cannot delete the only card. Add another first.

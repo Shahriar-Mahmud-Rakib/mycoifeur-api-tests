@@ -1,0 +1,2 @@
+Privacy page status: 404
+ℹ️  Privacy page response: Cannot GET /api/v1/pages/privacy-policy

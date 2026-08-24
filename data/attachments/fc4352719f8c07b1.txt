@@ -1,0 +1,1 @@
+✅ [TC-AS-07] XSS in settings → 404

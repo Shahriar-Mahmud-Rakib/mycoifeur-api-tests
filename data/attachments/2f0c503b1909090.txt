@@ -1,0 +1,2 @@
+Verify admin status: 200
+✅ Admin verified

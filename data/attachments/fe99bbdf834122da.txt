@@ -1,0 +1,1 @@
+✅ [TC-AS-06] SQL inject settings → 404

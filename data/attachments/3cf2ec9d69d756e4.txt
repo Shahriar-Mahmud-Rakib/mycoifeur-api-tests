@@ -1,0 +1,1 @@
+✅ [TC-L-09] Whitespace password rejected: 401

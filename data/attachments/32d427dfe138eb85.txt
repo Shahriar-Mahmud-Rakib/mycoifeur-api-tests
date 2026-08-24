@@ -1,0 +1,2 @@
+Salon working days status: 200
+✅ Working days fetched

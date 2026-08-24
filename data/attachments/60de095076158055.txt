@@ -1,0 +1,2 @@
+Delete package status: 204
+✅ Package deleted

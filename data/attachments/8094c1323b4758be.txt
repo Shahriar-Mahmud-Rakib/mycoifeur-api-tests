@@ -1,0 +1,1 @@
+✅ [TC-CARD-02] Cards list fetched, count: 1

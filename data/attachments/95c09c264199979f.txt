@@ -1,0 +1,1 @@
+✅ [TC-SRH-05] Empty search → 200

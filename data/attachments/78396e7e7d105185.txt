@@ -1,0 +1,1 @@
+✅ [TC-CART-13] String service_id → 400

@@ -1,0 +1,1 @@
+✅ [TC-MP-08] Mail provider response time OK

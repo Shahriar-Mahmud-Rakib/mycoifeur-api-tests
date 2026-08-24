@@ -1,0 +1,2 @@
+Salons no auth status: 401
+ℹ️  No auth response: Missing or invalid token

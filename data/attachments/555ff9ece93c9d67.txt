@@ -1,0 +1,1 @@
+✅ [TC-WD-02] No auth working days → 404

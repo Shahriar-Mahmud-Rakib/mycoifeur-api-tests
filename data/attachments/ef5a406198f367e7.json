@@ -1,0 +1,16 @@
+{
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "ok": false,
+  "body": {
+    "statusCode": 422,
+    "timestamp": "2026-08-24T04:43:15.472Z",
+    "path": "/api/v1/cards",
+    "message": "Unprocessable Entity Exception",
+    "errors": {
+      "cardholderName": "cardholderName must be shorter than or equal to 255 characters, cardholderName must be a string",
+      "expiryDate": "expiryDate must be shorter than or equal to 255 characters, expiryDate must be a string",
+      "cvv": "cvv must be shorter than or equal to 255 characters, cvv must be a string"
+    }
+  }
+}

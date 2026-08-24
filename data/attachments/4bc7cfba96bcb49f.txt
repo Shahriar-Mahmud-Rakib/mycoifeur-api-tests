@@ -1,0 +1,1 @@
+✅ [TC-FP-02] Non-existent phone rejected: 200 — Please enter the code sent to your mobile phone

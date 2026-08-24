@@ -1,0 +1,1 @@
+✅ [TC-FP-BV-06] Whitespace phone rejected: 400

@@ -1,0 +1,1 @@
+✅ [TC-RT-09] No Bearer prefix rejected: 401

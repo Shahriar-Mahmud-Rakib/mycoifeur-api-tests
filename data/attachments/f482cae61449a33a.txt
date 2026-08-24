@@ -1,0 +1,2 @@
+Service 3 show status: 404
+ℹ️  Service show response: Cannot GET /api/v1/guest/services/3/show

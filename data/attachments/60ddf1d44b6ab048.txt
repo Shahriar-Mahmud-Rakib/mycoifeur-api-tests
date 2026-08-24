@@ -1,0 +1,1 @@
+✅ No auth token correctly rejected, status: 404

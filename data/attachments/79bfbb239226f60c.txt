@@ -1,0 +1,1 @@
+✅ [TC-PAG-01] /api/v1/web/admin/salons page=1 limit=5 → 5 items

@@ -1,0 +1,1 @@
+✅ [TC-SEC-SDE-03] Admin user list does not expose password hashes

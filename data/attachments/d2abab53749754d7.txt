@@ -1,0 +1,1 @@
+✅ [TC-MP-03] No auth mail provider → 401

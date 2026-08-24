@@ -1,0 +1,2 @@
+Offers status: 200
+✅ Offers fetched, first id: null

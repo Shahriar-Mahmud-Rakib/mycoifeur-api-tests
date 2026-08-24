@@ -1,0 +1,2 @@
+Block user status: 422
+ℹ️  Block user: Unprocessable Entity Exception

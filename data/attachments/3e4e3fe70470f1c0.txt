@@ -1,0 +1,1 @@
+✅ [TC-CART-26] Delete no auth → 404

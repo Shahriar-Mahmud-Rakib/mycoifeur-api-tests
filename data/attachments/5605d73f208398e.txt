@@ -1,0 +1,2 @@
+Bank 1 status: 404
+ℹ️  Bank detail: Bank account not found

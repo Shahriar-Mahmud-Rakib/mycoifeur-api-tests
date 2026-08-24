@@ -1,0 +1,13 @@
+Create address status: 422
+Response: {
+  "statusCode": 422,
+  "timestamp": "2026-08-24T04:42:36.470Z",
+  "path": "/api/v1/address/create",
+  "message": "Unprocessable Entity Exception",
+  "errors": {
+    "countryId": "countryId should not be empty, countryId must be a number conforming to the specified constraints",
+    "cityId": "cityId should not be empty, cityId must be a number conforming to the specified constraints",
+    "stateId": "stateId should not be empty, stateId must be a number conforming to the specified constraints"
+  }
+}
+ℹ️  Create address response: Unprocessable Entity Exception

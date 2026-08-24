@@ -1,0 +1,1 @@
+✅ [TC-UL-10] User login response time: 187ms

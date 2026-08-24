@@ -1,0 +1,1 @@
+✅ [TC-UP-01] Valid PNG upload → 404

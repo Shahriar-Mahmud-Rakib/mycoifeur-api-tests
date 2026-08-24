@@ -1,0 +1,13 @@
+⚡ Initiating Stress Test: Sending 25 parallel requests to https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/locations/countries...
+
+📊 --- STRESS TEST REPORT ---
+   - Total Requests Sent: 25
+   - Unique Status Codes Returned: 200
+   - Successfully Resolved (2xx): 25
+   - Failed Requests: 0
+   - Rate Limited (429): 0
+   - Server Errors (5xx): 0
+   - Total Stress Duration: 757 ms
+   - Avg Response Time: 669.24 ms
+
+🔍 Validating server stability under stress (No 5xx errors permitted)...

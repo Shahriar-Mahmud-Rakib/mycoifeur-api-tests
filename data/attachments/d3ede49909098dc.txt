@@ -1,0 +1,2 @@
+Sales report status: 200
+✅ Sales report fetched

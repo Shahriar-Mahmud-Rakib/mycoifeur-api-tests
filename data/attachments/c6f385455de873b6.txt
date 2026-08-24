@@ -1,0 +1,1 @@
+✅ [TC-CART-15] Empty promo → 422

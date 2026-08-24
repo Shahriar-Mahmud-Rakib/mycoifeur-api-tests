@@ -1,0 +1,2 @@
+Services by type status: 404
+ℹ️  Services by type response: Cannot GET /api/v1/guest/services_types/hair

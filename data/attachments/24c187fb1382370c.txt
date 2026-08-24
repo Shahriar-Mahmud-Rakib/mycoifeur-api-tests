@@ -1,0 +1,2 @@
+   Admin refresh status: 200
+✅ [TC-ART-01] Admin token refreshed

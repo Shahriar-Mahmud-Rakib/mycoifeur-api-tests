@@ -1,0 +1,2 @@
+Payments list status: 200
+✅ Payments fetched, count: 2

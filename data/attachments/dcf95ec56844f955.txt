@@ -1,0 +1,1 @@
+✅ [TC-RC-03] Missing phone rejected: 422

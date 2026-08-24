@@ -1,0 +1,1 @@
+✅ [TC-SS-02] No auth services → 401

@@ -1,0 +1,1 @@
+✅ [TC-VC-02] Wrong code rejected: 404 — User not found

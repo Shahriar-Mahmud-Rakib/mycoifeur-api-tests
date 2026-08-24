@@ -1,0 +1,2 @@
+Salons location filter status: 200
+✅ Salons by location fetched

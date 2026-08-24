@@ -1,0 +1,1 @@
+✅ No auth rejected for /me, status: 401

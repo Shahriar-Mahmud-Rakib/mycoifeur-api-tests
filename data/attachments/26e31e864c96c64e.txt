@@ -1,0 +1,1 @@
+✅ [TC-SC-07] SQL inject month → 200

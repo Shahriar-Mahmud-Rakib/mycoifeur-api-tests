@@ -1,0 +1,2 @@
+Config version status: 400
+ℹ️  Config version response: null value in column "platform" of relation "app_version_logs" violates not-null constraint

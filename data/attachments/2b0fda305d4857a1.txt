@@ -1,0 +1,2 @@
+Set VIP status: 404
+ℹ️  Set VIP: Cannot PATCH /api/v1/web/admin/salons/1007485/vip

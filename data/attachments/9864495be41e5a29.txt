@@ -1,0 +1,1 @@
+✅ [TC-SEC-MA-02] Registration with balance fields rejected: 404

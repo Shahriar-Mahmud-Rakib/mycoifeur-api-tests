@@ -1,0 +1,8 @@
+Old version check status: 404
+Response: {
+  "statusCode": 404,
+  "timestamp": "2026-08-24T04:43:21.597Z",
+  "path": "/api/v1/config/check-version",
+  "message": "Cannot GET /api/v1/config/check-version"
+}
+ℹ️  Old version response captured

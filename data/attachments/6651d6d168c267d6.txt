@@ -1,0 +1,1 @@
+✅ [TC-UL-07] XSS in user login blocked: 404

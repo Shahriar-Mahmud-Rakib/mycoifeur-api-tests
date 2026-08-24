@@ -1,0 +1,11 @@
+{
+  "status": 404,
+  "statusText": "Not Found",
+  "ok": false,
+  "body": {
+    "statusCode": 404,
+    "timestamp": "2026-08-24T04:43:15.869Z",
+    "path": "/api/v1/cards/999999999",
+    "message": "Card not found"
+  }
+}

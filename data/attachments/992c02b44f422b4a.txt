@@ -1,0 +1,1 @@
+✅ [TC-RV-SCHEMA-07] Admin orders schema valid

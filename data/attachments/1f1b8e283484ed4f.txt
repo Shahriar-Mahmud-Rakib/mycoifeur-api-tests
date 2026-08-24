@@ -1,0 +1,1 @@
+✅ [TC-RBAC-CR-02] Admin blocked from user profile: 401

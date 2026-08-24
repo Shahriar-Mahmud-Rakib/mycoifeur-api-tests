@@ -1,0 +1,2 @@
+Salon stats status: 200
+✅ Salon stats fetched

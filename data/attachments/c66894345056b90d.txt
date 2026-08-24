@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-06] Salon invalid city filter → 401

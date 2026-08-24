@@ -1,0 +1,7 @@
+Got admin token
+Salon info response: {
+  statusCode: 404,
+  timestamp: '2026-08-24T04:43:24.132Z',
+  path: '/api/v1/web/admin/salons/1530',
+  message: 'Salon not found'
+}

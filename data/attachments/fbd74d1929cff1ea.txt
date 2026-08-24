@@ -1,0 +1,1 @@
+✅ [TC-ARCH-01] Rate limit test passed safely. HTTP Statuses: 404, 404, 404, 404, 404, 404, 404, 404, 404, 404

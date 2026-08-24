@@ -1,0 +1,17 @@
+{
+  "title": "Add card without auth token",
+  "method": "POST",
+  "url": "https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards",
+  "timestamp": "2026-08-24T04:43:15.308Z",
+  "headers": {
+    "x-custom-lang": "en",
+    "x-app-version": "1.1.9",
+    "x-platform": "android"
+  },
+  "body": {
+    "cardNumber": "5123450000000008",
+    "cardholderName": "Test User",
+    "expiryDate": "01/39",
+    "cvv": "100"
+  }
+}

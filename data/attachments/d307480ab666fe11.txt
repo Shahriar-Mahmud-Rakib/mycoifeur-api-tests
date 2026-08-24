@@ -1,0 +1,2 @@
+Missing bank fields status: 422
+✅ Missing fields rejected

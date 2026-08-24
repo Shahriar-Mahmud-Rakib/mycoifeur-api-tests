@@ -1,0 +1,1 @@
+✅ [TC-SEC-MA-01] Registration with admin fields rejected: 404

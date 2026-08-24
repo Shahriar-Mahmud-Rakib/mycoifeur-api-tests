@@ -1,0 +1,2 @@
+Accept order status: 404
+ℹ️  Accept order: Cannot PATCH /api/v1/web/admin/orders/9262/accept

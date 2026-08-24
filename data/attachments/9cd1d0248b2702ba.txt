@@ -1,0 +1,2 @@
+Android version check status: 404
+ℹ️  Response: Cannot GET /api/v1/config/check-version

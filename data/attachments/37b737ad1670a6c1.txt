@@ -1,0 +1,1 @@
+✅ [TC-SEC-SDE-01] Admin password not exposed in login response

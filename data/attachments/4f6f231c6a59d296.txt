@@ -1,0 +1,1 @@
+✅ No auth rejected, status: 401

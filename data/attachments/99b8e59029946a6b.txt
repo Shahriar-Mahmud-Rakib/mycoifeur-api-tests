@@ -1,0 +1,2 @@
+Restore type-service status: 404
+ℹ️  Restore type-service: {"statusCode":404,"timestamp":"2026-08-24T04:42:47.324Z","path":"/api/v1/web/admin/type-services/1/r

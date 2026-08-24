@@ -1,0 +1,11 @@
+{
+  "status": 400,
+  "statusText": "Bad Request",
+  "ok": false,
+  "body": {
+    "statusCode": 400,
+    "timestamp": "2026-08-24T04:43:14.710Z",
+    "path": "/api/v1/cards/39",
+    "message": "Cannot delete the only card. Add another first."
+  }
+}

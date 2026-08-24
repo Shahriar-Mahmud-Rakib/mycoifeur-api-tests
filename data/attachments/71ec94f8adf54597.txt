@@ -1,0 +1,2 @@
+Salon orders calendar status: 200
+✅ Salon orders calendar fetched

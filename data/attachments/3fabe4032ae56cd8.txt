@@ -1,0 +1,1 @@
+✅ [TC-SC-04] No auth calendar → 401

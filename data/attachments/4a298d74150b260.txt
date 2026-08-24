@@ -1,0 +1,1 @@
+✅ [TC-RBAC-IDOR-01] IDOR blocked: 404

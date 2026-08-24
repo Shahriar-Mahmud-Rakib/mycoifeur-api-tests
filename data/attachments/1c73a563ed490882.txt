@@ -1,0 +1,1 @@
+✅ No auth rejected for notifications, status: 401

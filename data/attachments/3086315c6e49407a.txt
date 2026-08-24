@@ -1,0 +1,2 @@
+Restore order status: 404
+ℹ️  Restore order: Cannot PATCH /api/v1/web/admin/orders/9262/restore

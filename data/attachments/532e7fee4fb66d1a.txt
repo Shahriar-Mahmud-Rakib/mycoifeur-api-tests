@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-05] quantity=0 → 404

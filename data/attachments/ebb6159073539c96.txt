@@ -1,0 +1,2 @@
+Salon orders status: 200
+✅ No salon orders yet

@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-07] SQL inject salon search → 401

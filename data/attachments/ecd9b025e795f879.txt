@@ -1,0 +1,2 @@
+Reject balance status: 404
+ℹ️  Reject balance: Cannot PATCH /api/v1/web/admin/wallet/balances/1335/reject

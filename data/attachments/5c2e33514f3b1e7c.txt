@@ -1,0 +1,1 @@
+✅ [TC-CAT-PAG-06] string page/limit → 200

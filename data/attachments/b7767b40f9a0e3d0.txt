@@ -1,0 +1,2 @@
+Delete order status: 404
+ℹ️  Delete order: Cannot DELETE /api/v1/web/admin/orders/9262/delete

@@ -1,0 +1,1 @@
+✅ [TC-SEC-SDE-05] No stack trace/path exposed in error response

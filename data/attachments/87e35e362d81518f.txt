@@ -1,0 +1,1 @@
+✅ [TC-L-13] Unicode password handled gracefully: 401

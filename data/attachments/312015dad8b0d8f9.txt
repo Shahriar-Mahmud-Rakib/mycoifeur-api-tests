@@ -1,0 +1,2 @@
+Update address status: 404
+ℹ️  Update address response: Cannot PATCH /api/v1/address/update

@@ -1,0 +1,1 @@
+✅ [TC-SVC-06] SQL inject service ID → 400

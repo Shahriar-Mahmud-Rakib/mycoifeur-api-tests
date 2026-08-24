@@ -1,0 +1,2 @@
+Salon gallery status: 200
+✅ Gallery fetched

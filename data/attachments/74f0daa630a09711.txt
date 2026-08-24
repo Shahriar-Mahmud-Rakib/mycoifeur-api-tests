@@ -1,0 +1,1 @@
+✅ [TC-RV-SC-05] Non-existent category → 404

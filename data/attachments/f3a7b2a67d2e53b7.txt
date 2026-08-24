@@ -1,0 +1,2 @@
+Service 3 show status: 200
+✅ Single service fetched

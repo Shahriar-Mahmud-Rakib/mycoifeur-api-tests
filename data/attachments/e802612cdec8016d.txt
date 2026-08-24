@@ -1,0 +1,2 @@
+Countries status: 200
+✅ Countries fetched successfully, count: 2

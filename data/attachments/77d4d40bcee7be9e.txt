@@ -1,0 +1,2 @@
+Cities by country status: 200
+✅ Cities by country fetched

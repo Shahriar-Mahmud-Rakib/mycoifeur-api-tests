@@ -1,0 +1,2 @@
+Apple Pay balance status: 422
+ℹ️  Apple Pay balance: Unprocessable Entity Exception

@@ -1,0 +1,1 @@
+✅ XSS forgot-pw handled [4]: 400

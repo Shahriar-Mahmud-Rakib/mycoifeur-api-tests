@@ -1,0 +1,11 @@
+{
+  "status": 401,
+  "statusText": "Unauthorized",
+  "ok": false,
+  "body": {
+    "statusCode": 401,
+    "timestamp": "2026-08-24T04:43:15.220Z",
+    "path": "/api/v1/cards",
+    "message": "Missing or invalid token"
+  }
+}

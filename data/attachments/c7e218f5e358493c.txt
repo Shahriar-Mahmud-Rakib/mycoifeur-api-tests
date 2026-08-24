@@ -1,0 +1,1 @@
+✅ [TC-RBAC-IT-02] Malformed JWT rejected: 401

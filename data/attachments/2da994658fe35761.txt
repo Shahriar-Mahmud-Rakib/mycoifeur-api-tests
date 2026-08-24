@@ -1,0 +1,6 @@
+Creating test salon...
+Test salon created with ID: 1010591
+Salon token received.
+Salon lifecycle tests completed successfully.
+Cleaning up Test User ID: 1010588
+Cleaning up Test Salon ID: 1010591

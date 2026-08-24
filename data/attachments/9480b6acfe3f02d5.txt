@@ -1,0 +1,2 @@
+Artist in way status: 404
+ℹ️  Artist in way: Cannot PATCH /api/v1/salon/orders/1/artist_in_way

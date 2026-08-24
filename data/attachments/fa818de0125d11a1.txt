@@ -1,0 +1,1 @@
+✅ [TC-GUEST-CART-04] Missing service_id → 404

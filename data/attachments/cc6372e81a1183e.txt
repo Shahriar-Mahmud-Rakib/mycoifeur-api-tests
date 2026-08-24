@@ -1,0 +1,2 @@
+User 1010563 details status: 200
+✅ User details fetched

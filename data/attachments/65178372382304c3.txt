@@ -1,0 +1,2 @@
+Artist stats status: 200
+✅ Artist stats fetched

@@ -1,0 +1,1 @@
+✅ [TC-SP-03] Invalid token → 404

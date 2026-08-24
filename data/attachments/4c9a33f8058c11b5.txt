@@ -1,0 +1,1 @@
+✅ No-token blocked from [GET] /api/v1/salon/commissions: 401

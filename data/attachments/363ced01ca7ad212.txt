@@ -1,0 +1,1 @@
+✅ [TC-PUB-PAG-03] Public categories limit=9999 → 200

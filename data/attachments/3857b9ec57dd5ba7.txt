@@ -1,0 +1,2 @@
+Admin pages status: 200
+✅ Pages fetched, count: 0

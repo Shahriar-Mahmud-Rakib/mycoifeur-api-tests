@@ -1,0 +1,2 @@
+Admin wallet status: 200
+✅ Admin wallet fetched

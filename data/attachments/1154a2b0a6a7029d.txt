@@ -1,0 +1,2 @@
+Invalid rate status: 422
+✅ Invalid rate rejected: Unprocessable Entity Exception

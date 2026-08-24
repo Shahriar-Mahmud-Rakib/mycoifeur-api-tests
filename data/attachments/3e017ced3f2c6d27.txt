@@ -1,0 +1,4 @@
+HTTP Status: 404 (Not Found)
+Endpoint: GET https://zk2a6jfr01.execute-api.ap-southeast-5.amazonaws.com/api/v1/cards/999999999
+Error Message: Card not found
+Timestamp: 2026-08-24T04:43:15.977Z

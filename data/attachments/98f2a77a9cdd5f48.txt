@@ -1,0 +1,1 @@
+✅ [TC-CART-32] Missing payment method → 422

@@ -1,0 +1,2 @@
+Admin detail status: 200
+✅ Admin details fetched

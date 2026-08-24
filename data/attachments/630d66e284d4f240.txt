@@ -1,0 +1,1 @@
+✅ [TC-SC-02] No auth commissions → 401

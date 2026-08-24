@@ -1,0 +1,2 @@
+Update salon status: 404
+ℹ️  Update salon: Cannot PATCH /api/v1/web/admin/salons/1007485

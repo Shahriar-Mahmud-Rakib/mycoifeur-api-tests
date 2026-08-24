@@ -1,0 +1,2 @@
+Delete promo status: 200
+✅ Promo deleted

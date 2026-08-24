@@ -1,0 +1,1 @@
+✅ [TC-CT-03] No auth contacts → 401

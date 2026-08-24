@@ -1,0 +1,1 @@
+✅ [TC-SS-10] Delete service → 204

@@ -1,0 +1,2 @@
+Artist restore status: 404
+ℹ️  Artist restore: Cannot PATCH /api/v1/salon/orders/1/artist_restore

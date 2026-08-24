@@ -1,0 +1,1 @@
+✅ [TC-PAG-04] /api/v1/web/admin/categories page=-1 → 400

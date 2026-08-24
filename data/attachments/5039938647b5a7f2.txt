@@ -1,0 +1,2 @@
+User stats status: 200
+✅ User stats fetched

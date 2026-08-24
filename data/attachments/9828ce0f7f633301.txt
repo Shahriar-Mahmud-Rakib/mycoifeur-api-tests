@@ -1,0 +1,1 @@
+ℹ️  [TC-UL-01] User login: 404 — Cannot POST /api/v1/auth/login

@@ -1,0 +1,1 @@
+✅ [TC-RC-02] Non-existent resend rejected: 200

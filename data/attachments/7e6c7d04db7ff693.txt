@@ -1,0 +1,2 @@
+Web service detail status: 404
+ℹ️  Web service detail: Cannot GET /api/v1/web/salon/services/1290
