@@ -81,6 +81,8 @@ try {
         cwd: ROOT_DIR,
         stdio: 'inherit'
     });
+    // 6. Add .nojekyll for GitHub Pages to disable Jekyll and serve SPA HTML directly
+    fs.writeFileSync(path.join(REPORT_DIR, '.nojekyll'), '');
 } catch (e) {
     console.error('❌ Error executing allure generate:', e.message);
     process.exit(1);
@@ -88,3 +90,5 @@ try {
 
 console.log('✨ [3/3] Allure Report generated successfully with full details & clean theme!');
 console.log('🌐 Run "npm run allure:open" to open the report.');
+
+
