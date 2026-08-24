@@ -15,6 +15,10 @@
     "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
     "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
     "test:cards": "npx playwright test tests/cards.spec.js",
+    "test:enterprise": "npx playwright test tests/cards-enterprise.spec.js",
+    "test:e2e-user": "npx playwright test tests/e2e-user-verification-lifecycle.spec.js",
+    "test:e2e-provider": "npx playwright test tests/e2e-provider-verification-lifecycle.spec.js",
+    "test:e2e-booking": "npx playwright test tests/e2e-user-booking-lifecycle.spec.js",
     "clean:results": "node -e \"const fs=require('fs'); fs.rmSync('./allure-results', {recursive:true, force:true}); fs.mkdirSync('./allure-results', {recursive:true});\"",
     "allure:generate": "node scripts/generate-allure.js",
     "allure:open": "npx allure open ./allure-report",
@@ -23,6 +27,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2",
     "monocart-reporter": "^2.9.0"

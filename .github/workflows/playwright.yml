@@ -11,6 +11,7 @@ on:
         type: choice
         options:
           - 'all'
+          - 'enterprise'
           - 'cards'
           - 'auth'
           - 'user'
@@ -46,7 +47,10 @@ jobs:
         SCOPE="${{ github.event.inputs.test_scope }}"
         echo "Selected Test Scope: $SCOPE"
         
-        if [ "$SCOPE" = "cards" ]; then
+        if [ "$SCOPE" = "enterprise" ]; then
+          echo "Running Enterprise Test Suite (Service Objects, AJV Schema, Matrix, DB)..."
+          npm run test:enterprise
+        elif [ "$SCOPE" = "cards" ]; then
           echo "Running Cards Test Suite..."
           npx playwright test tests/cards.spec.js
         elif [ "$SCOPE" = "auth" ]; then
