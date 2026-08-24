@@ -109,6 +109,15 @@ const FILE_UPLOAD = {
     VALID_EXT: '.jpg',
 };
 
+// ---------- Test Card Data ----------
+const TEST_CARD = {
+    cardNumber: '5123450000000008',
+    cardholderName: 'Test User',
+    expiryDate: '01/39',
+    cvv: '100',
+    isDefault: true,
+};
+
 module.exports = {
     SQL_INJECTION_PAYLOADS,
     XSS_PAYLOADS,
@@ -118,4 +127,6 @@ module.exports = {
     FAKE_IDS,
     PAGINATION_EDGE,
     FILE_UPLOAD,
+    TEST_CARD,
 };
+

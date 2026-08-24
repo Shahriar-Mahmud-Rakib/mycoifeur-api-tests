@@ -14,11 +14,12 @@
     "test:admin": "npx playwright test tests/admin-overview.spec.js tests/admin-users.spec.js tests/admin-salons.spec.js tests/admin-orders.spec.js tests/admin-categories-services.spec.js tests/admin-financial.spec.js tests/admin-settings.spec.js tests/admin-admins.spec.js tests/admin-content.spec.js",
     "test:exhaustive": "npx playwright test tests/exhaustive-suite/",
     "test:advanced": "npx playwright test tests/advanced-architecture.spec.js",
-    "test:stress": "npx playwright test tests/stress-test.spec.js",
-    "show-report": "npx playwright show-report",
-    "allure:generate": "npx allure generate ./allure-results --clean -o ./allure-report",
+    "test:cards": "npx playwright test tests/cards.spec.js",
+    "clean:results": "node -e \"const fs=require('fs'); fs.rmSync('./allure-results', {recursive:true, force:true}); fs.mkdirSync('./allure-results', {recursive:true});\"",
+    "allure:generate": "node scripts/generate-allure.js",
     "allure:open": "npx allure open ./allure-report",
-    "allure:serve": "npx allure serve ./allure-results"
+    "allure:serve": "node scripts/generate-allure.js && npx allure open ./allure-report",
+    "report": "node scripts/generate-allure.js && npx allure open ./allure-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
